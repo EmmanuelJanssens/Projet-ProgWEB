@@ -11,12 +11,14 @@ public  class NoiseMapGenerator : MonoBehaviour
 
     public static NoiseMapGenerator current;
 
-    [SerializeField]
-	private int _MapHeight = 256;
-    [SerializeField]
-    private int _MapWidth = 256 ;
-    [SerializeField]
-    private float _NoiseScale = .4f;
+	private int _MapHeight = 0;
+    private int _MapWidth = 0 ;
+    private float _NoiseScale =0;
+    private int _Seed = 0;
+
+    private int _octaves = 4;
+    private float _persistence = 0.5f;
+    private float _lacunarity = 1.5f;
 
     private Texture2D _GeneratedTexture;
     private Material _GeneratedMaterial;
@@ -26,43 +28,112 @@ public  class NoiseMapGenerator : MonoBehaviour
 
     public Renderer _NoiseMapRenderer;
 
+    public int Seed { get { return _Seed; } set { _Seed = value; } }
+    public int Height { get { return _MapHeight; } set { _MapHeight = value; } }
+    public int Width { get { return _MapWidth; } set { _MapWidth = value; } }
+    public float Scale { get { return _NoiseScale; }set { _NoiseScale = value; } }
+    public int Octaves { get { return _octaves; } set { _octaves = value; } }
+    public float Persistence { get { return _persistence; } set { _persistence = value; } }
+    public float Lacunarity { get { return _lacunarity; } set { _lacunarity = value; } }
 
-    public int Height { get { return _MapHeight; } }
-    public int Width { get { return _MapWidth;  } }
-    public float Scale { get { return _NoiseScale; } }
+
+    private float _minHeight = float.MaxValue;
+    private float _maxHeight = float.MinValue;
+
+    private float _midWidth;
+    private float _midHeight;
 
 	// Use this for initialization
 	void Start () 
 	{
         if (current == null)
             current = this;
-
-        _Noise = new float[_MapWidth, _MapHeight];
-        _PixelColor = new Color[_MapWidth * _MapHeight];
-        _GeneratedTexture = new Texture2D(_MapWidth, _MapHeight);
 	}
 	
+    /// <summary>
+    /// Get the instance of the NoiseMapGenerator
+    /// There is only one 
+    /// </summary>
+    /// <returns>Instance of the Generator</returns>
     public static NoiseMapGenerator Get()
     {
         return current;
     }
 
+    /// <summary>
+    /// Generate a 2D Noise map texture
+    /// </summary>
     public void Generate()
     {
-        for(int y = 0; y < _MapHeight; y++)
+        //Initate the data
+        _Noise = new float[_MapWidth, _MapHeight];
+        _PixelColor = new Color[_MapWidth * _MapHeight];
+        _GeneratedTexture = new Texture2D(_MapWidth, _MapHeight);
+
+        _midWidth = _MapWidth / 2;
+        _midHeight = _MapHeight / 2;
+
+
+        for (int y = 0; y < _MapHeight; y++)
         {
             for(int x = 0; x < _MapWidth; x++)
             {
-                float xCoord, yCoord;
-                xCoord = x /  _NoiseScale;
-                yCoord = y / _NoiseScale;
+                float amplitude = 1;
+                float frequency = 1;
+                float noiseHeight = 0;
 
-                float perlinValue = Mathf.PerlinNoise(xCoord, yCoord);
+                for (int i = 0; i < _octaves; i++)
+                {
 
-                _Noise[x, y] = perlinValue;
-                _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
+
+                    float xCoord, yCoord;
+                    xCoord = (x - _midWidth) / _NoiseScale * frequency;
+                    yCoord = (y - _midHeight) / _NoiseScale * frequency;
+
+                    float perlinValue = Mathf.PerlinNoise(xCoord + _Seed, yCoord + _Seed) * 2 - 1;
+
+                    noiseHeight += perlinValue * amplitude;
+
+                    amplitude *= _persistence;
+                    frequency *= _lacunarity;
+
+                }
+
+                if (noiseHeight > _maxHeight)
+                    _maxHeight = noiseHeight;
+                else if (noiseHeight < _minHeight)
+                    _minHeight = noiseHeight;
+
+                _Noise[x, y] = noiseHeight;
+
             }
         }
+        for (int y = 0; y < _MapHeight; y++)
+        {
+            for (int x = 0; x < _MapWidth; x++)
+            {
+                _Noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _Noise[x, y]);
+                if (_Noise[x, y] < 0.3)
+                    _PixelColor[y * _MapWidth + x] = Color.blue;
+                else if(_Noise[x,y] > 0.3 && _Noise[x,y] < 0.4)
+                {
+                    _PixelColor[y * _MapWidth + x] = Color.blue;
+                }
+                else if (_Noise[x, y] > 0.3 && _Noise[x, y] < 0.4)
+                {
+                    _PixelColor[y * _MapWidth + x] = Color.yellow;
+                }
+                else if (_Noise[x, y] > 0.4 && _Noise[x, y] < 0.7)
+                {
+                    _PixelColor[y * _MapWidth + x] = Color.green;
+                }
+                else
+                {
+                    _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
+                }
+            }
+        }
+
 
         _GeneratedTexture.SetPixels(_PixelColor);
         _GeneratedTexture.Apply();
