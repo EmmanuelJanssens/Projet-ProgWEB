@@ -113,24 +113,9 @@ public  class NoiseMapGenerator : MonoBehaviour
             for (int x = 0; x < _MapWidth; x++)
             {
                 _Noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _Noise[x, y]);
-                if (_Noise[x, y] < 0.3)
-                    _PixelColor[y * _MapWidth + x] = Color.blue;
-                else if(_Noise[x,y] > 0.3 && _Noise[x,y] < 0.4)
-                {
-                    _PixelColor[y * _MapWidth + x] = Color.blue;
-                }
-                else if (_Noise[x, y] > 0.3 && _Noise[x, y] < 0.4)
-                {
-                    _PixelColor[y * _MapWidth + x] = Color.yellow;
-                }
-                else if (_Noise[x, y] > 0.4 && _Noise[x, y] < 0.7)
-                {
-                    _PixelColor[y * _MapWidth + x] = Color.green;
-                }
-                else
-                {
-                    _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
-                }
+
+                _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
+
             }
         }
 
