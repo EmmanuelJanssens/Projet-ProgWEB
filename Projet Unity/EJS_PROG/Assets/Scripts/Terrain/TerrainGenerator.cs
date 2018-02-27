@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
+    //Gameobject on wich the terrain will be applied
     public GameObject GOTerrain;
-
+    
+    //Data of the terrain
     private TerrainCollider _terrainCollider;
     private Terrain _terrain;
     private TerrainData _terrainData;
@@ -20,6 +22,9 @@ public class TerrainGenerator : MonoBehaviour
         _terrainData = new TerrainData();       
     }
 
+    /// <summary>
+    /// Applies the noie scale from the NoiseMap generated beforeHands
+    /// </summary>
     public void GenerateTerrain()
     {
         _terrain = GOTerrain.GetComponent<Terrain>();
@@ -30,7 +35,6 @@ public class TerrainGenerator : MonoBehaviour
         _terrainData.SetHeights(0, 0, NoiseMapGenerator.Get().GetNoiseData());
 
         _terrain.terrainData = _terrainData;
-        _terrainCollider.terrainData = _terrainData;
-      
+        _terrainCollider.terrainData = _terrainData;     
     }
 }

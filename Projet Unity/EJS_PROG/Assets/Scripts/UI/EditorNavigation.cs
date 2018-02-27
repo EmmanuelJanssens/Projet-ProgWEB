@@ -21,17 +21,13 @@ public class EditorNavigation : MonoBehaviour
 
     //GameObject of the terrainpanel in the hierarchy
     public GameObject TerrainPanel;
-
+    public GameObject TexturePanel;
 
     //Keep track of the current openPanel
     [HideInInspector] public GameObject ActivePanel;
 
-    //
-    public Text Title;
 
 
-    public GameObject GONoiseMap;
-    public GameObject GOTerrain;
 
 	// Use this for initialization
 	void Start ()
@@ -58,25 +54,15 @@ public class EditorNavigation : MonoBehaviour
         {
             if (_navButtons[i].name == "Terrain")
             {
-                _navButtons[i].onClick.AddListener(delegate { Open(TerrainPanel); });
-                Title.text = "Terrain";
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TerrainPanel); });
+            }
+            if(_navButtons[i].name == "Texture")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TexturePanel); });
             }
         }
     }
 
-    /// <summary>
-    /// Opens a panel
-    /// </summary>
-    /// <param name="panel">Wich panel to Open</param>
-    public void Open(GameObject panel)
-    {
-
-        panel.SetActive(true);
-        ActivePanel = panel;
-
-        //Deactivate the mainPanel
-        gameObject.SetActive(false);
-    }
 
 
 	

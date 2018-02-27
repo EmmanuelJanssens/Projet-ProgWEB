@@ -4,7 +4,9 @@ using UnityEngine;
 
 
 /// <summary>
-/// Used to generate terrain
+/// Used to generate a noisemap 
+/// Data from this map is used through the whole project
+/// 
 /// </summary>
 public  class NoiseMapGenerator : MonoBehaviour 
 {
@@ -72,8 +74,6 @@ public  class NoiseMapGenerator : MonoBehaviour
 
         _midWidth = _MapWidth / 2;
         _midHeight = _MapHeight / 2;
-
-
         for (int y = 0; y < _MapHeight; y++)
         {
             for(int x = 0; x < _MapWidth; x++)
@@ -84,7 +84,6 @@ public  class NoiseMapGenerator : MonoBehaviour
 
                 for (int i = 0; i < _octaves; i++)
                 {
-
 
                     float xCoord, yCoord;
                     xCoord = (x - _midWidth) / _NoiseScale * frequency;
@@ -114,12 +113,13 @@ public  class NoiseMapGenerator : MonoBehaviour
             {
                 _Noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _Noise[x, y]);
 
+                //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array
                 _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
 
             }
         }
 
-
+        //Generates the texture to visualize the noise map
         _GeneratedTexture.SetPixels(_PixelColor);
         _GeneratedTexture.Apply();
         _NoiseMapRenderer.material.mainTexture = _GeneratedTexture;

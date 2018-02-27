@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3367548355
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: terrain
+      Dependencies: {}

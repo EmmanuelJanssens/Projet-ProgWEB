@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1123780128
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ce2ca77cae227cb70df33ae7ab016337
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c73412a662fd4e4f36af34cbdf078b85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Textures/Terrain/metal.jpg
+- Assets/Textures/Terrain/TerrainDirt_basecolor.png
+- Assets/Textures/Terrain/sand.jpg
+- Assets/Textures/Terrain/TerrainGrass_basecolor.png
+- Assets/Textures/Terrain/terrain.jpg
+- Assets/Textures/Terrain/grain.jpg
+- Assets/Textures/Terrain/snow.jpg
+- Assets/Textures/Terrain/grass.jpg
+Dependencies: []
