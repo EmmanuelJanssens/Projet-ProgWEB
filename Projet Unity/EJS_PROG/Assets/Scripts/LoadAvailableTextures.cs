@@ -10,19 +10,41 @@ using UnityEngine.UI;
 /// </summary>
 public class LoadAvailableTextures : MonoBehaviour
 {
+
     public static LoadAvailableTextures current;
 
+    /// <summary>
+    /// Container of the toggles for the available textures
+    /// </summary>
+    public GameObject goContainer;
+    /// <summary>
+    /// Prefab of a specificToggle
+    /// </summary>
     public GameObject _textureTogglePrefab;
 
+    /// <summary>
+    /// Bundle that is to be loaded
+    /// </summary>
     private AssetBundle _Bundle;
 
     private WWW www;
+
+    /// <summary>
+    /// Array of available textures in the assetBundle
+    /// </summary>
     [SerializeField]
     public Texture2D[] _AvailableTextures;
     public Sprite[] _TextureUISprite;
 
-    public List<CTexture> _Selected;
+    /// <summary>
+    /// List of the toggles that where ON
+    /// elements are added when the OK Button from the frame is pressed  
+    /// </summary>
+    public List<CTexture> Selected;
 
+    /// <summary>
+    /// Keep track of the state of texture loading
+    /// </summary>
     public bool Loaded = false;
     public bool Imported = false;
 
@@ -54,12 +76,12 @@ public class LoadAvailableTextures : MonoBehaviour
         if(Loaded)
         {
 
-            Toggle[] enabled = gameObject.GetComponentsInChildren<Toggle>();
+            Toggle[] enabled = goContainer.GetComponentsInChildren<Toggle>();
 
-            if (_Selected != null)
-                _Selected = null;
+            if (Selected != null)
+                Selected = null;
 
-            _Selected = new List<CTexture>();
+            Selected = new List<CTexture>();
 
             for(int i = 0; i < enabled.Length; i++)
             {
@@ -73,7 +95,7 @@ public class LoadAvailableTextures : MonoBehaviour
                     toAdd.height = 0.5f;
                     toAdd.orientation = 45f;
 
-                    _Selected.Add(toAdd);
+                    Selected.Add(toAdd);
                 }
             }
 
@@ -128,7 +150,7 @@ public class LoadAvailableTextures : MonoBehaviour
                     for (int i = 0; i < _AvailableTextures.Length; i++)
                     {
                         GameObject newObject = Instantiate(_textureTogglePrefab);
-                        newObject.transform.SetParent(this.transform);
+                        newObject.transform.SetParent(goContainer.transform);
                         newObject.transform.localScale = new Vector3(1, 1, 1);
                         Image[] BG = newObject.GetComponentsInChildren<Image>();
                         _TextureUISprite[i] = Sprite.Create(_AvailableTextures[i], new Rect(0, 0, _AvailableTextures[i].width, _AvailableTextures[i].height), new Vector2(0.5f, 0.5f), 100.0f);

@@ -19,8 +19,10 @@ public class CTexture : MonoBehaviour
     public string name;
     public Sprite sprite;
     public Texture2D texture;
+    public GameObject localGameobject;
 
     public float steepness;
     public float height;
     public float orientation;
+    public float influence;
 }

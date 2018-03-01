@@ -9,29 +9,21 @@ using UnityEngine.UI;
 /// 
 /// link between textureGenerator
 /// </summary>
-public class TextureUI : MonoBehaviour {
+public class TextureUI : MonoBehaviour
+{
 
     public Button cmdSelectTexture;
     public Button cmdGenerateTextures;
-    public Button cmdAddTextures;
 
-    public GameObject TextureChooser;
+    public GameObject frmTextureChooser;
 
-    public Slider SteepnesSlider;
-    public InputField Steepness;
-    public Slider HeightSlider;
-    public InputField Height;
-    public Slider OrientationSlider;
-    public InputField Orientation;
+  
     
     public void Start()
     {
-        cmdSelectTexture.onClick.AddListener(delegate { UIManager.Get.OpenFrame(TextureChooser); });
-        cmdAddTextures.onClick.AddListener(ChooseTextures);
+        cmdSelectTexture.onClick.AddListener(delegate { UIManager.Get.OpenFrame(frmTextureChooser); });
+        cmdGenerateTextures.onClick.AddListener(TextureGenerator.Get.Generate);
     }
 
-    public void ChooseTextures()
-    {
-        UIManager.Get.CloseFrame();
-    }
+
 }

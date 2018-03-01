@@ -10,6 +10,8 @@ using System.Linq;
 /// </summary>
 public class TextureGenerator : MonoBehaviour {
 
+    public static TextureGenerator current;
+
     public LoadAvailableTextures Loader;
     public NoiseMapGenerator Noise;
     public ImportTextures Import;
@@ -22,6 +24,15 @@ public class TextureGenerator : MonoBehaviour {
     private float[,,] _splatmapData;
     private float[] _weight;
 
+
+    public static TextureGenerator Get { get { return current; } }
+
+    public void Start()
+    {
+        if (current == null)
+            current = this;
+    }
+
     /// <summary>
     /// Function called when pressing the generate button
     /// </summary>
@@ -29,6 +40,7 @@ public class TextureGenerator : MonoBehaviour {
     {
         StartCoroutine(IGenerate());
     }
+
 
     /// <summary>
     /// Coroutine that generates the textures on the terrain
@@ -40,12 +52,12 @@ public class TextureGenerator : MonoBehaviour {
         if(Loader.Imported)
         {
             //Import texture into terrain painter
-            SplatPrototype[] Textures = new SplatPrototype[Import.addedTextures.Count];
+            SplatPrototype[] Textures = new SplatPrototype[Import.ImportedTextures.Count];
             
-            for(int i = 0; i < Import.addedTextures.Count; i++)
+            for(int i = 0; i < Import.ImportedTextures.Count; i++)
             {
                 Textures[i] = new SplatPrototype();
-                Textures[i].texture = Import.addedTextures[i].texture;
+                Textures[i].texture = Import.ImportedTextures[i].texture;
                 Textures[i].tileSize = new Vector2(1, 1);
             }
 
