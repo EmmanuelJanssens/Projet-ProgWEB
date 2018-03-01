@@ -11,8 +11,11 @@ using UnityEngine.UI;
 /// Sprites are used for UI visualisation
 /// Textures are used to paint on the terrain
 /// </summary>
-public class CTexture
+[SerializeField]
+public class CTexture : MonoBehaviour
 {
+    public int ID;
+
     public string name;
     public Sprite sprite;
     public Texture2D texture;

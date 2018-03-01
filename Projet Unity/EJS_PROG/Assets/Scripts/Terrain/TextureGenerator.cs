@@ -10,18 +10,19 @@ using System.Linq;
 /// </summary>
 public class TextureGenerator : MonoBehaviour {
 
-    public LoadAvailableTextures loader;
-    public NoiseMapGenerator noise;
-    public ImportTextures import;
+    public LoadAvailableTextures Loader;
+    public NoiseMapGenerator Noise;
+    public ImportTextures Import;
 
     //List of all textures loaded
     List<CTexture> _Textures;
 
-    public Terrain terrain;
-    private TerrainData data;
-    
+    public Terrain _terrain;
+    private TerrainData _terrainData;
+    private float[,,] _splatmapData;
+    private float[] _weight;
 
-	/// <summary>
+    /// <summary>
     /// Function called when pressing the generate button
     /// </summary>
     public void Generate()
@@ -36,35 +37,64 @@ public class TextureGenerator : MonoBehaviour {
     IEnumerator IGenerate()
     {
         //Only generate if importation was successfull
-        if(loader._imported)
+        if(Loader.Imported)
         {
             //Import texture into terrain painter
-            SplatPrototype[] Textures = new SplatPrototype[import.addedTextures.Count];
+            SplatPrototype[] Textures = new SplatPrototype[Import.addedTextures.Count];
             
-            for(int i = 0; i < import.addedTextures.Count; i++)
+            for(int i = 0; i < Import.addedTextures.Count; i++)
             {
                 Textures[i] = new SplatPrototype();
-                Textures[i].texture = import.addedTextures[i].texture;
+                Textures[i].texture = Import.addedTextures[i].texture;
                 Textures[i].tileSize = new Vector2(1, 1);
             }
 
-            data = terrain.terrainData;
-            data.splatPrototypes = Textures;
-            data.RefreshPrototypes();
+            _terrainData = _terrain.terrainData;
+            _terrainData.splatPrototypes = Textures;
+            _terrainData.RefreshPrototypes();
 
 
             //Generate textures
-            float[,,] splatmapData = new float[data.alphamapWidth, data.alphamapHeight, data.alphamapLayers];
+            _splatmapData = new float[_terrainData.alphamapWidth, _terrainData.alphamapHeight, _terrainData.alphamapLayers];
 
-            for (int y = 0; y < data.alphamapHeight; y++)
+            //Each CTexture has has 3 elements Height,Steepness,Orientation (Other to be added)
+            //Those values will influence the base formula
+            //HeightInfluence + SteepnessInfluence + OrientationInfluence
+            //How to
+            //\\Calculatte  -HeightInfluence        
+            //\\            -SteepnessInfluence
+            //\\            -OrientationInfluence
+            //First test with heightOnly
+            for (int y = 0; y < _terrainData.alphamapHeight; y++)
             {
-                for (int x = 0; x < data.alphamapWidth; x++)
+                for (int x = 0; x < _terrainData.alphamapWidth; x++)
                 {
+                    _weight = new float[_terrainData.alphamapLayers];
+
+                    float y_01 = (float)y / (float)_terrainData.alphamapHeight;
+                    float x_01 = (float)x / (float)_terrainData.alphamapWidth;
+
+                    float height = _terrainData.GetHeight(Mathf.RoundToInt(y_01 * _terrainData.heightmapHeight), Mathf.RoundToInt(x_01 * _terrainData.heightmapWidth));                    //Get Steepness of the terrain
+
+
                     //Rules for splat mapping
+                    float z;
+
+                
+                    _weight[0] = Mathf.Clamp01((_terrainData.heightmapHeight - height));
+
+                    z = _weight.Sum();
+
+                    for (int i = 0; i < _terrainData.alphamapLayers; i ++)
+                    {
+                        _weight[i] /= z;
+                        _splatmapData[x, y, i] = _weight[i] ;
+                    }
                 }
             }
 
-            data.SetAlphamaps(0, 0, splatmapData);
+            //Appliquer les textures
+            _terrainData.SetAlphamaps(0, 0, _splatmapData);
 
 
         }

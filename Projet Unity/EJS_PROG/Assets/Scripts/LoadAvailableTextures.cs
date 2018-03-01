@@ -23,8 +23,8 @@ public class LoadAvailableTextures : MonoBehaviour
 
     public List<CTexture> _Selected;
 
-    public bool _Loaded = false;
-    public bool _imported = false;
+    public bool Loaded = false;
+    public bool Imported = false;
 
     public static LoadAvailableTextures Get { get { return current; } }
 
@@ -51,7 +51,7 @@ public class LoadAvailableTextures : MonoBehaviour
     /// <returns></returns>
     public IEnumerator ImportTextures()
     {
-        if(_Loaded)
+        if(Loaded)
         {
 
             Toggle[] enabled = gameObject.GetComponentsInChildren<Toggle>();
@@ -88,7 +88,7 @@ public class LoadAvailableTextures : MonoBehaviour
                 Destroy(gameObject.GetComponentsInChildren<Toggle>()[i].gameObject);
             }
 
-            _Loaded = false;
+            Loaded = false;
 
         }
         yield return null;
@@ -104,7 +104,7 @@ public class LoadAvailableTextures : MonoBehaviour
     /// <returns></returns>
     public IEnumerator ILoadTextures()
     {
-        if(!_Loaded)
+        if(!Loaded)
         {
             if (_Bundle == null)
             {
@@ -142,7 +142,7 @@ public class LoadAvailableTextures : MonoBehaviour
                             }
                         }
                     }
-                    _Loaded = true;
+                    Loaded = true;
                     yield return null;
 
                 }

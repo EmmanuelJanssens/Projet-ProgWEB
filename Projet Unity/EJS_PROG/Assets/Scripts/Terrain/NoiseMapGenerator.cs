@@ -18,9 +18,9 @@ public  class NoiseMapGenerator : MonoBehaviour
     private float _NoiseScale =0;
     private int _Seed = 0;
 
-    private int _octaves = 4;
-    private float _persistence = 0.5f;
-    private float _lacunarity = 1.5f;
+    private int _octaves = 0;
+    private float _persistence = 0f;
+    private float _lacunarity = 0f;
 
     private Texture2D _GeneratedTexture;
     private Material _GeneratedMaterial;

@@ -9,17 +9,44 @@ public class ImportTextures : MonoBehaviour {
 
 
     public Button cmdImport;
+    public Button[] cmdTextureProp;
+    public Text txtTitle;
+    public Image sprTexture;
+
+    public GameObject _frmTextureProp;
     public GameObject _textureElement;
 
+    public InputField Slope;
+    public InputField Height;
+    public InputField Orientation;
+
+    public InputField Influence;
 
     public List<CTexture> addedTextures;
+
+    public CTexture[] allLoadedTexture;
+
+    public static int Identifier = 0;
 
     // Use this for initialization
     void Start ()
     {
-        cmdImport.onClick.AddListener(Import);
+        cmdImport.onClick.AddListener(Import);  
     }
 	
+    public void OpenTextureProp(int id)
+    {
+        UIManager.Get.OpenFrame(_frmTextureProp);
+
+        txtTitle.text = addedTextures[id].name;
+        sprTexture.sprite = addedTextures[id].sprite;
+
+
+    }
+    public void RemoveTexture()
+    {
+
+    }
     /// <summary>
     /// Functions that start the Importation
     /// </summary>
@@ -48,6 +75,8 @@ public class ImportTextures : MonoBehaviour {
             toAdd.transform.SetParent(this.transform);
             toAdd.transform.localScale = new Vector3(1, 1, 1);
 
+            CTexture texture = toAdd.GetComponent<CTexture>();
+            
             Text TextureName;
             Image TextureImage;
 
@@ -57,10 +86,29 @@ public class ImportTextures : MonoBehaviour {
             TextureImage = TextureName.GetComponentInChildren<Image>();
             TextureImage.sprite = _textureLoader._Selected[i].sprite;
 
-            addedTextures.Add(_textureLoader._Selected[i]);
-        }
-        _textureLoader._imported = true;
+            texture.name = _textureLoader._Selected[i].name;
+            texture.texture = _textureLoader._Selected[i].texture;
+            texture.sprite = _textureLoader._Selected[i].sprite;       
 
+            Identifier++;
+
+            texture.ID = Identifier-1;
+            addedTextures.Add(texture);
+        }
+        _textureLoader.Imported = true;
+        cmdTextureProp = gameObject.GetComponentsInChildren<Button>(true);
+
+        for (int i = 0; i < cmdTextureProp.Length; i++)
+        {
+            if(cmdTextureProp[i].name == "Propreties")
+            {
+                CTexture linked = cmdTextureProp[i].GetComponentInParent<CTexture>();
+                cmdTextureProp[i].onClick.AddListener(delegate { OpenTextureProp(linked.ID); });
+
+            }
+            if (cmdTextureProp[i].name == "remove")
+                cmdTextureProp[i].onClick.AddListener(RemoveTexture);
+        }
         yield return null;
     }
 	// Update is called once per frame
