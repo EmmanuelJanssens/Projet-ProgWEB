@@ -13,14 +13,14 @@ public  class NoiseMapGenerator : MonoBehaviour
 
     public static NoiseMapGenerator current;
 
-	private int _MapHeight = 0;
-    private int _MapWidth = 0 ;
-    private float _NoiseScale =0;
-    private int _Seed = 0;
+	private int _MapHeight = 256;
+    private int _MapWidth = 256 ;
+    private float _NoiseScale =70;
+    private int _Seed = 3;
 
-    private int _octaves = 0;
-    private float _persistence = 0f;
-    private float _lacunarity = 0f;
+    private int _octaves = 10;
+    private float _persistence = 0.5f;
+    private float _lacunarity = 1f;
 
     private Texture2D _GeneratedTexture;
     private Material _GeneratedMaterial;

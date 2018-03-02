@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class SwitchTab : MonoBehaviour
 {
 
-
     private TabItem[] _tabs;
     public Toggle[] _tabToggles;
 
 	// Use this for initialization
-	void OnEnable ()
+	void Start ()
     {
         _tabs = gameObject.GetComponentsInChildren<TabItem>(true);
 
@@ -46,9 +45,5 @@ public class SwitchTab : MonoBehaviour
 
         }
     }
-	// Update is called once per frame
-	void Update ()
-    {
-	    	
-	}
+
 }

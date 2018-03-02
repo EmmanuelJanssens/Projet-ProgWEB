@@ -71,6 +71,16 @@ public class TerrainUI : MonoBehaviour
         cmdGenerateTerrain.onClick.AddListener(GenerateTerrain);
 
 
+        HeightScaleValue.text = TerrainGen.HeightScale.ToString();
+
+        Width.text = NoiseGen.Width.ToString();
+        Height.text = NoiseGen.Height.ToString();
+        Octaves.text = NoiseGen.Octaves.ToString();
+        NoiseScaleValue.text = NoiseGen.Scale.ToString();
+        SeedValue.text = NoiseGen.Seed.ToString();
+        LacunaricityValue.text = NoiseGen.Lacunarity.ToString();
+        PersistenceValue.text = NoiseGen.Persistence.ToString();
+
     }
 
     /// <summary>
@@ -78,8 +88,18 @@ public class TerrainUI : MonoBehaviour
     /// </summary>
     public void GenerateNoiseMap()
     {
-        if(NoiseGen.Width > 10 && NoiseGen.Height > 10 && NoiseGen.Scale > 0.2f )
+        NoiseGen.Width = int.Parse(Width.text);
+        NoiseGen.Height = int.Parse(Height.text);
+        NoiseGen.Lacunarity = float.Parse(LacunaricityValue.text);
+        NoiseGen.Persistence = float.Parse(PersistenceValue.text);
+        NoiseGen.Scale = float.Parse(NoiseScaleValue.text);
+        NoiseGen.Octaves = int.Parse(Octaves.text);
+        NoiseGen.Seed = int.Parse(Width.text);
+        
+        if (NoiseGen.Width > 10 && NoiseGen.Height > 10 && NoiseGen.Scale > 0.2f )
         {
+
+
             NoiseGen.Generate();
             GONoiseMap.SetActive(true);
             GOTerrain.SetActive(false);

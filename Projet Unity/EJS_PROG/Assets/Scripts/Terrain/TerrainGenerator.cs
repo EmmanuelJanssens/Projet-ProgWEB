@@ -12,8 +12,7 @@ public class TerrainGenerator : MonoBehaviour
     private Terrain _terrain;
     private TerrainData _terrainData;
 
-    [SerializeField]
-    private float _heightScale = 20f;
+    private float _heightScale = 90f;
 
     public float HeightScale { get { return _heightScale; } set { _heightScale = value; } }
 

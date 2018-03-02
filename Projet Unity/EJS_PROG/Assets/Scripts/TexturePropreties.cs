@@ -10,6 +10,8 @@ using UnityEngine.UI;
 /// </summary>
 public class TexturePropreties : MonoBehaviour
 {
+
+    public enum PlacementType { Height,Orientation,Steepness };
     public TextureGenerator textureGenerator;
     public Button cmdApply;
     public Button cmdCancel;
@@ -32,10 +34,13 @@ public class TexturePropreties : MonoBehaviour
 
     public void OnEnable()
     {
-        Slope.text = toModify.steepness.ToString();
-        Height.text = toModify.height.ToString();
-        Orientation.text = toModify.orientation.ToString();
-        Influence.text = toModify.influence.ToString();
+        if(toModify != null)
+        {
+            Slope.text = toModify.steepness.ToString();
+            Height.text = toModify.height.ToString();
+            Orientation.text = toModify.orientation.ToString();
+            Influence.text = toModify.influence.ToString();
+        }
     }
 
     public void applyTexturePropreties()

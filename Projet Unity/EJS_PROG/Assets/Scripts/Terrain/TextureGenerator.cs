@@ -77,23 +77,32 @@ public class TextureGenerator : MonoBehaviour {
             //\\            -SteepnessInfluence
             //\\            -OrientationInfluence
             //First test with heightOnly
+
+            _Textures = ImportTextures.Get.ImportedTextures;
             for (int y = 0; y < _terrainData.alphamapHeight; y++)
             {
                 for (int x = 0; x < _terrainData.alphamapWidth; x++)
                 {
                     _weight = new float[_terrainData.alphamapLayers];
-
                     float y_01 = (float)y / (float)_terrainData.alphamapHeight;
                     float x_01 = (float)x / (float)_terrainData.alphamapWidth;
 
                     float height = _terrainData.GetHeight(Mathf.RoundToInt(y_01 * _terrainData.heightmapHeight), Mathf.RoundToInt(x_01 * _terrainData.heightmapWidth));                    //Get Steepness of the terrain
+                    float steepness = _terrainData.GetSteepness(x_01, y_01);
+                    Vector3 direction = _terrainData.GetInterpolatedNormal(x, y);
 
+                    for(int i = 0; i < _terrainData.alphamapLayers; i++)
+                    {
+                        CTexture textureProp = _Textures[i];
+
+                        if(height > textureProp.height || steepness < textureProp.steepness || direction.z < textureProp.orientation)
+                        {
+                            _weight[i] = textureProp.influence;
+                        }
+                    }
 
                     //Rules for splat mapping
                     float z;
-
-                
-                    _weight[0] = Mathf.Clamp01((_terrainData.heightmapHeight - height));
 
                     z = _weight.Sum();
 
@@ -104,7 +113,7 @@ public class TextureGenerator : MonoBehaviour {
                     }
                 }
             }
-
+            
             //Appliquer les textures
             _terrainData.SetAlphamaps(0, 0, _splatmapData);
 
