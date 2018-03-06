@@ -14,6 +14,8 @@ using UnityEngine.UI;
 [SerializeField]
 public class CTexture : MonoBehaviour
 {
+    public enum ApplicationMode { Height,Slope,Orientation,HeightRange,SlopeRange};
+
     public int ID;
 
     public string name;
@@ -25,4 +27,12 @@ public class CTexture : MonoBehaviour
     public float height;
     public float orientation;
     public float influence;
+
+    public float minheight;
+    public float maxheight;
+
+    public float minslope;
+    public float maxslope;
+
+    public ApplicationMode Mode;
 }

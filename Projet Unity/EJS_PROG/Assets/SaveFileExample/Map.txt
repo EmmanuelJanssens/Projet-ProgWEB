@@ -1,0 +1,31 @@
+<TerrainData>
+	<Noise>
+		<Dimensions>
+			256;256
+		</Dimensions>
+		<Octave>
+			10
+		</Octave>
+		<Scale>
+			70
+		</Scale>
+		<Lacunarity>
+			1
+		</Lacunarity>
+		<Persistence>
+			0.5
+		</Persistence>
+		<Seed>
+			3
+		</Seed>
+	</Noise>
+	
+	<Terrain>
+		<Height>
+			90
+		</Height>
+	</Terrain>
+</TerrainData>
+
+
+

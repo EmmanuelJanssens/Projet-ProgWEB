@@ -26,9 +26,6 @@ public class EditorNavigation : MonoBehaviour
     //Keep track of the current openPanel
     [HideInInspector] public GameObject ActivePanel;
 
-
-
-
 	// Use this for initialization
 	void Start ()
     {

@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
 
 
     public GameObject PreviousFrame;
-
     public GameObject CurrentFrame;
 
     public Text Title;

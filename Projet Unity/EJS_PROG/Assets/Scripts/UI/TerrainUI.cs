@@ -53,9 +53,13 @@ public class TerrainUI : MonoBehaviour
 	void Start ()
     {
 
+        //Affiliated gameobject 
         NoiseGen = GOGenerator.GetComponent<NoiseMapGenerator>();
         TerrainGen = GOGenerator.GetComponent<TerrainGenerator>();
 
+
+        //Event Listeners
+        /*********************************************************/
         NoiseScale.onValueChanged.AddListener(UpdateNoiseScaleSliderValue);
         HeightScale.onValueChanged.AddListener(UpdateHeightScaleSliderValue);
 
@@ -69,17 +73,29 @@ public class TerrainUI : MonoBehaviour
 
         cmdGenerateNoiseMap.onClick.AddListener(GenerateNoiseMap);
         cmdGenerateTerrain.onClick.AddListener(GenerateTerrain);
+        /*********************************************************/
 
 
+        //Update UI interface Values
+        /*********************************************************/
         HeightScaleValue.text = TerrainGen.HeightScale.ToString();
 
         Width.text = NoiseGen.Width.ToString();
         Height.text = NoiseGen.Height.ToString();
         Octaves.text = NoiseGen.Octaves.ToString();
+
         NoiseScaleValue.text = NoiseGen.Scale.ToString();
+        NoiseScale.value = float.Parse(NoiseScaleValue.text);
+
         SeedValue.text = NoiseGen.Seed.ToString();
+        RandomSeed.value = float.Parse(SeedValue.text);
+
         LacunaricityValue.text = NoiseGen.Lacunarity.ToString();
+        Lacunarity.value = float.Parse(LacunaricityValue.text);
+
         PersistenceValue.text = NoiseGen.Persistence.ToString();
+        Persistence.value = float.Parse(PersistenceValue.text);
+        /*********************************************************/
 
     }
 

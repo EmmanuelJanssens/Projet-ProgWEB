@@ -95,10 +95,32 @@ public class TextureGenerator : MonoBehaviour {
                     {
                         CTexture textureProp = _Textures[i];
 
-                        if(height > textureProp.height || steepness < textureProp.steepness || direction.z < textureProp.orientation)
+                        switch(textureProp.Mode)
                         {
-                            _weight[i] = textureProp.influence;
+                            case CTexture.ApplicationMode.Height:
+                                if (height > textureProp.height)
+                                    _weight[i] = textureProp.influence;
+                                break;
+                            case CTexture.ApplicationMode.Slope:
+                                if (steepness < textureProp.steepness)
+                                    _weight[i] = textureProp.influence;
+                                break;
+                            case CTexture.ApplicationMode.Orientation:
+                                if (direction.z < textureProp.orientation)
+                                    _weight[i] = textureProp.influence;
+                                break;
+                            case CTexture.ApplicationMode.HeightRange:
+                                if (height < textureProp.minheight && height > textureProp.maxheight)
+                                    _weight[i] = textureProp.influence;
+                                break;
+                            case CTexture.ApplicationMode.SlopeRange:
+                                if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
+                                    _weight[i] = textureProp.influence;
+                                break;
+                            default:
+                                break;
                         }
+
                     }
 
                     //Rules for splat mapping

@@ -15,13 +15,17 @@ public class TextureUI : MonoBehaviour
     public Button cmdSelectTexture;
     public Button cmdGenerateTextures;
 
-    public GameObject frmTextureChooser;
+    public LoadAvailableTextures Loader;
 
-  
+    public GameObject frmTextureChooser;
     
     public void Start()
     {
-        cmdSelectTexture.onClick.AddListener(delegate { UIManager.Get.OpenFrame(frmTextureChooser); });
+        cmdSelectTexture.onClick.AddListener(delegate {
+            Loader.StartLoading();
+            UIManager.Get.OpenFrame(frmTextureChooser);
+
+        });
         cmdGenerateTextures.onClick.AddListener(TextureGenerator.Get.Generate);
     }
 

@@ -16,51 +16,135 @@ public class TexturePropreties : MonoBehaviour
     public Button cmdApply;
     public Button cmdCancel;
 
+    public SwitchTab Tabs;
     /// <summary>
     /// Text input fields from the propreties from a CTexture
     /// </summary>
-    public InputField Slope;
-    public InputField Height;
-    public InputField Orientation;
+
+    //General influence
     public InputField Influence;
+
+
+    //For single Values
+    private InputField Value;
+
+    //For ranged Values
+    private InputField MinValue;
+    private InputField MaxValue;
 
     public CTexture toModify;
 
     public void Start()
     {
+        //Commands of the two buttons from the texture propreties frame
         cmdApply.onClick.AddListener(applyTexturePropreties);
         cmdCancel.onClick.AddListener(closeTexturePropreties);
     }
 
+    /// <summary>
+    /// Update UI values if texture to modifiy exists
+    /// </summary>
     public void OnEnable()
     {
-        if(toModify != null)
+       if(toModify != null)
         {
-            Slope.text = toModify.steepness.ToString();
-            Height.text = toModify.height.ToString();
-            Orientation.text = toModify.orientation.ToString();
-            Influence.text = toModify.influence.ToString();
+            for(int i = 0; i < Tabs.GetTabs.Length; i++)
+            {
+                switch(toModify.Mode)
+                {
+                    case CTexture.ApplicationMode.Height:
+                        Value.text = toModify.height.ToString();
+                        Tabs.SetActive("Height");
+                        break;
+                    case CTexture.ApplicationMode.Orientation:
+                        Value.text = toModify.orientation.ToString();
+                        Tabs.SetActive("Orientation");
+                        break;
+                    case CTexture.ApplicationMode.Slope:
+                        Value.text = toModify.steepness.ToString();
+                        Tabs.SetActive("Slope");
+                        break;
+                    case CTexture.ApplicationMode.SlopeRange:
+                        MinValue.text = toModify.minslope.ToString();
+                        MaxValue.text = toModify.maxslope.ToString();
+                        Tabs.SetActive("Slope Range");
+                        break;
+                    case CTexture.ApplicationMode.HeightRange:
+                        MinValue.text = toModify.minheight.ToString();
+                        MaxValue.text = toModify.maxheight.ToString();
+                        Tabs.SetActive("Height Range");                  
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 
+    /// <summary>
+    /// Applies a texture according to the Active Tab
+    /// </summary>
     public void applyTexturePropreties()
     {
-        float slope, height, orientation, influence;
 
-        if (float.TryParse(Slope.text, out slope)
-                && float.TryParse(Height.text, out height)
-                && float.TryParse(Orientation.text, out orientation)
-                && float.TryParse(Influence.text, out influence))
+        Value = Tabs.gameObject.GetComponentInChildren<InputField>();
+
+        if(Tabs.gameObject.GetComponentsInChildren<InputField>().Length > 1)
         {
-            toModify.steepness = slope;
-            toModify.height = height;
-            toModify.orientation = orientation;
-            toModify.influence = influence;
+            MinValue = Tabs.gameObject.GetComponentsInChildren<InputField>()[0];
+            MaxValue = Tabs.gameObject.GetComponentsInChildren<InputField>()[1];
         }
 
+        switch (Tabs.ActiveTab.Name)
+        {
+            case "Height":
+                toModify.height = SetValue(Value.text);
+                toModify.Mode = CTexture.ApplicationMode.Height;
+                break;
+            case "Slope":
+                toModify.steepness = SetValue(Value.text);
+                toModify.Mode = CTexture.ApplicationMode.Slope;
+                break;
+            case "Orientation":
+                toModify.orientation = SetValue(Value.text);
+                toModify.Mode = CTexture.ApplicationMode.Orientation;
+                break;
+            case "Height Range":
+                toModify.minheight = SetValue(MinValue.text);
+                toModify.maxheight = SetValue(MaxValue.text);
+                toModify.Mode = CTexture.ApplicationMode.HeightRange;
+                break;
+            case "Slope Range":
+                toModify.minslope = SetValue(MinValue.text);
+                toModify.maxslope = SetValue(MaxValue.text);
+                toModify.Mode = CTexture.ApplicationMode.SlopeRange;
+                break;
+            default:
+                break;
+        }
+        toModify.influence = SetValue(Influence.text);
         UIManager.Get.CloseFrame();
     }
 
+    /// <summary>
+    /// Returns a converted string from an inputfield
+    /// </summary>
+    /// <param name="v">string value of the input fiedld<param>
+    /// <returns>Float value of the input field</returns>
+    public float SetValue(string v)
+    {
+        float value ;
+
+        bool result = float.TryParse(v, out value);
+        if (result)
+            return value;
+        else
+            return 0f;
+    }
+
+    /// <summary>
+    /// Closes the propreties frame
+    /// </summary>
     public void closeTexturePropreties()
     {
         UIManager.Get.CloseFrame();

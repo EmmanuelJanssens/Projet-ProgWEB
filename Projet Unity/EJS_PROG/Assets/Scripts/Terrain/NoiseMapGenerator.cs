@@ -15,7 +15,7 @@ public  class NoiseMapGenerator : MonoBehaviour
 
 	private int _MapHeight = 256;
     private int _MapWidth = 256 ;
-    private float _NoiseScale =70;
+    private float _NoiseScale =70f;
     private int _Seed = 3;
 
     private int _octaves = 10;
@@ -72,22 +72,37 @@ public  class NoiseMapGenerator : MonoBehaviour
         _PixelColor = new Color[_MapWidth * _MapHeight];
         _GeneratedTexture = new Texture2D(_MapWidth, _MapHeight);
 
+        System.Random prng = new System.Random(Seed);
+        Vector2[] octaveOffests = new Vector2[Octaves];
+
+        //Randomise Octaves setting
+        for(int i = 0; i < Octaves; i++)
+        {
+            float offsetX = prng.Next(-100000, 10000);
+            float offsetY = prng.Next(-100000, 10000);
+
+            octaveOffests[i] = new Vector2(offsetX, offsetY); ;
+
+        }
+
+        if (_NoiseScale == 0)
+            _NoiseScale = 0.0001f;
         _midWidth = _MapWidth / 2;
         _midHeight = _MapHeight / 2;
         for (int y = 0; y < _MapHeight; y++)
         {
             for(int x = 0; x < _MapWidth; x++)
             {
-                float amplitude = 1;
-                float frequency = 1;
-                float noiseHeight = 0;
+                float amplitude = 1f;
+                float frequency = 1f;
+                float noiseHeight = 0f;
 
                 for (int i = 0; i < _octaves; i++)
                 {
 
                     float xCoord, yCoord;
-                    xCoord = (x - _midWidth) / _NoiseScale * frequency;
-                    yCoord = (y - _midHeight) / _NoiseScale * frequency;
+                    xCoord = (x - _midWidth) / _NoiseScale * frequency + octaveOffests[i].x;
+                    yCoord = (y - _midHeight) / _NoiseScale * frequency + octaveOffests[i].y;
 
                     float perlinValue = Mathf.PerlinNoise(xCoord + _Seed, yCoord + _Seed) * 2 - 1;
 

@@ -61,7 +61,7 @@ public class LoadAvailableTextures : MonoBehaviour
     /// <summary>
     /// When the frame is opened the TextureLoader Starts automaticaly
     /// </summary>
-    public void OnEnable()
+    public void StartLoading()
     {
         StartCoroutine(ILoadTextures());
     }
@@ -75,9 +75,11 @@ public class LoadAvailableTextures : MonoBehaviour
     {
         if(Loaded)
         {
-
+            //Array of toggles that where selected in the texture chooser
             Toggle[] enabled = goContainer.GetComponentsInChildren<Toggle>();
 
+            //Be sure to have an empty list of textur to import
+            //Otherwise precedently loaded texture will also be loaded
             if (Selected != null)
                 Selected = null;
 
@@ -85,6 +87,8 @@ public class LoadAvailableTextures : MonoBehaviour
 
             for(int i = 0; i < enabled.Length; i++)
             {
+                //If the toggle is ON 
+                //Add a new texture to the ones that have to be imported
                 if(enabled[i].isOn)
                 {
                     CTexture toAdd = new CTexture();
@@ -99,15 +103,17 @@ public class LoadAvailableTextures : MonoBehaviour
                 }
             }
 
+            //Is that realy needed ?
             //unload the unused textures
             _Bundle.Unload(false);
             _Bundle = null;
             _TextureUISprite = null;
             _AvailableTextures = null;
 
-            for(int i = 0; i <  gameObject.GetComponentsInChildren<Toggle>().Length; i++)
+            //Destroy List of Toggles for next load
+            for(int i = 0; i < goContainer.GetComponentsInChildren<Toggle>().Length; i++)
             {
-                Destroy(gameObject.GetComponentsInChildren<Toggle>()[i].gameObject);
+                Destroy(goContainer.GetComponentsInChildren<Toggle>()[i].gameObject);
             }
 
             Loaded = false;
@@ -163,6 +169,8 @@ public class LoadAvailableTextures : MonoBehaviour
                                 break;
                             }
                         }
+
+
                     }
                     Loaded = true;
                     yield return null;

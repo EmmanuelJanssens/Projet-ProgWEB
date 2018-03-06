@@ -70,9 +70,9 @@ public class ImportTextures : MonoBehaviour
     }
 	
     /// <summary>
-    /// Opens the texture propreties frame
+    /// Opens the texture propreties frame 
     /// </summary>
-    /// <param name="id"></param>
+    /// <param name="id">Identification number of the texture to be loaded</param>
     public void OpenTextureProp(int id)
     {
         TexturePropreties proprs = _frmTextureProp.GetComponent<TexturePropreties>();
@@ -85,18 +85,19 @@ public class ImportTextures : MonoBehaviour
     }
 
     /// <summary>
-    /// Removes an element from the list 
+    /// Removes an element from the list and updates the identification Numbers of all the texture
     /// </summary>
-    /// <param name="id"></param>
+    /// <param name="id">Identification of the texture that has to be removed</param>
     public void RemoveTexture(int id)
     {
         Destroy(ImportedTextures[id].localGameobject);
         ImportedTextures.RemoveAt(id);
         Identifier = 0;
-        for(int i = 0; i < ImportedTextures.Count; i++)
+        for (int i = 0; i < ImportedTextures.Count; i++)
         {
-            Identifier++;
+
             ImportedTextures[i].ID = Identifier;
+            Identifier++;
         }
     }
     /// <summary>
@@ -114,12 +115,13 @@ public class ImportTextures : MonoBehaviour
     /// <returns></returns>
     IEnumerator CoImport()
     {
-
         // First import the selected/enabled textures in the texture chooser
         yield return StartCoroutine(_textureLoader.ImportTextures());
 
         // Add the selected textures from the loader into the imported texture
-        ImportedTextures = new List<CTexture>();
+        if(ImportedTextures == null)
+            ImportedTextures = new List<CTexture>();
+
         for(int i = 0; i < _textureLoader.Selected.Count; i++)
         {
             GameObject toAdd = Instantiate(_textureElement);
@@ -147,6 +149,7 @@ public class ImportTextures : MonoBehaviour
             texture.ID = Identifier-1;
             ImportedTextures.Add(texture);
         }
+
         _textureLoader.Imported = true;
         cmdTextureProp = goContainer.GetComponentsInChildren<Button>(true);
 
@@ -167,8 +170,5 @@ public class ImportTextures : MonoBehaviour
         UIManager.Get.CloseFrame();
         yield return null;
     }
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
