@@ -54,12 +54,16 @@ public class ImportTextures : MonoBehaviour
     /// </summary>
     public List<CTexture> ImportedTextures;
 
+    public ListManager TextureList;
+
     /// <summary>
     /// Counts the total of textures to affect an unique identifier to them
     /// </summary>
     public static int Identifier = 0;
 
     public static ImportTextures Get { get { return current; } }
+
+
     // Use this for initialization
     void Start ()
     {
@@ -100,6 +104,16 @@ public class ImportTextures : MonoBehaviour
             Identifier++;
         }
     }
+
+    public void UpdateTextureList()
+    {
+        for (int i = 0; i < ImportedTextures.Count; i++)
+        {
+            ImportedTextures[i].ID = TextureList.Elements[i].ID;
+        }
+
+    }
+
     /// <summary>
     /// Functions that start the Importation
     /// </summary>
@@ -135,6 +149,7 @@ public class ImportTextures : MonoBehaviour
 
             TextureName = toAdd.GetComponentInChildren<Text>();
             TextureName.text = _textureLoader.Selected[i].name;
+            toAdd.name = TextureName.text;
 
             TextureImage = TextureName.GetComponentInChildren<Image>();
             TextureImage.sprite = _textureLoader.Selected[i].sprite;
@@ -168,6 +183,8 @@ public class ImportTextures : MonoBehaviour
         }
 
         UIManager.Get.CloseFrame();
+
+        TextureList.Init();
         yield return null;
     }
 

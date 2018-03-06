@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4105,6 +4105,7 @@ MonoBehaviour:
   _textureElement: {fileID: 1702786452155434, guid: fd5fb8b941c4dd04f8239924850c4089,
     type: 2}
   ImportedTextures: []
+  TextureList: {fileID: 924719900}
 --- !u!114 &867172645 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114249387055653746, guid: 2df901a6945ffbc448186f223d70c4c5,
@@ -4433,6 +4434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924719898}
   - component: {fileID: 924719899}
+  - component: {fileID: 924719900}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -4481,6 +4483,19 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &924719900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924719897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e2e85a551169f41951fb6085729d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _elements: []
+  TextrureImporter: {fileID: 813420280}
 --- !u!1 &964532193
 GameObject:
   m_ObjectHideFlags: 0

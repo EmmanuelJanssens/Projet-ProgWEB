@@ -46,7 +46,8 @@ public class TexturePropreties : MonoBehaviour
     /// </summary>
     public void OnEnable()
     {
-       if(toModify != null)
+
+        if (toModify != null)
         {
             for(int i = 0; i < Tabs.GetTabs.Length; i++)
             {
