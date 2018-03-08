@@ -22,6 +22,7 @@ public class EditorNavigation : MonoBehaviour
     //GameObject of the terrainpanel in the hierarchy
     public GameObject TerrainPanel;
     public GameObject TexturePanel;
+    public GameObject TreePanel;
 
     //Keep track of the current openPanel
     [HideInInspector] public GameObject ActivePanel;
@@ -56,6 +57,10 @@ public class EditorNavigation : MonoBehaviour
             if(_navButtons[i].name == "Texture")
             {
                 _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TexturePanel); });
+            }
+            if(_navButtons[i].name == "Trees")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TreePanel); });
             }
         }
     }

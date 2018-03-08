@@ -36,7 +36,7 @@ public class AssetBundleLoader : MonoBehaviour
             switch(storage)
             {
                 case STORAGE.LOCAL:
-                    _bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, _bundleName));
+                    _bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath + "/Bundles/", _bundleName));
                     break;
 
                 case STORAGE.REMOTE:
