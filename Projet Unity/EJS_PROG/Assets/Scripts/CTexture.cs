@@ -18,7 +18,7 @@ public class CTexture : MonoBehaviour
 
     public int ID;
 
-    public string name;
+    public string Name;
     public Sprite sprite;
     public Texture2D texture;
     public GameObject localGameobject;

@@ -38,6 +38,7 @@ public class TerrainUI : MonoBehaviour
     public InputField LacunaricityValue;
     public Slider Lacunarity;
 
+
     [Header("Terrain propreties")]
     public GameObject GOTerrain;
 
@@ -95,6 +96,7 @@ public class TerrainUI : MonoBehaviour
 
         PersistenceValue.text = NoiseGen.Persistence.ToString();
         Persistence.value = float.Parse(PersistenceValue.text);
+
         /*********************************************************/
 
     }
@@ -188,6 +190,7 @@ public class TerrainUI : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Upates the random seed text value
     /// </summary>
@@ -244,6 +247,8 @@ public class TerrainUI : MonoBehaviour
             }
         }
     }
+
+
 
     /// <summary>
     /// Updates the textfield of the Terrain height Scale value

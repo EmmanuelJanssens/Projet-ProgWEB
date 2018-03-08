@@ -16,7 +16,8 @@ public class ImportTextures : MonoBehaviour
     /// <summary>
     /// Needed to access all loaded texture from the assetbundle
     /// </summary>
-    public LoadAvailableTextures _textureLoader;
+    [HideInInspector]
+    public ImportAssets Importer;
 
     /// <summary>
     /// Container of the graphical elements
@@ -26,6 +27,7 @@ public class ImportTextures : MonoBehaviour
     /// <summary>
     /// Interaction with the texture elements
     /// </summary>
+    [HideInInspector]
     public Button[] cmdTextureProp;
     public Text txtTitle;
     public Image sprTexture;
@@ -47,12 +49,16 @@ public class ImportTextures : MonoBehaviour
     /// </summary>
     public GameObject _textureElement;
 
-
-
     /// <summary>
     /// List of textures that are available into the generator
     /// </summary>
+    [HideInInspector]
     public List<CTexture> ImportedTextures;
+
+    /// <summary>
+    /// List of the textures
+    /// </summary>
+    public ListManager TextureList;
 
     /// <summary>
     /// Counts the total of textures to affect an unique identifier to them
@@ -60,9 +66,14 @@ public class ImportTextures : MonoBehaviour
     public static int Identifier = 0;
 
     public static ImportTextures Get { get { return current; } }
+
+    public bool TextureImported = false;
     // Use this for initialization
     void Start ()
     {
+
+        Importer = gameObject.GetComponent<ImportAssets>();
+
         if (current == null)
             current = this;
 
@@ -78,7 +89,7 @@ public class ImportTextures : MonoBehaviour
         TexturePropreties proprs = _frmTextureProp.GetComponent<TexturePropreties>();
         proprs.toModify = ImportedTextures[id];
 
-        txtTitle.text = ImportedTextures[id].name;
+        txtTitle.text = ImportedTextures[id].Name;
         sprTexture.sprite = ImportedTextures[id].sprite;
 
         UIManager.Get.OpenFrame(_frmTextureProp);
@@ -100,6 +111,16 @@ public class ImportTextures : MonoBehaviour
             Identifier++;
         }
     }
+
+    public void UpdateTextureList()
+    {
+        for (int i = 0; i < ImportedTextures.Count; i++)
+        {
+            ImportedTextures[i].ID = TextureList.Elements[i].ID;
+        }
+
+    }
+
     /// <summary>
     /// Functions that start the Importation
     /// </summary>
@@ -116,32 +137,35 @@ public class ImportTextures : MonoBehaviour
     IEnumerator CoImport()
     {
         // First import the selected/enabled textures in the texture chooser
-        yield return StartCoroutine(_textureLoader.ImportTextures());
+        yield return StartCoroutine(Importer.Import<CTexture>());
 
         // Add the selected textures from the loader into the imported texture
         if(ImportedTextures == null)
             ImportedTextures = new List<CTexture>();
 
-        for(int i = 0; i < _textureLoader.Selected.Count; i++)
+        for(int i = 0; i < Importer.Selected.Count; i++)
         {
             GameObject toAdd = Instantiate(_textureElement);
             toAdd.transform.SetParent(goContainer.transform);
             toAdd.transform.localScale = new Vector3(1, 1, 1);
 
             CTexture texture = toAdd.GetComponent<CTexture>();
-            
+            CTexture importedTexture  = Importer.Selected[i] as CTexture;
+
             Text TextureName;
             Image TextureImage;
 
+
             TextureName = toAdd.GetComponentInChildren<Text>();
-            TextureName.text = _textureLoader.Selected[i].name;
+            TextureName.text = importedTexture.Name;
+            toAdd.name = TextureName.text;
 
             TextureImage = TextureName.GetComponentInChildren<Image>();
-            TextureImage.sprite = _textureLoader.Selected[i].sprite;
+            TextureImage.sprite = importedTexture.sprite;
 
-            texture.name = _textureLoader.Selected[i].name;
-            texture.texture = _textureLoader.Selected[i].texture;
-            texture.sprite = _textureLoader.Selected[i].sprite;
+            texture.Name = importedTexture.Name;
+            texture.texture = importedTexture.texture;
+            texture.sprite = importedTexture.sprite;
             texture.localGameobject = toAdd;
 
             Identifier++;
@@ -150,7 +174,7 @@ public class ImportTextures : MonoBehaviour
             ImportedTextures.Add(texture);
         }
 
-        _textureLoader.Imported = true;
+        TextureImported = true;
         cmdTextureProp = goContainer.GetComponentsInChildren<Button>(true);
 
         for (int i = 0; i < cmdTextureProp.Length; i++)
@@ -168,6 +192,8 @@ public class ImportTextures : MonoBehaviour
         }
 
         UIManager.Get.CloseFrame();
+
+        TextureList.Init();
         yield return null;
     }
 

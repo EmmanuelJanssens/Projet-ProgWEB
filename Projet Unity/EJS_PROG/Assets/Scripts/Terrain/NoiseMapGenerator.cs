@@ -13,31 +13,32 @@ public  class NoiseMapGenerator : MonoBehaviour
 
     public static NoiseMapGenerator current;
 
-	private int _MapHeight = 256;
-    private int _MapWidth = 256 ;
-    private float _NoiseScale =70f;
-    private int _Seed = 3;
+	private int _mapHeight = 256;
+    private int _mapWidth = 256 ;
+    private float _noiseScale =70f;
+    private int _seed = 3;
 
     private int _octaves = 10;
     private float _persistence = 0.5f;
-    private float _lacunarity = 1f;
+    private float _lacunarity = 1;
+    private Vector2 _offset;
 
-    private Texture2D _GeneratedTexture;
-    private Material _GeneratedMaterial;
-    private Color[] _PixelColor; // black/white
 
-    private float[,] _Noise;
+    private Texture2D _generatedTexture;
+    private Color[] _pixelColor; // black/white
 
-    public Renderer _NoiseMapRenderer;
+    private float[,] _noise;
 
-    public int Seed { get { return _Seed; } set { _Seed = value; } }
-    public int Height { get { return _MapHeight; } set { _MapHeight = value; } }
-    public int Width { get { return _MapWidth; } set { _MapWidth = value; } }
-    public float Scale { get { return _NoiseScale; }set { _NoiseScale = value; } }
+    public Renderer _noiseMapRenderer;
+
+    public int Seed { get { return _seed; } set { _seed = value; } }
+    public int Height { get { return _mapHeight; } set { _mapHeight = value; } }
+    public int Width { get { return _mapWidth; } set { _mapWidth = value; } }
+    public float Scale { get { return _noiseScale; }set { _noiseScale = value; } }
     public int Octaves { get { return _octaves; } set { _octaves = value; } }
     public float Persistence { get { return _persistence; } set { _persistence = value; } }
     public float Lacunarity { get { return _lacunarity; } set { _lacunarity = value; } }
-
+    
 
     private float _minHeight = float.MaxValue;
     private float _maxHeight = float.MinValue;
@@ -68,30 +69,42 @@ public  class NoiseMapGenerator : MonoBehaviour
     public void Generate()
     {
         //Initate the data
-        _Noise = new float[_MapWidth, _MapHeight];
-        _PixelColor = new Color[_MapWidth * _MapHeight];
-        _GeneratedTexture = new Texture2D(_MapWidth, _MapHeight);
+        if (_noise != null)
+            _noise = null;
+        _noise = new float[_mapWidth, _mapHeight];
 
+        if (_pixelColor != null)
+            _pixelColor = null;
+        _pixelColor = new Color[_mapWidth * _mapHeight];
+
+        if (_generatedTexture != null)
+            _generatedTexture = null;
+        _generatedTexture = new Texture2D(_mapWidth, _mapHeight);
+
+
+        //For more vareity in the noise
         System.Random prng = new System.Random(Seed);
         Vector2[] octaveOffests = new Vector2[Octaves];
 
-        //Randomise Octaves setting
+        //Randomize the octave start position
         for(int i = 0; i < Octaves; i++)
         {
             float offsetX = prng.Next(-100000, 10000);
             float offsetY = prng.Next(-100000, 10000);
-
+  
             octaveOffests[i] = new Vector2(offsetX, offsetY); ;
-
         }
 
-        if (_NoiseScale == 0)
-            _NoiseScale = 0.0001f;
-        _midWidth = _MapWidth / 2;
-        _midHeight = _MapHeight / 2;
-        for (int y = 0; y < _MapHeight; y++)
+        if (_noiseScale == 0)
+            _noiseScale = 0.0001f;
+
+        //Scale the noise down to center
+        _midWidth = _mapWidth / 2;
+        _midHeight = _mapHeight / 2;
+
+        for (int y = 0; y < _mapHeight; y++)
         {
-            for(int x = 0; x < _MapWidth; x++)
+            for(int x = 0; x < _mapWidth; x++)
             {
                 float amplitude = 1f;
                 float frequency = 1f;
@@ -99,50 +112,44 @@ public  class NoiseMapGenerator : MonoBehaviour
 
                 for (int i = 0; i < _octaves; i++)
                 {
-
                     float xCoord, yCoord;
-                    xCoord = (x - _midWidth) / _NoiseScale * frequency + octaveOffests[i].x;
-                    yCoord = (y - _midHeight) / _NoiseScale * frequency + octaveOffests[i].y;
+                    xCoord = (x - _midWidth) / _noiseScale * frequency + octaveOffests[i].x;
+                    yCoord = (y - _midHeight) / _noiseScale * frequency + octaveOffests[i].y;
 
-                    float perlinValue = Mathf.PerlinNoise(xCoord + _Seed, yCoord + _Seed) * 2 - 1;
+                    float perlinValue = Mathf.PerlinNoise(xCoord + _seed, yCoord + _seed) * 2 - 1;
 
+                    
                     noiseHeight += perlinValue * amplitude;
 
                     amplitude *= _persistence;
                     frequency *= _lacunarity;
-
                 }
+
 
                 if (noiseHeight > _maxHeight)
                     _maxHeight = noiseHeight;
                 else if (noiseHeight < _minHeight)
                     _minHeight = noiseHeight;
 
-                _Noise[x, y] = noiseHeight;
 
-            }
-        }
-        for (int y = 0; y < _MapHeight; y++)
-        {
-            for (int x = 0; x < _MapWidth; x++)
-            {
-                _Noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _Noise[x, y]);
+                _noise[x, y] = noiseHeight;
 
-                //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array
-                _PixelColor[y * _MapWidth + x] = Color.Lerp(Color.black, Color.white, _Noise[x, y]);
+                _noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _noise[x, y]);
 
+                //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array         
+                _pixelColor[y * _mapWidth + x] = Color.Lerp(Color.black, Color.white, _noise[x, y]);
             }
         }
 
         //Generates the texture to visualize the noise map
-        _GeneratedTexture.SetPixels(_PixelColor);
-        _GeneratedTexture.Apply();
-        _NoiseMapRenderer.material.mainTexture = _GeneratedTexture;
+        _generatedTexture.SetPixels(_pixelColor);
+        _generatedTexture.Apply();
+        _noiseMapRenderer.material.mainTexture = _generatedTexture;
     }
 
     public float[,] GetNoiseData()
     {
-        return _Noise;
+        return _noise;
     }
 
 }

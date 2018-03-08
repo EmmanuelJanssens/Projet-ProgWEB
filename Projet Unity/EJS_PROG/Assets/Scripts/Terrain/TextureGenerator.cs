@@ -12,7 +12,6 @@ public class TextureGenerator : MonoBehaviour {
 
     public static TextureGenerator current;
 
-    public LoadAvailableTextures Loader;
     public NoiseMapGenerator Noise;
     public ImportTextures Import;
 
@@ -41,7 +40,6 @@ public class TextureGenerator : MonoBehaviour {
         StartCoroutine(IGenerate());
     }
 
-
     /// <summary>
     /// Coroutine that generates the textures on the terrain
     /// </summary>
@@ -49,7 +47,7 @@ public class TextureGenerator : MonoBehaviour {
     IEnumerator IGenerate()
     {
         //Only generate if importation was successfull
-        if(Loader.Imported)
+        if(Import.TextureImported)
         {
             //Import texture into terrain painter
             SplatPrototype[] Textures = new SplatPrototype[Import.ImportedTextures.Count];
@@ -110,7 +108,7 @@ public class TextureGenerator : MonoBehaviour {
                                     _weight[i] = textureProp.influence;
                                 break;
                             case CTexture.ApplicationMode.HeightRange:
-                                if (height < textureProp.minheight && height > textureProp.maxheight)
+                                if (height > textureProp.minheight && height < textureProp.maxheight)
                                     _weight[i] = textureProp.influence;
                                 break;
                             case CTexture.ApplicationMode.SlopeRange:

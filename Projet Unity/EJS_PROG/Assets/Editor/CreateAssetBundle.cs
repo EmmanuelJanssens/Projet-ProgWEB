@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 
 public class CreateAssetBundle  {
-
+    
     [MenuItem("Assets/Build AssetBundles")]
     static void BuildAllAssetBundles()
     {
@@ -16,4 +16,5 @@ public class CreateAssetBundle  {
         }
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
     }
+
 }
