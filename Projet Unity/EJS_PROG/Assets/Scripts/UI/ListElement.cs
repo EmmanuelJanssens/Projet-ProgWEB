@@ -27,7 +27,6 @@ public class ListElement : MonoBehaviour
     /// </summary>
     public ListManager manager;
 
-
     public virtual void Init()
     {
         //List of alll button children

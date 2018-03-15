@@ -133,10 +133,6 @@ namespace FAE
             workflow = util.workflow;
             terrain = util.terrain;
 
-            //Avoid unused variable warning
-            pigmentmapSize = 1024;
-            material = null;
-
             //Values for the inspector
             if (workflow == TerrainUVUtil.Workflow.Terrain)
             {

@@ -20,9 +20,14 @@ public class EditorNavigation : MonoBehaviour
     private Button[] _navButtons;
 
     //GameObject of the terrainpanel in the hierarchy
-    public GameObject TerrainPanel;
+    public GameObject NoisePanel;
     public GameObject TexturePanel;
+    public GameObject OceanPanel;
     public GameObject TreePanel;
+    public GameObject PlantPanel;
+    public GameObject RockPanel;
+    public GameObject RiverPanel;
+
 
     //Keep track of the current openPanel
     [HideInInspector] public GameObject ActivePanel;
@@ -50,9 +55,9 @@ public class EditorNavigation : MonoBehaviour
     {
         for(int i = 0; i < _navButtons.Length; i++)
         {
-            if (_navButtons[i].name == "Terrain")
+            if (_navButtons[i].name == "Noise")
             {
-                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TerrainPanel); });
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(NoisePanel); });
             }
             if(_navButtons[i].name == "Texture")
             {
@@ -61,6 +66,22 @@ public class EditorNavigation : MonoBehaviour
             if(_navButtons[i].name == "Trees")
             {
                 _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(TreePanel); });
+            }
+            if (_navButtons[i].name == "Water")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(OceanPanel); });
+            }
+            if (_navButtons[i].name == "Plants")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(PlantPanel); });
+            }
+            if (_navButtons[i].name == "Rocks")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(RockPanel); });
+            }
+            if (_navButtons[i].name == "Rivers")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(RiverPanel); });
             }
         }
     }

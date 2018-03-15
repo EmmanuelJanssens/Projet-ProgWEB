@@ -8,28 +8,31 @@ using UnityEngine;
 /// Used to load assets from an asset bundle
 /// \\Local or remote storage
 /// </summary>
+[SerializeField]
 public class AssetBundleLoader : MonoBehaviour
 {
     public enum STORAGE { LOCAL, REMOTE }
+
     [SerializeField]
     protected string _bundlePath;
+    public string BundlePath { get { return _bundlePath; } set { _bundlePath = value; } }
+
     [SerializeField]
     protected string _bundleName;
-    protected AssetBundle _bundle;
-    protected Texture2D _assetPreview;
-    protected bool _loaded = false;
-
-    protected Object[] _assets;
-
-    public string BundlePath { get { return _bundlePath; } set { _bundlePath = value; } }
     public string BundleName { get { return _bundleName; } set { _bundleName = value; } }
+
+    protected AssetBundle _bundle;
     public AssetBundle Bundle { get { return _bundle; } }
-    public Texture2D AssetPreview { get { return _assetPreview; } }
+
+
+    protected bool _loaded = false;
     public bool IsLoaded { get { return _loaded; } }
 
+    protected Object[] _assets;
+    public Object[] Assets { get { return _assets; } }
 
-
-    public IEnumerator LoadLocal<T>(STORAGE storage) where T : Object
+    
+    public IEnumerator LoadAssetBundle<T>(STORAGE storage) where T : Object
     {
         if(_bundle == null)
         {
@@ -58,9 +61,4 @@ public class AssetBundleLoader : MonoBehaviour
         yield return null;
     }
 
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

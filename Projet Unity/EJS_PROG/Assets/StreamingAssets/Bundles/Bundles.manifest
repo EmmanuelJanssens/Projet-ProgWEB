@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 2894219084
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: terrain
+      Dependencies: {}
+    Info_1:
+      Name: trees_ui
+      Dependencies: {}
+    Info_2:
+      Name: terrain_ui
+      Dependencies: {}

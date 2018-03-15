@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1638580601
+CRC: 3680599052
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c2d77521acb770fea997014f54b5afc2
+    Hash: 420fa52dd5d4487c27ae3c6b8c12bf63
   TypeTreeHash:
     serializedVersion: 2
     Hash: c73412a662fd4e4f36af34cbdf078b85
@@ -12,12 +12,11 @@ ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 Assets:
-- Assets/Textures/Terrain/metal.jpg
-- Assets/Textures/Terrain/TerrainDirt_basecolor.png
-- Assets/Textures/Terrain/sand.jpg
-- Assets/Textures/Terrain/TerrainGrass_basecolor.png
-- Assets/Textures/Terrain/terrain.jpg
-- Assets/Textures/Terrain/grain.jpg
-- Assets/Textures/Terrain/snow.jpg
-- Assets/Textures/Terrain/grass.jpg
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainSand/TerrainSand_output.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainGrass/TerrainGrass_basecolor.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainRock/TerrainRock_basecolor.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainForestFloor/TerrainForestFloor_basecolor.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainSnow/TerrainSnow_albedo.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainForestFloor_Birch/TerrainForestFloor_Birch_basecolor.png
+- Assets/Resources/Fantasy Adventure Environment/Terrain/Textures/TerrainDirt/TerrainDirt_basecolor.png
 Dependencies: []

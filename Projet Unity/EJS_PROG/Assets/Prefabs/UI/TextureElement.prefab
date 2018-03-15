@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 224054790246094538}
   - component: {fileID: 222227432357380522}
   - component: {fileID: 114227611747385122}
-  - component: {fileID: 114412605596268536}
   - component: {fileID: 114853747976686474}
   m_Layer: 5
   m_Name: TextureElement
@@ -400,31 +399,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114412605596268536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1702786452155434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 252648a5f19dad24397ccf3f8774a9aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  sprite: {fileID: 0}
-  texture: {fileID: 0}
-  localGameobject: {fileID: 0}
-  steepness: 0
-  height: 0
-  orientation: 0
-  influence: 0
-  minheight: 0
-  maxheight: 0
-  minslope: 0
-  maxslope: 0
-  Mode: 0
 --- !u!114 &114459598890649310
 MonoBehaviour:
   m_ObjectHideFlags: 1

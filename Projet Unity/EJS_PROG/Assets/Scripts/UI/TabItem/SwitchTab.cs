@@ -11,7 +11,9 @@ using UnityEngine.UI;
 public class SwitchTab : MonoBehaviour
 {
 
+    [SerializeField]
     private TabItem[] _tabs;
+
     public Toggle[] _tabToggles;
 
     public TabItem ActiveTab;
@@ -34,6 +36,7 @@ public class SwitchTab : MonoBehaviour
             if (_tabs[0].Name == _tabToggles[i].name)
             {
                 _tabs[0].gameObject.SetActive(true);
+                _tabToggles[i].isOn = true;
                 ActiveTab = _tabs[0];
             }
             else
@@ -53,12 +56,14 @@ public class SwitchTab : MonoBehaviour
         {
             if(_tabs[i].Name == tabName)
             {
+                _tabs[i].gameObject.SetActive(true);
                 _tabToggles[i].isOn = true;
                 ActiveTab = _tabs[i];
             }
             else
             {
                 _tabToggles[i].isOn = false;
+                _tabs[i].gameObject.SetActive(false);
             }
         }
     }

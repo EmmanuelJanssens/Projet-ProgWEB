@@ -8,18 +8,16 @@ public class TreeUI : MonoBehaviour {
 
     public Button cmdSelectTrees;
     public GameObject frmTreeSelection;
-    public ImportTrees Loader;
+    public UIAssetSelectionLoader Loader;
 	// Use this for initialization
 	void Start () {
         cmdSelectTrees.onClick.AddListener(delegate
         {
-            Loader.Importer.StartLoading<Texture2D>();
             UIManager.Get.OpenFrame(frmTreeSelection);
+            Loader.LoadAssetSelection();
+
         });	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

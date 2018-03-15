@@ -18,7 +18,6 @@ public class SavePNG : EditorWindow {
         
     }
 
-
     int selection = 0;
 	// Update is called once per frame
 	void OnGUI ()
@@ -29,6 +28,7 @@ public class SavePNG : EditorWindow {
         if (GUILayout.Button("Get Textures"))
         {
             _objects = get<Object>(folder);
+            Debug.Log("LOADED  " + _objects.Length);
         }
 
         if(GUILayout.Button("Save Images"))
@@ -63,7 +63,7 @@ public class SavePNG : EditorWindow {
     {
         T []lst;
 
-        lst = Resources.LoadAll<T>("Fantasy Adventure Environment/Prefabs/" + path) as T[];
+        lst = Resources.LoadAll<T>( path) as T[];
 
         foreach (T o in lst)
         {

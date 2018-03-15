@@ -6,6 +6,7 @@ labels:
 timeCreated: 1496934171
 licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - globalColorMap: {fileID: -911685577, guid: e65711a37f9dfb04ea27266d05cef87e, type: 3}

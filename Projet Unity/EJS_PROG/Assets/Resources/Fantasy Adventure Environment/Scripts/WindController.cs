@@ -19,9 +19,7 @@ namespace FAE
     {
 
         [Header("Vector map")]
-#if UNITY_EDITOR
         public ProceduralMaterial windSubstance;
-#endif
         public Texture windVectors;
         public bool visualizeVectors = false;
         /// <summary>
@@ -113,12 +111,12 @@ namespace FAE
             visualizeVectors = (Shader.GetGlobalFloat("_WindDebug") == 1) ? true : false;
 #endif
 
+#endif
 
             if (windVectors == null)
             {
                 GetSubstanceOutput();
             }
-#endif
 
             SetShaderParameters();
         }
@@ -214,7 +212,6 @@ namespace FAE
             Shader.SetGlobalFloat("_WindDebug", state ? 1f : 0f);
         }
 
-#if UNITY_EDITOR
         private void GetSubstanceOutput()
         {
 
@@ -230,7 +227,6 @@ namespace FAE
             windVectors = substanceOutputs[0];
 
         }
-#endif
 
 
     }

@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 85827a98514358f438446da0fc64b0f5, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -84,7 +84,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WindAmplitudeMultiplier: 10
+    - _WindAmplitudeMultiplier: 0.75
     - _WindWeight: 0.364
     - _ZWrite: 1
     - __dirty: 0

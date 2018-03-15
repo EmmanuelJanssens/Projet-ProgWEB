@@ -13,6 +13,7 @@ public class TexturePropreties : MonoBehaviour
 
     public enum PlacementType { Height,Orientation,Steepness };
     public TextureGenerator textureGenerator;
+
     public Button cmdApply;
     public Button cmdCancel;
 
@@ -34,19 +35,17 @@ public class TexturePropreties : MonoBehaviour
 
     public CTexture toModify;
 
+     
     public void Start()
     {
         //Commands of the two buttons from the texture propreties frame
         cmdApply.onClick.AddListener(applyTexturePropreties);
         cmdCancel.onClick.AddListener(closeTexturePropreties);
     }
-
-    /// <summary>
     /// Update UI values if texture to modifiy exists
     /// </summary>
     public void OnEnable()
     {
-
         if (toModify != null)
         {
             for(int i = 0; i < Tabs.GetTabs.Length; i++)
@@ -82,18 +81,20 @@ public class TexturePropreties : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Applies a texture according to the Active Tab
     /// </summary>
     public void applyTexturePropreties()
     {
-
-        Value = Tabs.gameObject.GetComponentInChildren<InputField>();
-
         if(Tabs.gameObject.GetComponentsInChildren<InputField>().Length > 1)
         {
             MinValue = Tabs.gameObject.GetComponentsInChildren<InputField>()[0];
             MaxValue = Tabs.gameObject.GetComponentsInChildren<InputField>()[1];
+        }
+        else
+        {
+            Value = Tabs.gameObject.GetComponentInChildren<InputField>();
         }
 
         switch (Tabs.ActiveTab.Name)

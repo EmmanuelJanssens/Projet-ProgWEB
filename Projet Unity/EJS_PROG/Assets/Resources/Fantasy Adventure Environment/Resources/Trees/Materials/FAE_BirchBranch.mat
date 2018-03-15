@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 85827a98514358f438446da0fc64b0f5, type: 3}
   m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _ALPHATEST_ON _USELIGHTCOLOR_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -113,14 +113,14 @@ Material:
     m_Floats:
     - _AO: 1
     - _Alphacutoff: 0.415
-    - _AmbientOcclusion: 0.33
+    - _AmbientOcclusion: 0
     - _BendingInfluence: 0
     - _BlendSpeed: 1
     - _BumpScale: 1
     - _ColorVariation: 0.422
     - _Colorvariation: 0.266
     - _Cull: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 1
     - _Debug: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -162,7 +162,7 @@ Material:
     - _TranslucencyViewDependency: 0.7
     - _UVSec: 0
     - _Uselightcolor: 1
-    - _WindAmplitudeMultiplier: 10
+    - _WindAmplitudeMultiplier: 3
     - _WindQuality: 5
     - _WindSpeed: 0.5
     - _WindWeight: 0.448

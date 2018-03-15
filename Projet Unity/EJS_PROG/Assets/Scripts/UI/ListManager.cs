@@ -18,6 +18,7 @@ public class ListManager : MonoBehaviour
     //Accessible list 
     public List<ListElement> Elements { get { return _elements; } set { _elements = value; } }
 
+ 
     // Use this for initialization
     public void Init ()
     {
@@ -77,9 +78,9 @@ public class ListManager : MonoBehaviour
 
     public virtual void Remove(int index)
     {
-        _elements.RemoveAt(index);
         Destroy(_elements[index].gameObject);
-
-        UpdateIdentifiers();
+        Elements.RemoveAt(index);
+        Elements.Clear();
+        Init();
     }
 }

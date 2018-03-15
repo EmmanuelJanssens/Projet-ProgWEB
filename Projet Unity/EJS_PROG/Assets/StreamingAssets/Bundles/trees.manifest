@@ -1,0 +1,50 @@
+ManifestFileVersion: 0
+CRC: 4016907453
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2d2b8e93ca5299dc753ae3759f47e27e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 39bbccd400985e761bfee5458c779675
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 185
+  Script: {instanceID: 0}
+- Class: 186
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Pine_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Tree_B.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Palm_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Spruce_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Tree_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Palm_C.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Birch_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Birch_C.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Birch_B.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Spruce_B.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Palm_B.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Tree_C.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Willow_A.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Willow_B.prefab
+- Assets/Resources/Fantasy Adventure Environment/Prefabs/Trees/FAE_Spruce_C.prefab
+Dependencies: []

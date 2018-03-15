@@ -3,6 +3,7 @@ guid: 24fde3c48dcbc944089cb19c0fd52770
 timeCreated: 1510490146
 licenseType: Store
 SubstanceImporter:
+  externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
@@ -21,6 +22,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: $randomseed
       value:
         scalar[0]: 0
@@ -28,6 +30,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: NormalStrength
       value:
         scalar[0]: 1
@@ -35,6 +38,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: outputcolor
       value:
         scalar[0]: 0.662745
@@ -42,6 +46,7 @@ SubstanceImporter:
         scalar[2]: 0.403922
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Wetness
       value:
         scalar[0]: 0
@@ -49,6 +54,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roughness
       value:
         scalar[0]: 0.891
@@ -56,6 +62,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: PebblesAmount
       value:
         scalar[0]: 0.171
@@ -63,6 +70,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: PebblesScale
       value:
         scalar[0]: 2.41
@@ -70,6 +78,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Height
       value:
         scalar[0]: 0.256
@@ -77,6 +86,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -85,103 +95,49 @@ SubstanceImporter:
       generateAllOutputs: 1
       animationUpdateRate: 0
     materialProperties:
-      serializedVersion: 2
+      serializedVersion: 3
       texEnvs:
-      - first:
-          name: _BumpMap
-        second:
-          texture: {instanceID: 0}
+      - _BumpMap:
+          texture: {fileID: 35010065, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _MainTex
-        second:
-          texture: {instanceID: 0}
+      - _MainTex:
+          texture: {fileID: -836536469, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _ParallaxMap
-        second:
-          texture: {instanceID: 0}
+      - _ParallaxMap:
+          texture: {fileID: -1408329762, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _texcoord
-        second:
+      - _texcoord:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       floats:
-      - first:
-          name: _BumpScale
-        second: 1
-      - first:
-          name: _Cutoff
-        second: 0.5
-      - first:
-          name: _DetailNormalMapScale
-        second: 1
-      - first:
-          name: _DstBlend
-        second: 0
-      - first:
-          name: _EdgeLength
-        second: 8
-      - first:
-          name: _GlossMapScale
-        second: 1
-      - first:
-          name: _Glossiness
-        second: 0.5
-      - first:
-          name: _GlossyReflections
-        second: 1
-      - first:
-          name: _Metallic
-        second: 0
-      - first:
-          name: _Mode
-        second: 0
-      - first:
-          name: _OcclusionStrength
-        second: 1
-      - first:
-          name: _Opacity
-        second: 1
-      - first:
-          name: _Parallax
-        second: 0.08
-      - first:
-          name: _SmoothnessTextureChannel
-        second: 1
-      - first:
-          name: _SpecularHighlights
-        second: 1
-      - first:
-          name: _SrcBlend
-        second: 1
-      - first:
-          name: _Tessellation
-        second: 24
-      - first:
-          name: _UVSec
-        second: 0
-      - first:
-          name: _ZWrite
-        second: 1
-      - first:
-          name: __dirty
-        second: 0
+      - _BumpScale: 1
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 0
+      - _EdgeLength: 8
+      - _GlossMapScale: 1
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 0
+      - _OcclusionStrength: 1
+      - _Opacity: 1
+      - _Parallax: 0.08
+      - _SmoothnessTextureChannel: 1
+      - _SpecularHighlights: 1
+      - _SrcBlend: 1
+      - _Tessellation: 24
+      - _UVSec: 0
+      - _ZWrite: 1
+      - __dirty: 0
       colors:
-      - first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      - first:
-          name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      - first:
-          name: _SpecColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: TerrainDirt_basecolor
       alphaSource: 6
@@ -214,16 +170,13 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp:
-        name: _MainTex
+    - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 709227980
-    - shaderProp:
-        name: _BumpMap
+    - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 709227982
-    - shaderProp:
-        name: _ParallaxMap
+    - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 734547248
     buildTargetSettings:
@@ -255,6 +208,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: $randomseed
       value:
         scalar[0]: 0
@@ -262,6 +216,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: NormalStrength
       value:
         scalar[0]: 1
@@ -269,6 +224,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: outputcolor
       value:
         scalar[0]: 0.662745
@@ -276,6 +232,7 @@ SubstanceImporter:
         scalar[2]: 0.403922
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Wetness
       value:
         scalar[0]: 1
@@ -283,6 +240,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roughness
       value:
         scalar[0]: 0.891
@@ -290,6 +248,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: PebblesAmount
       value:
         scalar[0]: 0.309
@@ -297,6 +256,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: PebblesScale
       value:
         scalar[0]: 1.52
@@ -304,6 +264,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Height
       value:
         scalar[0]: 0.47
@@ -311,6 +272,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -319,100 +281,48 @@ SubstanceImporter:
       generateAllOutputs: 1
       animationUpdateRate: 0
     materialProperties:
-      serializedVersion: 2
+      serializedVersion: 3
       texEnvs:
-      - first:
-          name: _BumpMap
-        second:
-          texture: {instanceID: 0}
+      - _BumpMap:
+          texture: {fileID: -968602, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _MainTex
-        second:
-          texture: {instanceID: 0}
+      - _MainTex:
+          texture: {fileID: -1725585854, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _ParallaxMap
-        second:
-          texture: {instanceID: 0}
+      - _ParallaxMap:
+          texture: {fileID: -304686814, guid: 24fde3c48dcbc944089cb19c0fd52770, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _texcoord
-        second:
+      - _texcoord:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       floats:
-      - first:
-          name: _BumpScale
-        second: 1
-      - first:
-          name: _Cutoff
-        second: 0.5
-      - first:
-          name: _DetailNormalMapScale
-        second: 1
-      - first:
-          name: _DstBlend
-        second: 0
-      - first:
-          name: _EdgeLength
-        second: 8
-      - first:
-          name: _GlossMapScale
-        second: 1
-      - first:
-          name: _Glossiness
-        second: 0.5
-      - first:
-          name: _GlossyReflections
-        second: 1
-      - first:
-          name: _Metallic
-        second: 0
-      - first:
-          name: _Mode
-        second: 0
-      - first:
-          name: _OcclusionStrength
-        second: 1
-      - first:
-          name: _Parallax
-        second: 0.08
-      - first:
-          name: _SmoothnessTextureChannel
-        second: 1
-      - first:
-          name: _SpecularHighlights
-        second: 1
-      - first:
-          name: _SrcBlend
-        second: 1
-      - first:
-          name: _Tessellation
-        second: 23.5
-      - first:
-          name: _UVSec
-        second: 0
-      - first:
-          name: _ZWrite
-        second: 1
-      - first:
-          name: __dirty
-        second: 1
+      - _BumpScale: 1
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 0
+      - _EdgeLength: 8
+      - _GlossMapScale: 1
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 0
+      - _OcclusionStrength: 1
+      - _Parallax: 0.08
+      - _SmoothnessTextureChannel: 1
+      - _SpecularHighlights: 1
+      - _SrcBlend: 1
+      - _Tessellation: 23.5
+      - _UVSec: 0
+      - _ZWrite: 1
+      - __dirty: 1
       colors:
-      - first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      - first:
-          name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      - first:
-          name: _SpecColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: TerrainMud_basecolor
       alphaSource: 7
@@ -445,16 +355,13 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp:
-        name: _MainTex
+    - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 709227980
-    - shaderProp:
-        name: _BumpMap
+    - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 709227982
-    - shaderProp:
-        name: _ParallaxMap
+    - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 734547248
     buildTargetSettings:

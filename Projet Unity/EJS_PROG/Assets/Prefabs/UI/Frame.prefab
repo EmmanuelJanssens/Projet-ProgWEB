@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 224603966125056650}
   - component: {fileID: 222494819899869546}
   - component: {fileID: 114395632238372792}
-  - component: {fileID: 114530178115379484}
   m_Layer: 5
   m_Name: TextureList
   m_TagString: Untagged
@@ -699,18 +698,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Scrollbar+ScrollEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114530178115379484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924109943232828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe0ba0d5524bb64da327105744b92d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Elements: []
 --- !u!114 &114664078883347944
 MonoBehaviour:
   m_ObjectHideFlags: 1

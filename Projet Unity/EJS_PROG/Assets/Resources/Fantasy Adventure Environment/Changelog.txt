@@ -1,11 +1,3 @@
-1.1.2
-Fixed:
-- Build errors on Nintendo Switch
-- Recreated Sunshaft shaders in ASE, fixing PS4 issues
-
-Changed:
-- Removed all third party scripts from demo scene
-
 1.1.1
 Added:
 - Willow_A tree asset (with LODs, billboard and collider)
@@ -28,7 +20,7 @@ Wind:
 
 Grass:
 - Light transmission now visible in shorter grass as well
-- Improved grass wind color influence (only brightens, rather than darkening and brightening)
+- Improved grass wind color influence (only brightens, rather than darkening and brightning)
 
 1.1.0
 Added:

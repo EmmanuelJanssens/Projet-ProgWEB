@@ -3,6 +3,7 @@ guid: cefd76dd5fe67074eaa5d8c1fbb402ab
 timeCreated: 1510490178
 licenseType: Store
 SubstanceImporter:
+  externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
@@ -21,6 +22,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: $randomseed
       value:
         scalar[0]: 0
@@ -28,6 +30,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: BaseColor
       value:
         scalar[0]: 0.576471
@@ -35,6 +38,7 @@ SubstanceImporter:
         scalar[2]: 0.352941
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: BaseHeight
       value:
         scalar[0]: -1
@@ -42,6 +46,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: AmbientOcclusion
       value:
         scalar[0]: 0.265
@@ -49,6 +54,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: AO_Spread
       value:
         scalar[0]: 1
@@ -56,6 +62,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Color
       value:
         scalar[0]: 0.471264
@@ -63,6 +70,7 @@ SubstanceImporter:
         scalar[2]: 0.28071
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Amount
       value:
         scalar[0]: 0.99
@@ -70,6 +78,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Scale
       value:
         scalar[0]: 3
@@ -77,6 +86,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Scale_Variation
       value:
         scalar[0]: 0.4
@@ -84,6 +94,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Normal_Strength
       value:
         scalar[0]: 0.33
@@ -91,6 +102,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Color
       value:
         scalar[0]: 0.294118
@@ -98,6 +110,7 @@ SubstanceImporter:
         scalar[2]: 0.141176
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Amount
       value:
         scalar[0]: 0.79
@@ -105,6 +118,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Contrast
       value:
         scalar[0]: -0.92
@@ -112,6 +126,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Height
       value:
         scalar[0]: -1
@@ -119,6 +134,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_NormalStrength
       value:
         scalar[0]: 0.3
@@ -126,6 +142,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Amount
       value:
         scalar[0]: 0.393
@@ -133,6 +150,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Number
       value:
         scalar[0]: 9.9
@@ -140,6 +158,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Color
       value:
         scalar[0]: 0.266667
@@ -147,6 +166,7 @@ SubstanceImporter:
         scalar[2]: 0.172549
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Contrast
       value:
         scalar[0]: 0
@@ -154,6 +174,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Scale
       value:
         scalar[0]: 7
@@ -161,6 +182,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Scale_Random
       value:
         scalar[0]: 1
@@ -168,6 +190,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Size
       value:
         scalar[0]: 1
@@ -175,6 +198,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Size_Random
       value:
         scalar[0]: 0.2
@@ -182,6 +206,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Height
       value:
         scalar[0]: 0.4
@@ -189,6 +214,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Normal_Strength
       value:
         scalar[0]: 0.75
@@ -196,6 +222,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Crinkle_Amount
       value:
         scalar[0]: 2.1
@@ -203,6 +230,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Amount
       value:
         scalar[0]: 0.05
@@ -210,6 +238,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Tint
       value:
         scalar[0]: 0.572549
@@ -217,6 +246,7 @@ SubstanceImporter:
         scalar[2]: 0.439216
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Scale
       value:
         scalar[0]: 2
@@ -224,6 +254,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Height
       value:
         scalar[0]: 0.15
@@ -231,6 +262,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_NormalStrength
       value:
         scalar[0]: 1
@@ -238,6 +270,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Amount
       value:
         scalar[0]: 0.069
@@ -245,6 +278,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Tint
       value:
         scalar[0]: 0.729412
@@ -252,6 +286,7 @@ SubstanceImporter:
         scalar[2]: 0.164706
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_ColorVariation
       value:
         scalar[0]: 0.17
@@ -259,6 +294,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Scale
       value:
         scalar[0]: 2.5
@@ -266,6 +302,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_NormalStrength
       value:
         scalar[0]: 0.2
@@ -273,6 +310,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -281,94 +319,46 @@ SubstanceImporter:
       generateAllOutputs: 1
       animationUpdateRate: 42
     materialProperties:
-      serializedVersion: 2
+      serializedVersion: 3
       texEnvs:
-      - first:
-          name: _BumpMap
-        second:
-          texture: {instanceID: 0}
+      - _BumpMap:
+          texture: {fileID: -1144237760, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _MainTex
-        second:
-          texture: {instanceID: 0}
+      - _MainTex:
+          texture: {fileID: 1666910442, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _ParallaxMap
-        second:
-          texture: {instanceID: 0}
+      - _ParallaxMap:
+          texture: {fileID: 1255022888, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _texcoord
-        second:
+      - _texcoord:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       floats:
-      - first:
-          name: _BumpScale
-        second: 1
-      - first:
-          name: _Cutoff
-        second: 0.5
-      - first:
-          name: _DetailNormalMapScale
-        second: 1
-      - first:
-          name: _DstBlend
-        second: 0
-      - first:
-          name: _GlossMapScale
-        second: 1
-      - first:
-          name: _Glossiness
-        second: 0.5
-      - first:
-          name: _GlossyReflections
-        second: 1
-      - first:
-          name: _Metallic
-        second: 0
-      - first:
-          name: _Mode
-        second: 0
-      - first:
-          name: _OcclusionStrength
-        second: 1
-      - first:
-          name: _Parallax
-        second: 0.02
-      - first:
-          name: _SmoothnessTextureChannel
-        second: 0
-      - first:
-          name: _SpecularHighlights
-        second: 1
-      - first:
-          name: _SrcBlend
-        second: 1
-      - first:
-          name: _Tessellation
-        second: 24
-      - first:
-          name: _UVSec
-        second: 0
-      - first:
-          name: _ZWrite
-        second: 1
-      - first:
-          name: __dirty
-        second: 1
+      - _BumpScale: 1
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 0
+      - _GlossMapScale: 1
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 0
+      - _OcclusionStrength: 1
+      - _Parallax: 0.02
+      - _SmoothnessTextureChannel: 0
+      - _SpecularHighlights: 1
+      - _SrcBlend: 1
+      - _Tessellation: 24
+      - _UVSec: 0
+      - _ZWrite: 1
+      - __dirty: 1
       colors:
-      - first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      - first:
-          name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
     - name: TerrainForestFloor_basecolor
       alphaSource: 6
@@ -421,16 +411,13 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp:
-        name: _MainTex
+    - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 523530197
-    - shaderProp:
-        name: _BumpMap
+    - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 523530199
-    - shaderProp:
-        name: _ParallaxMap
+    - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 458966306
     buildTargetSettings:
@@ -462,6 +449,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: $randomseed
       value:
         scalar[0]: 0
@@ -469,6 +457,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: BaseColor
       value:
         scalar[0]: 0.576471
@@ -476,6 +465,7 @@ SubstanceImporter:
         scalar[2]: 0.352941
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: BaseHeight
       value:
         scalar[0]: -1
@@ -483,6 +473,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: AmbientOcclusion
       value:
         scalar[0]: 0.2
@@ -490,6 +481,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Color
       value:
         scalar[0]: 0.471264
@@ -497,6 +489,7 @@ SubstanceImporter:
         scalar[2]: 0.28071
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Number
       value:
         scalar[0]: 64
@@ -504,6 +497,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Amount
       value:
         scalar[0]: 0.01
@@ -511,6 +505,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Normal_Strength
       value:
         scalar[0]: 1
@@ -518,6 +513,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Scale
       value:
         scalar[0]: 6
@@ -525,6 +521,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Needles_Scale_Variation
       value:
         scalar[0]: 1
@@ -532,6 +529,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Color
       value:
         scalar[0]: 0.294118
@@ -539,6 +537,7 @@ SubstanceImporter:
         scalar[2]: 0.141176
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Contrast
       value:
         scalar[0]: -0.92
@@ -546,6 +545,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_NormalStrength
       value:
         scalar[0]: 1
@@ -553,6 +553,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Amount
       value:
         scalar[0]: 0
@@ -560,6 +561,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Number
       value:
         scalar[0]: 11
@@ -567,6 +569,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Color
       value:
         scalar[0]: 0.266667
@@ -574,6 +577,7 @@ SubstanceImporter:
         scalar[2]: 0.172549
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Contrast
       value:
         scalar[0]: 0.4
@@ -581,6 +585,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Normal_Strength
       value:
         scalar[0]: 1
@@ -588,6 +593,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Scale
       value:
         scalar[0]: 10
@@ -595,6 +601,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Scale_Random
       value:
         scalar[0]: 1
@@ -602,6 +609,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Size
       value:
         scalar[0]: 1
@@ -609,6 +617,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Size_Random
       value:
         scalar[0]: 0.2
@@ -616,6 +625,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Height
       value:
         scalar[0]: 0.5
@@ -623,6 +633,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Roots_Crinkle_Amount
       value:
         scalar[0]: 2
@@ -630,6 +641,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Amount
       value:
         scalar[0]: 0
@@ -637,6 +649,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Tint
       value:
         scalar[0]: 0.572549
@@ -644,6 +657,7 @@ SubstanceImporter:
         scalar[2]: 0.439216
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Scale
       value:
         scalar[0]: 2.5
@@ -651,6 +665,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_Height
       value:
         scalar[0]: 0.15
@@ -658,6 +673,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Amount
       value:
         scalar[0]: 0.359
@@ -665,6 +681,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Tint
       value:
         scalar[0]: 0.729412
@@ -672,6 +689,7 @@ SubstanceImporter:
         scalar[2]: 0.164706
         scalar[3]: 1
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_ColorVariation
       value:
         scalar[0]: 0.33
@@ -679,6 +697,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_Scale
       value:
         scalar[0]: 2.5
@@ -686,6 +705,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Amount
       value:
         scalar[0]: 0.716
@@ -693,6 +713,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Moss_Height
       value:
         scalar[0]: -1
@@ -700,6 +721,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Rocks_NormalStrength
       value:
         scalar[0]: 1
@@ -707,6 +729,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: AO_Spread
       value:
         scalar[0]: 1
@@ -714,6 +737,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     - name: Leafs_NormalStrength
       value:
         scalar[0]: 0.2
@@ -721,6 +745,7 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -729,94 +754,46 @@ SubstanceImporter:
       generateAllOutputs: 1
       animationUpdateRate: 42
     materialProperties:
-      serializedVersion: 2
+      serializedVersion: 3
       texEnvs:
-      - first:
-          name: _BumpMap
-        second:
-          texture: {instanceID: 0}
+      - _BumpMap:
+          texture: {fileID: 628598158, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _MainTex
-        second:
-          texture: {instanceID: 0}
+      - _MainTex:
+          texture: {fileID: -296933846, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _ParallaxMap
-        second:
-          texture: {instanceID: 0}
+      - _ParallaxMap:
+          texture: {fileID: -1410136995, guid: cefd76dd5fe67074eaa5d8c1fbb402ab, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - first:
-          name: _texcoord
-        second:
+      - _texcoord:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       floats:
-      - first:
-          name: _BumpScale
-        second: 1
-      - first:
-          name: _Cutoff
-        second: 0.5
-      - first:
-          name: _DetailNormalMapScale
-        second: 1
-      - first:
-          name: _DstBlend
-        second: 0
-      - first:
-          name: _EdgeLength
-        second: 2
-      - first:
-          name: _GlossMapScale
-        second: 1
-      - first:
-          name: _Glossiness
-        second: 0.5
-      - first:
-          name: _GlossyReflections
-        second: 1
-      - first:
-          name: _Metallic
-        second: 0
-      - first:
-          name: _Mode
-        second: 0
-      - first:
-          name: _OcclusionStrength
-        second: 1
-      - first:
-          name: _Parallax
-        second: 0.02
-      - first:
-          name: _SmoothnessTextureChannel
-        second: 0
-      - first:
-          name: _SpecularHighlights
-        second: 1
-      - first:
-          name: _SrcBlend
-        second: 1
-      - first:
-          name: _UVSec
-        second: 0
-      - first:
-          name: _ZWrite
-        second: 1
-      - first:
-          name: __dirty
-        second: 1
+      - _BumpScale: 1
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 0
+      - _EdgeLength: 2
+      - _GlossMapScale: 1
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 0
+      - _OcclusionStrength: 1
+      - _Parallax: 0.02
+      - _SmoothnessTextureChannel: 0
+      - _SpecularHighlights: 1
+      - _SrcBlend: 1
+      - _UVSec: 0
+      - _ZWrite: 1
+      - __dirty: 1
       colors:
-      - first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      - first:
-          name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
     - name: TerrainForestFloor_Birch_basecolor
       alphaSource: 6
@@ -839,16 +816,13 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp:
-        name: _MainTex
+    - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 523530197
-    - shaderProp:
-        name: _BumpMap
+    - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 523530199
-    - shaderProp:
-        name: _ParallaxMap
+    - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 458966306
     buildTargetSettings:
