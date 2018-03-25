@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 4253862436
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2c6149e01a3311a9472a380840726dfa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/UISprites/Trees/FAE_Spruce_B.png
+- Assets/UISprites/Trees/FAE_Birch_A.png
+- Assets/UISprites/Trees/FAE_Palm_B.png
+- Assets/UISprites/Trees/FAE_Birch_C.png
+- Assets/UISprites/Trees/FAE_Tree_A.png
+- Assets/UISprites/Trees/FAE_Pine_A.png
+- Assets/UISprites/Trees/FAE_Spruce_A.png
+- Assets/UISprites/Trees/FAE_Spruce_C.png
+- Assets/UISprites/Trees/FAE_Tree_B.png
+- Assets/UISprites/Trees/FAE_Tree_C.png
+- Assets/UISprites/Trees/FAE_Palm_C.png
+- Assets/UISprites/Trees/FAE_Palm_A.png
+- Assets/UISprites/Trees/FAE_Willow_B.png
+- Assets/UISprites/Trees/FAE_Birch_B.png
+- Assets/UISprites/Trees/FAE_Willow_A.png
+Dependencies: []

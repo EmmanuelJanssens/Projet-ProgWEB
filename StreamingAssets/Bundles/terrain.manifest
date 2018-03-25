@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1291356708
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3453d1c7d5f439aea68bba8fffcbb529
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c73412a662fd4e4f36af34cbdf078b85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainSand/TerrainSand_output.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainGrass/TerrainGrass_basecolor.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainRock/TerrainRock_basecolor.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainForestFloor/TerrainForestFloor_basecolor.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainSnow/TerrainSnow_albedo.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainForestFloor_Birch/TerrainForestFloor_Birch_basecolor.png
+- Assets/Fantasy Adventure Environment/Terrain/Textures/TerrainDirt/TerrainDirt_basecolor.png
+Dependencies: []
