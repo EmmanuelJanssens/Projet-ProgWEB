@@ -27,7 +27,7 @@ public class EditorNavigation : MonoBehaviour
     public GameObject PlantPanel;
     public GameObject RockPanel;
     public GameObject RiverPanel;
-
+    public GameObject SimulationPanel;
 
     //Keep track of the current openPanel
     [HideInInspector] public GameObject ActivePanel;
@@ -82,6 +82,10 @@ public class EditorNavigation : MonoBehaviour
             if (_navButtons[i].name == "Rivers")
             {
                 _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(RiverPanel); });
+            }
+            if(_navButtons[i].name == "Simulation")
+            {
+                _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(SimulationPanel); });
             }
         }
     }
