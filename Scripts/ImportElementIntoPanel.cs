@@ -81,7 +81,7 @@ public  class ImportElementIntoPanel : MonoBehaviour
                 toPrepare.height = 0f;
                 toPrepare.orientation = 0f;
                 toPrepare.avgColor = AverageColorFromTexture(template.ui_sprite.texture);
-
+                toPrepare.avgColor.a = 1;
                 toPrepare.obj = template.obj;
                 toPrepare.Description = template.Description;
 
@@ -99,6 +99,7 @@ public  class ImportElementIntoPanel : MonoBehaviour
                 toPrepare.height = 0f;
                 toPrepare.orientation = 0f;
                 toPrepare.avgColor = AverageColorFromTexture(template.ui_sprite.texture);
+                toPrepare.avgColor.a = 1;
 
 
                 toPrepare.texture = template.texture;

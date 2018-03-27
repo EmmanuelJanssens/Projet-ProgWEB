@@ -24,6 +24,12 @@ public class UIManager : MonoBehaviour
 
     public Text Title;
 
+
+    public Toggle ShowTerrain;
+    public Toggle ShowNoiseMap;
+    public Toggle FreeLook;
+
+
     public static UIManager Get
     {
         get { return current; }
@@ -34,6 +40,27 @@ public class UIManager : MonoBehaviour
         if (current == null)
             current = this;
     }
+
+    public void Start()
+    {
+        ShowTerrain.onValueChanged.AddListener(EnableTerrain);
+        ShowNoiseMap.onValueChanged.AddListener(EnableNoiseMap);
+        FreeLook.onValueChanged.AddListener(EnableFreeLook);
+    }
+    public void EnableTerrain(bool b)
+    {
+        AppManager.Get.NoiseMap.terrain.gameObject.SetActive(b);
+        AppManager.Get.NoiseMap.terrain.gameObject.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 100;
+    }
+    public void EnableNoiseMap(bool b)
+    {
+        AppManager.Get.NoiseMap.NoiseImage.gameObject.SetActive(b);
+    }
+    public void EnableFreeLook(bool b)
+    {
+        Camera.main.gameObject.GetComponent<FreeLookCamera>().enabled = b;
+    }
+
 
     public void SwitchPanel(GameObject panelToOpen)
     {

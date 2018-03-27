@@ -63,6 +63,7 @@ public class TextureGenerator : MonoBehaviour
             for (int i = 0; i < Import.ReadyElements.Count; i++)
             {
                 _Textures.Add((CTexture)Import.ReadyElements[i]);
+                Debug.Log(_Textures[i].avgColor);
             }
 
 
@@ -90,6 +91,7 @@ public class TextureGenerator : MonoBehaviour
                                 if (height > textureProp.height)
                                 {
                                     AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor ;
+
                                 }
                                 break;
                             case CTexture.ApplicationMode.Slope:

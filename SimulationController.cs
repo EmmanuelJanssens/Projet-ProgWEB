@@ -12,7 +12,6 @@ public class SimulationController : MonoBehaviour
     public GameObject Player;
 
     public Camera MainCamera;
-    public Camera SimCamera;
 
     public void Start()
     {
@@ -28,8 +27,8 @@ public class SimulationController : MonoBehaviour
         Player.transform.position = StartPosition;
         Player.SetActive(true);
 
-        MainCamera.gameObject.SetActive(false);
-        SimCamera.gameObject.SetActive(true);
+        MainCamera.GetComponent<ThirdPersonCamera>().enabled = true;
+        MainCamera.GetComponent<FreeLookCamera>().enabled = false;
     }
 
 
@@ -41,8 +40,17 @@ public class SimulationController : MonoBehaviour
             Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out hit))
             {
-                StartPosition = hit.transform.position;
+                StartPosition = hit.point;
+                Player.SetActive(true);
+                Player.transform.position = StartPosition;
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainCamera.GetComponent<ThirdPersonCamera>().enabled = false;
+            MainCamera.GetComponent<FreeLookCamera>().enabled = false;
+            Player.SetActive(false);
         }
     }
 

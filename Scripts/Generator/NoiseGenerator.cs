@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 /// <summary>
 /// Used to generate a noisemap 
@@ -25,6 +25,7 @@ public  class NoiseGenerator : MonoBehaviour
 
 
     private Texture2D _generatedTexture;
+
     private Color[] _pixelColor; // black/white
 
     private float[,] _noise;
@@ -36,7 +37,7 @@ public  class NoiseGenerator : MonoBehaviour
     private float _midWidth;
     private float _midHeight;
 
-    public Renderer _noiseMapRenderer;
+    public Image NoiseImage;
 
     [Header("Terrain")]
     public GameObject GOTerrain;
@@ -102,9 +103,7 @@ public  class NoiseGenerator : MonoBehaviour
             _pixelColor = null;
         _pixelColor = new Color[_mapWidth * _mapHeight];
 
-        if (_generatedTexture != null)
-            _generatedTexture = null;
-        _generatedTexture = new Texture2D(_mapWidth, _mapHeight);
+
 
 
         //For more vareity in the noise
@@ -158,8 +157,7 @@ public  class NoiseGenerator : MonoBehaviour
 
 
                 _noise[x, y] = noiseHeight;
-
-                _noise[x, y] = Mathf.InverseLerp(_maxHeight, _minHeight, _noise[x, y]);
+                _noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _noise[x, y]);
 
                 //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array         
                 _pixelColor[y * _mapWidth + x] = Color.Lerp(Color.black, Color.white, _noise[x, y]);
@@ -175,9 +173,16 @@ public  class NoiseGenerator : MonoBehaviour
 
     public void GenerateTexture()
     {
+        if (_generatedTexture != null)
+            _generatedTexture = null;
+        _generatedTexture = new Texture2D(_mapWidth, _mapHeight);
+
         _generatedTexture.SetPixels(_pixelColor);
         _generatedTexture.Apply();
-        _noiseMapRenderer.material.mainTexture = _generatedTexture;
+
+
+        NoiseImage.sprite = null;
+        NoiseImage.sprite = Sprite.Create(_generatedTexture, new Rect(0, 0, _mapWidth, _mapHeight), new Vector2(0.5f, 0.5f)); ;
     }
     /// <summary>
     /// Generates a hidden terrain 
