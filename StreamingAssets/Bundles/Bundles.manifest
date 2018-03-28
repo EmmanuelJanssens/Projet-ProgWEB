@@ -1,16 +1,26 @@
 ManifestFileVersion: 0
-CRC: 3291021018
+CRC: 1188579926
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: terrain
+      Name: trees_ui
       Dependencies: {}
     Info_1:
       Name: trees
       Dependencies: {}
     Info_2:
-      Name: trees_ui
+      Name: terrain_ui
       Dependencies: {}
     Info_3:
-      Name: terrain_ui
+      Name: terrain
+      Dependencies: {}
+    Info_4:
+      Name: vegetation
+      Dependencies: {}
+    Info_5:
+      Name: rock
+      Dependencies:
+        Dependency_0: terrain
+    Info_6:
+      Name: vegetation_ui
       Dependencies: {}

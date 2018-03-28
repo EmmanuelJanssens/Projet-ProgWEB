@@ -71,9 +71,10 @@ public class EditorNavigation : MonoBehaviour
             {
                 _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(OceanPanel); });
             }
-            if (_navButtons[i].name == "Plants")
+            if (_navButtons[i].name == "Vegetation")
             {
                 _navButtons[i].onClick.AddListener(delegate { UIManager.Get.SwitchPanel(PlantPanel); });
+
             }
             if (_navButtons[i].name == "Rocks")
             {

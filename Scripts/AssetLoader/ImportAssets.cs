@@ -71,6 +71,16 @@ public class ImportAssets : MonoBehaviour
                         toAdd.obj = UI_Selection.LinkedBundles[UI_Selection.PreviewSprite[i].name] as GameObject;
                         Selected.Add(toAdd);
                     }
+                    else if(typeof(T) == typeof(CVegetation))
+                    {
+                        CVegetation toAdd = new CVegetation();
+                        toAdd.ui_sprite = UI_Selection.PreviewSprite[i];
+                        toAdd.ObjectName = UI_Selection.PreviewSprite[i].name;
+                        toAdd.Description = "yolo";
+                        toAdd.avgColor = Color.green;
+                        toAdd.obj = UI_Selection.LinkedBundles[UI_Selection.PreviewSprite[i].name] as GameObject;
+                        Selected.Add(toAdd);
+                    }
                 }              
             }
             for (int i = 0; i < toggles.Length; i ++)

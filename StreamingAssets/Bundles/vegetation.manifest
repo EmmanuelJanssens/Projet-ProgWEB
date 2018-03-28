@@ -1,0 +1,61 @@
+ManifestFileVersion: 0
+CRC: 1987831878
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 17b7c0a2e3d3c2f2b5e25a385281c0fc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 388f2d4bd50551d58632a6876b0c8ea9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 185
+  Script: {instanceID: 0}
+- Class: 186
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+Assets:
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Bush_B.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/GrassTall.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Groundcover_Leaves.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Groundcover_Daisies.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/RedPoppy.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/ElephantEar_A.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/ElephantEar_B.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Lilypads_A.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Grass.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Daisy.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Lotus.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/RedPoppyCluster.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Groundcover_Poppies.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/DaisyCluster.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/DandelionCluster.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Lilypads_B.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Groundcover_Clovers.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Bush_C.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/GrassThick.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Speedwell.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Bush_A.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Lilypad.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Chervil.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/BluePoppy.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/ChervilCluster.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Dandelions.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/Fern.prefab
+- Assets/Fantasy Adventure Environment/Prefabs/Vegetation/BluePoppyCluster.prefab
+Dependencies: []

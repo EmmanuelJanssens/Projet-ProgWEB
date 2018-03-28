@@ -105,7 +105,23 @@ public  class ImportElementIntoPanel : MonoBehaviour
                 toPrepare.texture = template.texture;
                 ReadyElements.Add(toPrepare);
             }
+            else if (typeof(T) == typeof(CVegetation))
+            {
+                CVegetation toPrepare = new CVegetation();
+                CVegetation template = toGenerate.AllAddedCustomObject[i] as CVegetation;
 
+                toPrepare.ObjectName = template.ObjectName;
+                toPrepare.ui_sprite = template.ui_sprite;
+                toPrepare.Mode = CTexture.ApplicationMode.Height;
+                toPrepare.steepness = 0f;
+                toPrepare.height = 0f;
+                toPrepare.orientation = 0f;
+                toPrepare.avgColor = AverageColorFromTexture(template.ui_sprite.texture);
+                toPrepare.avgColor.a = 1;
+
+
+                ReadyElements.Add(toPrepare);
+            }
             ElementList.Init();
 
             // ADD event to OPEN/REMOVE BUTTON
@@ -136,7 +152,9 @@ public  class ImportElementIntoPanel : MonoBehaviour
 
     public void RemoveFromReady(int index)
     {
+        Debug.Log(ReadyElements[index].ObjectName);
         ReadyElements.RemoveAt(index);
+        Debug.Log(ReadyElements.Count );
     }
     
     public void UpdateElementID(int id)
