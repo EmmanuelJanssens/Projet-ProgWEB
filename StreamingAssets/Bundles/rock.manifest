@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3939077267
+CRC: 4183434220
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ee568bd8c46c404a1d203518a1350254
+    Hash: fcacb82f64220134ae32c8b3a7f17a5a
   TypeTreeHash:
     serializedVersion: 2
     Hash: d4ec6a2a5917d53d1e29402bf555c95b
@@ -37,14 +37,24 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_E.prefab
+- Assets/Resources/Create/Cliff_D.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_A.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_B.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/RockCluster_A.prefab
+- Assets/Resources/Create/RockCluster_A.prefab
+- Assets/Resources/Create/Cliff_B.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_C.prefab
+- Assets/Resources/Create/Cliff_E.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/RockCluster_D.prefab
+- Assets/Resources/Create/Cliff_C.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_F.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/RockCluster_C.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/Cliff_D.prefab
+- Assets/Resources/Create/Cliff_A.prefab
+- Assets/Resources/Create/RockCluster_B.prefab
+- Assets/Resources/Create/RockCluster_C.prefab
+- Assets/Resources/Create/Cliff_F.prefab
 - Assets/Fantasy Adventure Environment/Prefabs/Rocks/RockCluster_B.prefab
+- Assets/Resources/Create/RockCluster_D.prefab
 Dependencies:
-- E:/C#/Unity/projet web/Projet Unity/EJS_PROG/Assets/StreamingAssets/Bundles/terrain
+- E:/C#/Unity/PROG/EJS_PROG/Assets/StreamingAssets/Bundles/terrain

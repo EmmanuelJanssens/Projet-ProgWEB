@@ -39,18 +39,7 @@ public  class NoiseGenerator : MonoBehaviour
 
     public Image NoiseImage;
 
-    [Header("Terrain")]
-    public GameObject GOTerrain;
-
     [HideInInspector]
-    public TerrainCollider terrainCollider;
-
-    [HideInInspector]
-    public Terrain terrain;
-
-    [HideInInspector]
-    public TerrainData terrainData;
-
     public Texture2D GeneratedTexture;
 
 
@@ -73,10 +62,6 @@ public  class NoiseGenerator : MonoBehaviour
 	{
         if (current == null)
             current = this;
-
-        terrain = GOTerrain.GetComponent<Terrain>();
-        terrainCollider = GOTerrain.GetComponent<TerrainCollider>();
-        terrainData = new TerrainData();
     }
 	
     /// <summary>
@@ -166,9 +151,7 @@ public  class NoiseGenerator : MonoBehaviour
 
         //Generates the texture to visualize the noise map
         GenerateTexture();
-        GenerateTerrain();
 
-        AppManager.Get.NoiseMapGenerated = true;
     }
 
     public void GenerateTexture()
@@ -183,45 +166,8 @@ public  class NoiseGenerator : MonoBehaviour
 
         NoiseImage.sprite = null;
         NoiseImage.sprite = Sprite.Create(_generatedTexture, new Rect(0, 0, _mapWidth, _mapHeight), new Vector2(0.5f, 0.5f)); ;
-    }
-    /// <summary>
-    /// Generates a hidden terrain 
-    /// </summary>
-    public void GenerateTerrain()
-    {
 
-        terrainData.heightmapResolution = _mapWidth;
-        terrainData.size = new Vector3(_mapWidth, _worldScale, _mapHeight);
-        terrainData.SetHeights(0, 0, _noise);
-
-        terrain.terrainData = terrainData;
-        terrainCollider.terrainData = terrainData;
-
-    }
-
-    public void GenerateNoiseTexture()
-    {
-
-    }
-
-    public void GenerateNoiseWater()
-    {
-
-    }
-
-    public void GenerateNoiseTrees()
-    {
-
-    }
-
-    public void GenerateNoisePlants()
-    {
-
-    }
-
-    public void GenerateNoiseRocks()
-    {
-
+        AppManager.Get.NoiseMapGenerated = true;
     }
 
     public float[,] GetNoiseData()

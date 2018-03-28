@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class TreeGenerator : MonoBehaviour
 {
-    public ImportElementIntoPanel TreeElements;
+    public ChooseAssets Import;
 
     public TreePrototype[] DrawableTrees;
     // Use this for initialization
     public List<TreeInstance> instances;
 
-    public int NumberofTrees = 1000;
 
     public void Generate()
     {
-        DrawableTrees = new TreePrototype[TreeElements.ReadyElements.Count];
+        DrawableTrees = new TreePrototype[Import.ChoosenTrees.Count];
         instances = new List<TreeInstance>();
-        AppManager.Get.NoiseMap.terrainData.treeInstances = instances.ToArray();
+        AppManager.Get.SplatMap.terrainData.treeInstances = instances.ToArray();
 
 
         for (int i = 0; i < DrawableTrees.Length; i++)
         {
-            CTree tree = TreeElements.ReadyElements[i] as CTree;
+            CTree tree = Import.ChoosenTrees[i] as CTree;
 
             DrawableTrees[i] = new TreePrototype();
             DrawableTrees[i].prefab = tree.obj;
 
         }
 
-        AppManager.Get.NoiseMap.terrainData.treePrototypes = DrawableTrees;
-        AppManager.Get.NoiseMap.terrainData.RefreshPrototypes();
+        AppManager.Get.SplatMap.terrainData.treePrototypes = DrawableTrees;
+        AppManager.Get.SplatMap.terrainData.RefreshPrototypes();
 
         System.Random prng = new System.Random(10);
 
-        for (int i = 0; i < TreeElements.ReadyElements.Count; i++)
+        for (int i = 0; i < Import.ChoosenTrees.Count; i++)
         {
-            CTree tree = TreeElements.ReadyElements[i] as CTree;
+            CTree tree = Import.ChoosenTrees[i] as CTree;
 
             for ( int j = 0; j < tree.influence; j++)
             {               
@@ -50,7 +49,7 @@ public class TreeGenerator : MonoBehaviour
 
                 Vector3 pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
                 newtree.position = new Vector3(pos.x, pos.y,pos.z);
-                newtree.position.y = AppManager.Get.NoiseMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z)/AppManager.Get.NoiseMap.WorldScale;
+                newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z)/AppManager.Get.NoiseMap.WorldScale;
 
 
                 switch (tree.Mode)
@@ -61,19 +60,19 @@ public class TreeGenerator : MonoBehaviour
                         {
                             pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
                             newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.NoiseMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
+                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
                             treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
                         }
                         break;
                     case CObject.ApplicationMode.Slope:
-                        float steepness = AppManager.Get.NoiseMap.terrainData.GetSteepness(newtree.position.x , newtree.position.y);
+                        float steepness = AppManager.Get.SplatMap.terrainData.GetSteepness(newtree.position.x , newtree.position.y);
 
                         while (steepness > tree.steepness)
                         {
                             pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
                             newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.NoiseMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
-                            steepness = AppManager.Get.NoiseMap.terrainData.GetSteepness(newtree.position.x, newtree.position.y);
+                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
+                            steepness = AppManager.Get.SplatMap.terrainData.GetSteepness(newtree.position.x, newtree.position.y);
                         }
 
                         break;
@@ -86,7 +85,7 @@ public class TreeGenerator : MonoBehaviour
                         {
                             pos = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
                             newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.NoiseMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
+                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
                             treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
                         }
                         break;
@@ -104,9 +103,8 @@ public class TreeGenerator : MonoBehaviour
             }
            
         }
-
         Debug.Log(instances.Count);
-        AppManager.Get.NoiseMap.terrainData.treeInstances = instances.ToArray();
+        AppManager.Get.SplatMap.terrainData.treeInstances = instances.ToArray();
     }
 
 

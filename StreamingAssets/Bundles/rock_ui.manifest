@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 620266090
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8a8c9fc2e16681d259775168fa7ce362
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/UISprites/Rocks/RockCluster_C.png
+- Assets/UISprites/Rocks/Cliff_D.png
+- Assets/UISprites/Rocks/Cliff_C.png
+- Assets/UISprites/Rocks/RockCluster_D.png
+- Assets/UISprites/Rocks/RockCluster_B.png
+- Assets/UISprites/Rocks/Cliff_B.png
+- Assets/UISprites/Rocks/Cliff_E.png
+- Assets/UISprites/Rocks/Cliff_F.png
+- Assets/UISprites/Rocks/RockCluster_A.png
+- Assets/UISprites/Rocks/Cliff_A.png
+Dependencies: []

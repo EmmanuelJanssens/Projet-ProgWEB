@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e16821b6f47f3d04a8943b41cec368e8
-timeCreated: 1521814900
+guid: 53e9bcf5504866342948e50d21e1bda8
+timeCreated: 1522258446
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,7 +23,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -84,5 +84,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: 
+  assetBundleName: rock_ui
   assetBundleVariant: 

@@ -13,33 +13,42 @@ public class TextureGenerator : MonoBehaviour
 
     public static TextureGenerator current;
 
-    public Transform Container;
-
-    public ImportElementIntoPanel Import;
+    public ChooseAssets Import;
 
 
     //List of all textures loaded
     List<CTexture> _Textures;
     List<SplatPrototype> SplatPrototypes;
 
-
     private float[,,] _splatmapData;
 
 
     public static TextureGenerator Get { get { return current; } }
 
+    public GameObject TerrainToApplyTexture;
+
+    [HideInInspector]
+    public Terrain terrain;
+
+    [HideInInspector]
+    public TerrainData terrainData;
+
+    [HideInInspector]
+    public TerrainCollider terrainCollider;
 
     public void Start()
     {
         if (current == null)
             current = this;
 
+        terrain = TerrainToApplyTexture.GetComponent<Terrain>();
+        terrainCollider = TerrainToApplyTexture.GetComponent<TerrainCollider>();
+        terrainData = new TerrainData();
     }
 
     public void RemoveFromSplatPrototypes(int index)
     {
         SplatPrototypes.RemoveAt(index);
-        AppManager.Get.NoiseMap.terrainData.RefreshPrototypes();
     }
     /// <summary>
     /// Function called when pressing the generate button
@@ -52,83 +61,77 @@ public class TextureGenerator : MonoBehaviour
 
     IEnumerator GenerateTextureOnNoiseMap()
     {
-        //Only generate if importation was successfull
-        if (Import.ElementsAreReady)
+        AppManager.Get.NoiseMap.GenerateNoiseBW();
+
+        //Import texture into terrain painter
+        _Textures = new List<CTexture>();
+
+        for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
-            AppManager.Get.NoiseMap.GenerateNoiseBW();
+            _Textures.Add(Import.ChoosenTextures[i] as CTexture);
+        }
 
-            //Import texture into terrain painter
-            _Textures = new List<CTexture>();
 
-            for (int i = 0; i < Import.ReadyElements.Count; i++)
+        for (int y = 0; y < terrainData.alphamapHeight; y++)
+        {
+            for (int x = 0; x < terrainData.alphamapWidth; x++)
             {
-                _Textures.Add((CTexture)Import.ReadyElements[i]);
-                Debug.Log(_Textures[i].avgColor);
-            }
+                float y_01 = (float)y / (float)terrainData.alphamapHeight;
+                float x_01 = (float)x / (float) terrainData.alphamapWidth;
 
+                int ix = Mathf.RoundToInt(x_01 * terrainData.heightmapWidth);
+                int iy = Mathf.RoundToInt(y_01 * terrainData.heightmapHeight);
 
-            for (int y = 0; y < AppManager.Get.NoiseMap.terrainData.alphamapHeight; y++)
-            {
-                for (int x = 0; x < AppManager.Get.NoiseMap.terrainData.alphamapWidth; x++)
+                float height = terrainData.GetHeight(ix, iy);                    //Get Steepness of the terrain
+                float steepness = terrainData.GetSteepness(x_01, y_01);
+                Vector3 direction = terrainData.GetInterpolatedNormal(x, y);
+
+                for (int i = 0; i < _Textures.Count; i++)
                 {
-                    float y_01 = (float)y / (float)AppManager.Get.NoiseMap.terrainData.alphamapHeight;
-                    float x_01 = (float)x / (float) AppManager.Get.NoiseMap.terrainData.alphamapWidth;
+                    CTexture textureProp = _Textures[i];
 
-                    int ix = Mathf.RoundToInt(x_01 * AppManager.Get.NoiseMap.terrainData.heightmapWidth);
-                    int iy = Mathf.RoundToInt(y_01 * AppManager.Get.NoiseMap.terrainData.heightmapHeight);
-
-                    float height = AppManager.Get.NoiseMap.terrainData.GetHeight(ix, iy);                    //Get Steepness of the terrain
-                    float steepness = AppManager.Get.NoiseMap.terrainData.GetSteepness(x_01, y_01);
-                    Vector3 direction = AppManager.Get.NoiseMap.terrainData.GetInterpolatedNormal(x, y);
-
-                    for (int i = 0; i < _Textures.Count; i++)
+                    switch (textureProp.Mode)
                     {
-                        CTexture textureProp = _Textures[i];
+                        case CTexture.ApplicationMode.Height:
+                            if (height > textureProp.height)
+                            {
+                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor ;
 
-                        switch (textureProp.Mode)
-                        {
-                            case CTexture.ApplicationMode.Height:
-                                if (height > textureProp.height)
-                                {
-                                    AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor ;
-
-                                }
-                                break;
-                            case CTexture.ApplicationMode.Slope:
-                                //Slope 0 to 90 degrees
-                                if (steepness < textureProp.steepness)
-                                {
-                                    AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
-                                }
-                                break;
-                            case CTexture.ApplicationMode.Orientation:
-                                if (direction.z < textureProp.orientation)
-                                {
-                                    AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
-                                }
-                                break;
-                            case CTexture.ApplicationMode.HeightRange:
-                                if (height > textureProp.minheight && height < textureProp.maxheight)
-                                {
-                                    AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
-                                }
-                                break;
-                            case CTexture.ApplicationMode.SlopeRange:
-                                if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
-                                {
-                                    AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
+                            }
+                            break;
+                        case CTexture.ApplicationMode.Slope:
+                            //Slope 0 to 90 degrees
+                            if (steepness < textureProp.steepness)
+                            {
+                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                            }
+                            break;
+                        case CTexture.ApplicationMode.Orientation:
+                            if (direction.z < textureProp.orientation)
+                            {
+                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                            }
+                            break;
+                        case CTexture.ApplicationMode.HeightRange:
+                            if (height > textureProp.minheight && height < textureProp.maxheight)
+                            {
+                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                            }
+                            break;
+                        case CTexture.ApplicationMode.SlopeRange:
+                            if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
+                            {
+                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
-
-            AppManager.Get.NoiseMap.GenerateTexture();
-
         }
+
+        AppManager.Get.NoiseMap.GenerateTexture();
         yield return null;
     }
     /// <summary>
@@ -137,103 +140,107 @@ public class TextureGenerator : MonoBehaviour
     /// <returns></returns>
     IEnumerator IGenerate()
     {
-        //Only generate if importation was successfull
-        if(Import.ElementsAreReady)
+
+        terrainData.heightmapResolution = AppManager.Get.NoiseMap.Width;
+        terrainData.size = new Vector3(AppManager.Get.NoiseMap.Width, AppManager.Get.NoiseMap.WorldScale, AppManager.Get.NoiseMap.Height);
+        terrainData.SetHeights(0, 0, AppManager.Get.NoiseMap.Noise);
+
+        terrain.terrainData = terrainData;
+        terrainCollider.terrainData = terrainData;
+
+
+        SplatPrototypes = new List<SplatPrototype>();
+
+        //Import texture into terrain painter
+        _Textures = new List<CTexture>();
+
+        for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
-            SplatPrototypes = new List<SplatPrototype>();
+            SplatPrototypes.Add(new SplatPrototype());
+            CTexture texture = Import.ChoosenTextures[i] as CTexture;
 
-            //Import texture into terrain painter
-            _Textures = new List<CTexture>();
+            SplatPrototypes[i].texture = texture.texture;
+            SplatPrototypes[i].tileSize = new Vector2(1, 1);
 
-            for (int i = 0; i < Import.ReadyElements.Count; i++)
+            _Textures.Add(texture);
+        }
+
+        terrainData.splatPrototypes = SplatPrototypes.ToArray(); ;
+        terrainData.RefreshPrototypes();
+
+        //Generate textures
+        _splatmapData = new float[terrainData.alphamapWidth, terrainData.alphamapHeight, terrainData.alphamapLayers];
+
+        //Each CTexture has has 3 elements Height,Steepness,Orientation (Other to be added)
+        //Those values will influence the base formula
+        //HeightInfluence + SteepnessInfluence + OrientationInfluence
+        //How to
+        //\\Calculatte  -HeightInfluence        
+        //\\            -SteepnessInfluence
+        //\\            -OrientationInfluence
+        //First test with heightOnly
+
+        float[] _weight;
+        for (int y = 0; y < terrainData.alphamapHeight; y++)
+        {
+            for (int x = 0; x < terrainData.alphamapWidth; x++)
             {
-                SplatPrototypes.Add(new SplatPrototype());
-                CTexture texture = Import.ReadyElements[i] as CTexture;
+                _weight = new float[terrainData.alphamapLayers];
+                float y_01 = (float)y / (float)terrainData.alphamapHeight;
+                float x_01 = (float)x / (float)terrainData.alphamapWidth;
 
-                SplatPrototypes[i].texture = texture.texture;
-                SplatPrototypes[i].tileSize = new Vector2(1, 1);
+                float height = terrainData.GetHeight(Mathf.RoundToInt(y_01 * terrainData.heightmapHeight), Mathf.RoundToInt(x_01 * terrainData.heightmapWidth));                    //Get Steepness of the terrain
+                float steepness = terrainData.GetSteepness(x_01, y_01);
+                Vector3 direction = terrainData.GetInterpolatedNormal(x, y);
 
-                _Textures.Add(texture);
-            }
-
-            AppManager.Get.NoiseMap.terrainData.splatPrototypes = SplatPrototypes.ToArray(); ;
-            AppManager.Get.NoiseMap.terrainData.RefreshPrototypes();
-
-            //Generate textures
-            _splatmapData = new float[AppManager.Get.NoiseMap.terrainData.alphamapWidth, AppManager.Get.NoiseMap.terrainData.alphamapHeight, AppManager.Get.NoiseMap.terrainData.alphamapLayers];
-
-            //Each CTexture has has 3 elements Height,Steepness,Orientation (Other to be added)
-            //Those values will influence the base formula
-            //HeightInfluence + SteepnessInfluence + OrientationInfluence
-            //How to
-            //\\Calculatte  -HeightInfluence        
-            //\\            -SteepnessInfluence
-            //\\            -OrientationInfluence
-            //First test with heightOnly
-
-            float[] _weight;
-            for (int y = 0; y < AppManager.Get.NoiseMap.terrainData.alphamapHeight; y++)
-            {
-                for (int x = 0; x < AppManager.Get.NoiseMap.terrainData.alphamapWidth; x++)
+                for(int i = 0; i < terrainData.alphamapLayers; i++)
                 {
-                    _weight = new float[AppManager.Get.NoiseMap.terrainData.alphamapLayers];
-                    float y_01 = (float)y / (float)AppManager.Get.NoiseMap.terrainData.alphamapHeight;
-                    float x_01 = (float)x / (float)AppManager.Get.NoiseMap.terrainData.alphamapWidth;
+                    CTexture textureProp = _Textures[i];
 
-                    float height = AppManager.Get.NoiseMap.terrainData.GetHeight(Mathf.RoundToInt(y_01 * AppManager.Get.NoiseMap.terrainData.heightmapHeight), Mathf.RoundToInt(x_01 * AppManager.Get.NoiseMap.terrainData.heightmapWidth));                    //Get Steepness of the terrain
-                    float steepness = AppManager.Get.NoiseMap.terrainData.GetSteepness(x_01, y_01);
-                    Vector3 direction = AppManager.Get.NoiseMap.terrainData.GetInterpolatedNormal(x, y);
-
-                    for(int i = 0; i < AppManager.Get.NoiseMap.terrainData.alphamapLayers; i++)
+                    switch(textureProp.Mode)
                     {
-                        CTexture textureProp = _Textures[i];
-
-                        switch(textureProp.Mode)
-                        {
-                            case CTexture.ApplicationMode.Height:
-                                if (height > textureProp.height)
-                                    _weight[i] = textureProp.influence;
-                                break;
-                            case CTexture.ApplicationMode.Slope:
-                                if (steepness < textureProp.steepness)
-                                    _weight[i] = textureProp.influence;
-                                break;
-                            case CTexture.ApplicationMode.Orientation:
-                                if (direction.z < textureProp.orientation)
-                                    _weight[i] = textureProp.influence;
-                                break;
-                            case CTexture.ApplicationMode.HeightRange:
-                                if (height > textureProp.minheight && height < textureProp.maxheight)
-                                    _weight[i] = textureProp.influence;
-                                break;
-                            case CTexture.ApplicationMode.SlopeRange:
-                                if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
-                                    _weight[i] = textureProp.influence;
-                                break;
-                            default:
-                                break;
-                        }
-
+                        case CTexture.ApplicationMode.Height:
+                            if (height > textureProp.height)
+                                _weight[i] = textureProp.influence;
+                            break;
+                        case CTexture.ApplicationMode.Slope:
+                            if (steepness < textureProp.steepness)
+                                _weight[i] = textureProp.influence;
+                            break;
+                        case CTexture.ApplicationMode.Orientation:
+                            if (direction.z < textureProp.orientation)
+                                _weight[i] = textureProp.influence;
+                            break;
+                        case CTexture.ApplicationMode.HeightRange:
+                            if (height > textureProp.minheight && height < textureProp.maxheight)
+                                _weight[i] = textureProp.influence;
+                            break;
+                        case CTexture.ApplicationMode.SlopeRange:
+                            if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
+                                _weight[i] = textureProp.influence;
+                            break;
+                        default:
+                            break;
                     }
 
-                    //Rules for splat mapping
-                    float z;
+                }
 
-                    z = _weight.Sum();
+                //Rules for splat mapping
+                float z;
 
-                    for (int i = 0; i < AppManager.Get.NoiseMap.terrainData.alphamapLayers; i ++)
-                    {
-                        _weight[i] /= z;
-                        _splatmapData[x, y, i] = _weight[i] ;
-                    }
+                z = _weight.Sum();
+
+                for (int i = 0; i < terrainData.alphamapLayers; i ++)
+                {
+                    _weight[i] /= z;
+                    _splatmapData[x, y, i] = _weight[i] ;
                 }
             }
-
-            //Appliquer les textures
-            AppManager.Get.NoiseMap.terrainData.SetAlphamaps(0, 0, _splatmapData);
-
-
         }
+
+        //Appliquer les textures
+        terrainData.SetAlphamaps(0, 0, _splatmapData);
+
         yield return null;
     }
 

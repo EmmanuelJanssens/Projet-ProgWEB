@@ -19,10 +19,12 @@ public class SwitchTab : MonoBehaviour
     public TabItem ActiveTab;
 
     public TabItem[] GetTabs { get { return _tabs; } }
+
 	// Use this for initialization
 	void Start ()
     {
         _tabs = gameObject.GetComponentsInChildren<TabItem>(true);
+        _tabToggles = gameObject.GetComponentsInChildren<Toggle>();
 
         for(int i = 0; i < _tabToggles.Length; i++)
         {

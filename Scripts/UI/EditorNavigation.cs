@@ -39,7 +39,6 @@ public class EditorNavigation : MonoBehaviour
             current = this;
 
         _navButtons = gameObject.GetComponentsInChildren<Button>();
-
         AddListeners();
 	}
 	

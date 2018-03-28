@@ -52,9 +52,9 @@ public class LakeGenerator : MonoBehaviour {
         }
 
 
-        GameObject plane = Instantiate(waterPlane,AppManager.Get.NoiseMap.terrain.gameObject.transform);
-        plane.transform.localScale = new Vector3(AppManager.Get.NoiseMap.terrainData.size.x/10, 1, AppManager.Get.NoiseMap.terrainData.size.z/10);
-        plane.transform.localPosition = new Vector3(AppManager.Get.NoiseMap.terrainData.size.x /2, OceanLevel, AppManager.Get.NoiseMap.terrainData.size.z / 2);
+        GameObject plane = Instantiate(waterPlane,AppManager.Get.SplatMap.terrain.gameObject.transform);
+        plane.transform.localScale = new Vector3(AppManager.Get.SplatMap.terrainData.size.x/10, 1, AppManager.Get.SplatMap.terrainData.size.z/10);
+        plane.transform.localPosition = new Vector3(AppManager.Get.SplatMap.terrainData.size.x /2, OceanLevel, AppManager.Get.SplatMap.terrainData.size.z / 2);
         AppManager.Get.NoiseMap.GenerateTexture();
         AppManager.Get.WaterGenerated = true;
     }

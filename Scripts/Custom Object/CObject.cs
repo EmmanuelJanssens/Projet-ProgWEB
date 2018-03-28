@@ -19,7 +19,7 @@ public class CObject
     public float steepness;
     public float height;
     public float orientation;
-    public float influence;
+    public float influence = 100;
 
     public float minheight;
     public float maxheight;

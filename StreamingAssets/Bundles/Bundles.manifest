@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1188579926
+CRC: 1042815091
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -23,4 +23,7 @@ AssetBundleManifest:
         Dependency_0: terrain
     Info_6:
       Name: vegetation_ui
+      Dependencies: {}
+    Info_7:
+      Name: rock_ui
       Dependencies: {}
