@@ -4558,7 +4558,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 682110361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414aa8ec9087c0e4192ce07cbd181f2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78dc62683a632e04b89d5ca0ae03376e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ElementAvailable: {fileID: 1673945576534424, guid: 17304434a515cc44b8672902e9e55ef7,
@@ -4852,7 +4852,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 736075271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d06d41502e237346aed07192690fd1a, type: 3}
+  m_Script: {fileID: 11500000, guid: bdeb2b44b30f7bf4caa1484bf0abfeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Import: {fileID: 682110365}
@@ -5868,6 +5868,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 902680060}
+  - component: {fileID: 902680061}
   m_Layer: 0
   m_Name: AssetSelection
   m_TagString: Untagged
@@ -5888,6 +5889,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902680061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902680059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e79327120bd7b40bb38d4aa7fe038c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyBundles: {fileID: 234599205}
+  cmdOpenTextures: {fileID: 1102186810}
+  cmdOpenPlants: {fileID: 485382467}
+  cmdOpenRocks: {fileID: 1560635340}
 --- !u!224 &906993584 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224986228448463296, guid: 9ec93b77caf19e743991a0856263a02b,
@@ -11509,7 +11525,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1761415262}
-  - component: {fileID: 1761415263}
+  - component: {fileID: 1761415264}
   m_Layer: 0
   m_Name: Texture UI
   m_TagString: Untagged
@@ -11530,7 +11546,7 @@ Transform:
   m_Father: {fileID: 194659357}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1761415263
+--- !u!114 &1761415264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -11538,7 +11554,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761415261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b384b13d5a56a7419426de0d90b7412, type: 3}
+  m_Script: {fileID: 11500000, guid: 396fd1dea1466354e800acccf4094e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cmdGenerateTextures: {fileID: 1190458888}
@@ -14234,7 +14250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015961562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab0af3f508f957f48ace9020a29318f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6918a3af0785a914bb798d0c1439e535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cmdGenerate: {fileID: 1112516465}
