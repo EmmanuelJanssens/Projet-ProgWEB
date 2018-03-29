@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class BundleLoader : MonoBehaviour {
 
-    public List<CBundle> BundleList;
-    public Dictionary<string, CBundle> Bundles;
+    public List<GDBundle> BundleList;
+    public Dictionary<string, GDBundle> Bundles;
 
     public Coroutine Loader;
 
     public void Start()
     {
-        Bundles = new Dictionary<string, CBundle>();
+        Bundles = new Dictionary<string, GDBundle>();
         for(int i  = 0; i < BundleList.Count; i++)
         {
             string name = BundleList[i].Name;
             Bundles[name] = BundleList[i];
-            Bundles[name + "_ui"] = new CBundle();
+            Bundles[name + "_ui"] = new GDBundle();
             Bundles[name + "_ui"].Name = name + "_ui";
         }
 

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 441900812
+CRC: 62225124
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c843052beba7e727fe575cb5060b76eb
+    Hash: f37b570cc25fd463fbfc213ef7c7f197
   TypeTreeHash:
     serializedVersion: 2
     Hash: 460b4f5d62b6facbccf7c01637df8f00
@@ -16,16 +16,26 @@ ClassTypes:
 Assets:
 - Assets/UISprites/Vegetation/BluePoppy.png
 - Assets/UISprites/Vegetation/ElephantEar_A.png
+- Assets/UISprites/Trees/FAE_Spruce_B.png
+- Assets/UISprites/Trees/FAE_Birch_A.png
+- Assets/UISprites/Trees/FAE_Palm_B.png
 - Assets/UISprites/Vegetation/Daisy.png
+- Assets/UISprites/Trees/FAE_Birch_C.png
 - Assets/UISprites/Vegetation/Lilypads_A.png
+- Assets/UISprites/Trees/FAE_Tree_A.png
 - Assets/UISprites/Vegetation/RedPoppy.png
 - Assets/UISprites/Vegetation/Groundcover_Daisies.png
+- Assets/UISprites/Trees/FAE_Pine_A.png
 - Assets/UISprites/Vegetation/Bush_C.png
 - Assets/UISprites/Vegetation/Grass.png
 - Assets/UISprites/Vegetation/ChervilCluster.png
+- Assets/UISprites/Trees/FAE_Spruce_A.png
 - Assets/UISprites/Vegetation/Groundcover_Clovers.png
+- Assets/UISprites/Trees/FAE_Spruce_C.png
+- Assets/UISprites/Trees/FAE_Tree_B.png
 - Assets/UISprites/Vegetation/DandelionCluster.png
 - Assets/UISprites/Vegetation/Lilypad.png
+- Assets/UISprites/Trees/FAE_Tree_C.png
 - Assets/UISprites/Vegetation/Chervil.png
 - Assets/UISprites/Vegetation/Fern.png
 - Assets/UISprites/Vegetation/ElephantEar_B.png
@@ -35,11 +45,16 @@ Assets:
 - Assets/UISprites/Vegetation/DaisyCluster.png
 - Assets/UISprites/Vegetation/Lilypads_B.png
 - Assets/UISprites/Vegetation/GrassTall.png
+- Assets/UISprites/Trees/FAE_Palm_C.png
 - Assets/UISprites/Vegetation/GrassThick.png
+- Assets/UISprites/Trees/FAE_Palm_A.png
+- Assets/UISprites/Trees/FAE_Willow_B.png
 - Assets/UISprites/Vegetation/RedPoppyCluster.png
 - Assets/UISprites/Vegetation/Lotus.png
 - Assets/UISprites/Vegetation/Groundcover_Leaves.png
+- Assets/UISprites/Trees/FAE_Birch_B.png
 - Assets/UISprites/Vegetation/Speedwell.png
 - Assets/UISprites/Vegetation/Bush_A.png
 - Assets/UISprites/Vegetation/Bush_B.png
+- Assets/UISprites/Trees/FAE_Willow_A.png
 Dependencies: []

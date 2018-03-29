@@ -16,7 +16,6 @@ public class OpenAssetSelection : MonoBehaviour
 
     #region Buttons
     public Button cmdOpenTextures;
-    public Button cmdOpenTrees;
     public Button cmdOpenPlants;
     public Button cmdOpenRocks;
     #endregion
@@ -28,12 +27,6 @@ public class OpenAssetSelection : MonoBehaviour
             {
                 UIManager.Get.OpenFrame(UIManager.Get.SelectFrame);
                 MyBundles.Load<Texture2D>("terrain");
-            });
-        cmdOpenTrees.onClick.AddListener(
-            delegate
-            {
-                UIManager.Get.OpenFrame(UIManager.Get.SelectFrame);
-                MyBundles.Load<GameObject>("trees");
             });
         cmdOpenPlants.onClick.AddListener(
             delegate

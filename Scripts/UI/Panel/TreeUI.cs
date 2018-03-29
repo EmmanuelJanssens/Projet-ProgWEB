@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class TreeUI : MonoBehaviour
 {
-    public Button cmdGenerate;
+   /* public Button cmdGenerate;
 	// Use this for initialization
 	void Start ()
     {
         cmdGenerate.onClick.AddListener(AppManager.Get.TreeMap.Generate);
 	}
-	
+	*/
 
 }

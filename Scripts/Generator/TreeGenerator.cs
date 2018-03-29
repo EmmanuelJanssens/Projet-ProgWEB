@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TreeGenerator : MonoBehaviour
 {
-    public ChooseAssets Import;
+ /*   public ChooseAssets Import;
 
     public TreePrototype[] DrawableTrees;
     // Use this for initialization
@@ -103,7 +103,7 @@ public class TreeGenerator : MonoBehaviour
             }
            
         }
-        Debug.Log(instances.Count);
+
         AppManager.Get.SplatMap.terrainData.treeInstances = instances.ToArray();
     }
 

@@ -23,10 +23,9 @@ public  class NoiseGenerator : MonoBehaviour
     private float _lacunarity = 1;
     private Vector2 _offset;
 
-
     private Texture2D _generatedTexture;
 
-    private Color[] _pixelColor; // black/white
+    private Color32[] _pixelColor; // black/white
 
     private float[,] _noise;
     private float _worldScale = 100f;
@@ -45,7 +44,7 @@ public  class NoiseGenerator : MonoBehaviour
 
     [HideInInspector]
 
-    public Color[] PixelColor { get { return _pixelColor; } set { _pixelColor = value; } }
+    public Color32[] PixelColor { get { return _pixelColor; } set { _pixelColor = value; } }
     public float[,] Noise { get { return _noise; } }
     public int Seed { get { return _seed; } set { _seed = value; } }
     public int Height { get { return _mapHeight; } set { _mapHeight = value; } }
@@ -86,7 +85,7 @@ public  class NoiseGenerator : MonoBehaviour
 
         if (_pixelColor != null)
             _pixelColor = null;
-        _pixelColor = new Color[_mapWidth * _mapHeight];
+        _pixelColor = new Color32[_mapWidth * _mapHeight];
 
 
 
@@ -158,14 +157,18 @@ public  class NoiseGenerator : MonoBehaviour
     {
         if (_generatedTexture != null)
             _generatedTexture = null;
-        _generatedTexture = new Texture2D(_mapWidth, _mapHeight);
+        Texture2D display = new Texture2D(_mapWidth, _mapHeight, TextureFormat.RGBAFloat, true);
+        display.SetPixels32(_pixelColor);
+        display.Apply();
 
-        _generatedTexture.SetPixels(_pixelColor);
+        _generatedTexture = new Texture2D(_mapWidth, _mapHeight,TextureFormat.PVRTC_RGBA4,true);
+        _generatedTexture.LoadRawTextureData(display.GetRawTextureData());
+        _generatedTexture.GetRawTextureData();
         _generatedTexture.Apply();
 
 
         NoiseImage.sprite = null;
-        NoiseImage.sprite = Sprite.Create(_generatedTexture, new Rect(0, 0, _mapWidth, _mapHeight), new Vector2(0.5f, 0.5f)); ;
+        NoiseImage.sprite = Sprite.Create(display, new Rect(0, 0, _mapWidth, _mapHeight), new Vector2(0.5f, 0.5f)); ;
 
         AppManager.Get.NoiseMapGenerated = true;
     }

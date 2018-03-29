@@ -18,13 +18,14 @@ public class AppManager : MonoBehaviour
     public NoiseGenerator NoiseMap;
     public TextureGenerator SplatMap;
     public LakeGenerator WaterMap;
-    public TreeGenerator TreeMap;
+    public VegetationGenerator PlantMap;
+
     /*(public TextureGenerator TextureMap;
     public LakeGenerator WaterMap;
     public TreeGenerator TreeMap;*/
 
     [HideInInspector]
-    public CObject ObjectToModify;
+    public GDObject ObjectToModify;
 
     [HideInInspector]
     public bool NoiseMapGenerated;
@@ -41,8 +42,7 @@ public class AppManager : MonoBehaviour
     [HideInInspector]
     public bool RocksGenerated;
 
-    [HideInInspector]
-    public bool TreeGenerated;
+
 
     [HideInInspector]
     public bool PlantGenerated;

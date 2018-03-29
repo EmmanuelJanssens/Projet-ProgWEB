@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         CurrentPanel = panelToOpen;
         CurrentPanel.SetActive(true);
 
-        Title.text = CurrentPanel.name;
+        Title.text = CurrentPanel.name[0].ToString().ToUpper() + CurrentPanel.name.Substring(1);
     }
 
     public void OpenFrame(GameObject toOpen)

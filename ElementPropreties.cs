@@ -63,24 +63,24 @@ public class ElementPropreties : MonoBehaviour
             {
                 switch (AppManager.Get.ObjectToModify.Mode)
                 {
-                    case CObject.ApplicationMode.Height:
+                    case GDObject.ApplicationMode.Height:
                         Value.text = AppManager.Get.ObjectToModify.height.ToString();
                         Tabs.SetActive("Height");
                         break;
-                    case CObject.ApplicationMode.Orientation:
+                    case GDObject.ApplicationMode.Orientation:
                         Value.text = AppManager.Get.ObjectToModify.orientation.ToString();
                         Tabs.SetActive("Orientation");
                         break;
-                    case CObject.ApplicationMode.Slope:
+                    case GDObject.ApplicationMode.Slope:
                         Value.text = AppManager.Get.ObjectToModify.steepness.ToString();
                         Tabs.SetActive("Slope");
                         break;
-                    case CObject.ApplicationMode.SlopeRange:
+                    case GDObject.ApplicationMode.SlopeRange:
                         MinValue.text = AppManager.Get.ObjectToModify.minslope.ToString();
                         MaxValue.text = AppManager.Get.ObjectToModify.maxslope.ToString();
                         Tabs.SetActive("Slope Range");
                         break;
-                    case CObject.ApplicationMode.HeightRange:
+                    case GDObject.ApplicationMode.HeightRange:
                         MinValue.text = AppManager.Get.ObjectToModify.minheight.ToString();
                         MaxValue.text = AppManager.Get.ObjectToModify.maxheight.ToString();
                         Tabs.SetActive("Height Range");
@@ -113,25 +113,25 @@ public class ElementPropreties : MonoBehaviour
         {
             case "Height":
                 AppManager.Get.ObjectToModify.height = SetValue(Value.text);
-                AppManager.Get.ObjectToModify.Mode = CObject.ApplicationMode.Height;
+                AppManager.Get.ObjectToModify.Mode = GDObject.ApplicationMode.Height;
                 break;
             case "Slope":
                 AppManager.Get.ObjectToModify.steepness = SetValue(Value.text);
-                AppManager.Get.ObjectToModify.Mode = CObject.ApplicationMode.Slope;
+                AppManager.Get.ObjectToModify.Mode = GDObject.ApplicationMode.Slope;
                 break;
             case "Orientation":
                 AppManager.Get.ObjectToModify.orientation = SetValue(Value.text);
-                AppManager.Get.ObjectToModify.Mode = CObject.ApplicationMode.Orientation;
+                AppManager.Get.ObjectToModify.Mode = GDObject.ApplicationMode.Orientation;
                 break;
             case "Height Range":
                 AppManager.Get.ObjectToModify.minheight = SetValue(MinValue.text);
                 AppManager.Get.ObjectToModify.maxheight = SetValue(MaxValue.text);
-                AppManager.Get.ObjectToModify.Mode = CObject.ApplicationMode.HeightRange;
+                AppManager.Get.ObjectToModify.Mode = GDObject.ApplicationMode.HeightRange;
                 break;
             case "Slope Range":
                 AppManager.Get.ObjectToModify.minslope = SetValue(MinValue.text);
                 AppManager.Get.ObjectToModify.maxslope = SetValue(MaxValue.text);
-                AppManager.Get.ObjectToModify.Mode = CObject.ApplicationMode.SlopeRange;
+                AppManager.Get.ObjectToModify.Mode = GDObject.ApplicationMode.SlopeRange;
                 break;
             default:
                 break;

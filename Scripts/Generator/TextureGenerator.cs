@@ -17,7 +17,7 @@ public class TextureGenerator : MonoBehaviour
 
 
     //List of all textures loaded
-    List<CTexture> _Textures;
+    List<GDTexture> _Textures;
     List<SplatPrototype> SplatPrototypes;
 
     private float[,,] _splatmapData;
@@ -64,11 +64,11 @@ public class TextureGenerator : MonoBehaviour
         AppManager.Get.NoiseMap.GenerateNoiseBW();
 
         //Import texture into terrain painter
-        _Textures = new List<CTexture>();
+        _Textures = new List<GDTexture>();
 
         for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
-            _Textures.Add(Import.ChoosenTextures[i] as CTexture);
+            _Textures.Add(Import.ChoosenTextures[i] as GDTexture);
         }
 
 
@@ -88,37 +88,37 @@ public class TextureGenerator : MonoBehaviour
 
                 for (int i = 0; i < _Textures.Count; i++)
                 {
-                    CTexture textureProp = _Textures[i];
+                    GDTexture textureProp = _Textures[i];
 
                     switch (textureProp.Mode)
                     {
-                        case CTexture.ApplicationMode.Height:
+                        case GDTexture.ApplicationMode.Height:
                             if (height > textureProp.height)
                             {
                                 AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor ;
 
                             }
                             break;
-                        case CTexture.ApplicationMode.Slope:
+                        case GDTexture.ApplicationMode.Slope:
                             //Slope 0 to 90 degrees
                             if (steepness < textureProp.steepness)
                             {
                                 AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
                             }
                             break;
-                        case CTexture.ApplicationMode.Orientation:
+                        case GDTexture.ApplicationMode.Orientation:
                             if (direction.z < textureProp.orientation)
                             {
                                 AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
                             }
                             break;
-                        case CTexture.ApplicationMode.HeightRange:
+                        case GDTexture.ApplicationMode.HeightRange:
                             if (height > textureProp.minheight && height < textureProp.maxheight)
                             {
                                 AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
                             }
                             break;
-                        case CTexture.ApplicationMode.SlopeRange:
+                        case GDTexture.ApplicationMode.SlopeRange:
                             if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
                             {
                                 AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
@@ -152,12 +152,12 @@ public class TextureGenerator : MonoBehaviour
         SplatPrototypes = new List<SplatPrototype>();
 
         //Import texture into terrain painter
-        _Textures = new List<CTexture>();
+        _Textures = new List<GDTexture>();
 
         for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
             SplatPrototypes.Add(new SplatPrototype());
-            CTexture texture = Import.ChoosenTextures[i] as CTexture;
+            GDTexture texture = Import.ChoosenTextures[i] as GDTexture;
 
             SplatPrototypes[i].texture = texture.texture;
             SplatPrototypes[i].tileSize = new Vector2(1, 1);
@@ -195,27 +195,27 @@ public class TextureGenerator : MonoBehaviour
 
                 for(int i = 0; i < terrainData.alphamapLayers; i++)
                 {
-                    CTexture textureProp = _Textures[i];
+                    GDTexture textureProp = _Textures[i];
 
                     switch(textureProp.Mode)
                     {
-                        case CTexture.ApplicationMode.Height:
+                        case GDTexture.ApplicationMode.Height:
                             if (height > textureProp.height)
                                 _weight[i] = textureProp.influence;
                             break;
-                        case CTexture.ApplicationMode.Slope:
+                        case GDTexture.ApplicationMode.Slope:
                             if (steepness < textureProp.steepness)
                                 _weight[i] = textureProp.influence;
                             break;
-                        case CTexture.ApplicationMode.Orientation:
+                        case GDTexture.ApplicationMode.Orientation:
                             if (direction.z < textureProp.orientation)
                                 _weight[i] = textureProp.influence;
                             break;
-                        case CTexture.ApplicationMode.HeightRange:
+                        case GDTexture.ApplicationMode.HeightRange:
                             if (height > textureProp.minheight && height < textureProp.maxheight)
                                 _weight[i] = textureProp.influence;
                             break;
-                        case CTexture.ApplicationMode.SlopeRange:
+                        case GDTexture.ApplicationMode.SlopeRange:
                             if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
                                 _weight[i] = textureProp.influence;
                             break;
