@@ -13,29 +13,55 @@ public class TextureGenerator : MonoBehaviour
 
     public static TextureGenerator current;
 
+    /// <summary>
+    /// Used to import the assets that where seleced
+    /// </summary>
     public ChooseAssets Import;
 
+    /// <summary>
+    /// List of all the textures that where loaded
+    /// </summary>
+    List<GDTexture> _textures;
 
-    //List of all textures loaded
-    List<GDTexture> _Textures;
+    /// <summary>
+    /// Splat prototypes to be used by the terrain
+    /// </summary>
     List<SplatPrototype> SplatPrototypes;
 
+    /// <summary>
+    /// Data for the terrain data
+    /// </summary>
     private float[,,] _splatmapData;
 
 
     public static TextureGenerator Get { get { return current; } }
 
+    /// <summary>
+    /// Terrain object on wich the terrain component is attached
+    /// </summary>
     public GameObject TerrainToApplyTexture;
 
+    /// <summary>
+    /// Terrain that is used
+    /// </summary>
     [HideInInspector]
     public Terrain terrain;
 
+
+    /// <summary>
+    /// Terrain data from the terrain
+    /// </summary>
     [HideInInspector]
     public TerrainData terrainData;
 
+    /// <summary>
+    /// Terrain collider
+    /// </summary>
     [HideInInspector]
     public TerrainCollider terrainCollider;
 
+
+    public List<GDTexture> Textures { get { return _textures; } }
     public void Start()
     {
         if (current == null)
@@ -46,38 +72,42 @@ public class TextureGenerator : MonoBehaviour
         terrainData = new TerrainData();
     }
 
-    public void RemoveFromSplatPrototypes(int index)
-    {
-        SplatPrototypes.RemoveAt(index);
-    }
+
     /// <summary>
     /// Function called when pressing the generate button
     /// </summary>
     public void Generate()
     {
         StartCoroutine(GenerateTextureOnNoiseMap());
-        StartCoroutine(IGenerate());
     }
 
+    /// <summary>
+    /// Generates thte textures on the noise map, displays average color from the texture
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GenerateTextureOnNoiseMap()
     {
-        AppManager.Get.NoiseMap.GenerateNoiseBW();
+        AppManager.Get.NoiseMap.Noise = AppManager.Get.NoiseMap.GenerateNoiseBW();
+        NoiseGenerator ng = AppManager.Get.NoiseMap;
+        Color32[] color = AppManager.Get.NoiseMap.PixelColor;
+        //First generate a blank terrain
+        yield return StartCoroutine(IGenerate());
 
         //Import texture into terrain painter
-        _Textures = new List<GDTexture>();
+        _textures = new List<GDTexture>();
 
         for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
-            _Textures.Add(Import.ChoosenTextures[i] as GDTexture);
+            _textures.Add(Import.ChoosenTextures[i] as GDTexture);
         }
 
 
-        for (int y = 0; y < terrainData.alphamapHeight; y++)
+        for (int y = terrainData.alphamapHeight; y > 0 ; y--)
         {
-            for (int x = 0; x < terrainData.alphamapWidth; x++)
+            for (int x = terrainData.alphamapWidth; x > 0; x--)
             {
                 float y_01 = (float)y / (float)terrainData.alphamapHeight;
-                float x_01 = (float)x / (float) terrainData.alphamapWidth;
+                float x_01 = (float)x / (float)terrainData.alphamapWidth;
 
                 int ix = Mathf.RoundToInt(x_01 * terrainData.heightmapWidth);
                 int iy = Mathf.RoundToInt(y_01 * terrainData.heightmapHeight);
@@ -86,52 +116,54 @@ public class TextureGenerator : MonoBehaviour
                 float steepness = terrainData.GetSteepness(x_01, y_01);
                 Vector3 direction = terrainData.GetInterpolatedNormal(x, y);
 
-                for (int i = 0; i < _Textures.Count; i++)
+                for (int i = 0; i < _textures.Count; i++)
                 {
-                    GDTexture textureProp = _Textures[i];
+                    GDTexture textureProp = _textures[i];
 
                     switch (textureProp.Mode)
                     {
                         case GDTexture.ApplicationMode.Height:
                             if (height > textureProp.height)
                             {
-                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor ;
-
+                                color[iy * ng.Width + ix] = _textures[i].avgColor;
                             }
                             break;
                         case GDTexture.ApplicationMode.Slope:
                             //Slope 0 to 90 degrees
                             if (steepness < textureProp.steepness)
                             {
-                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                                color[iy * ng.Width + ix] = _textures[i].avgColor;
                             }
                             break;
                         case GDTexture.ApplicationMode.Orientation:
                             if (direction.z < textureProp.orientation)
                             {
-                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                                color[iy * ng.Width + ix] = _textures[i].avgColor;
                             }
                             break;
                         case GDTexture.ApplicationMode.HeightRange:
                             if (height > textureProp.minheight && height < textureProp.maxheight)
                             {
-                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                                color[iy * ng.Width + ix] = _textures[i].avgColor;
                             }
                             break;
                         case GDTexture.ApplicationMode.SlopeRange:
                             if (steepness > textureProp.minslope && steepness < textureProp.maxslope)
                             {
-                                AppManager.Get.NoiseMap.PixelColor[iy * AppManager.Get.NoiseMap.Width + ix] = _Textures[i].avgColor;
+                                color[iy * ng.Width + ix] = _textures[i].avgColor;
                             }
                             break;
                         default:
                             break;
                     }
+                    //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array         
+
                 }
             }
         }
-
-        AppManager.Get.NoiseMap.GenerateTexture();
+        ng.DisplayTexture.SetPixels32 (color);
+        ng.DisplayTexture.Apply();
+        ng.GenerateTexture();
         yield return null;
     }
     /// <summary>
@@ -144,6 +176,8 @@ public class TextureGenerator : MonoBehaviour
         terrainData.heightmapResolution = AppManager.Get.NoiseMap.Width;
         terrainData.size = new Vector3(AppManager.Get.NoiseMap.Width, AppManager.Get.NoiseMap.WorldScale, AppManager.Get.NoiseMap.Height);
         terrainData.SetHeights(0, 0, AppManager.Get.NoiseMap.Noise);
+        terrainData.baseMapResolution = AppManager.Get.NoiseMap.Width;
+        terrainData.alphamapResolution = AppManager.Get.NoiseMap.Width; 
 
         terrain.terrainData = terrainData;
         terrainCollider.terrainData = terrainData;
@@ -152,7 +186,7 @@ public class TextureGenerator : MonoBehaviour
         SplatPrototypes = new List<SplatPrototype>();
 
         //Import texture into terrain painter
-        _Textures = new List<GDTexture>();
+        _textures = new List<GDTexture>();
 
         for (int i = 0; i < Import.ChoosenTextures.Count; i++)
         {
@@ -162,7 +196,7 @@ public class TextureGenerator : MonoBehaviour
             SplatPrototypes[i].texture = texture.texture;
             SplatPrototypes[i].tileSize = new Vector2(1, 1);
 
-            _Textures.Add(texture);
+            _textures.Add(texture);
         }
 
         terrainData.splatPrototypes = SplatPrototypes.ToArray(); ;
@@ -195,7 +229,7 @@ public class TextureGenerator : MonoBehaviour
 
                 for(int i = 0; i < terrainData.alphamapLayers; i++)
                 {
-                    GDTexture textureProp = _Textures[i];
+                    GDTexture textureProp = _textures[i];
 
                     switch(textureProp.Mode)
                     {

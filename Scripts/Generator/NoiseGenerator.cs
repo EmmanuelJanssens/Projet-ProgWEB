@@ -13,22 +13,66 @@ public  class NoiseGenerator : MonoBehaviour
 
     public static NoiseGenerator current;
 
+    /// <summary>
+    /// noise map height
+    /// </summary>
 	private int _mapHeight = 256;
+    /// <summary>
+    /// Noise map width
+    /// </summary>
     private int _mapWidth = 256 ;
+
+    /// <summary>
+    /// noise map scale
+    /// </summary>
     private float _noiseScale =70f;
+
+    /// <summary>
+    /// Random seed of the map
+    /// </summary>
     private int _seed = 3;
 
-    private int _octaves = 10;
-    private float _persistence = 0.5f;
-    private float _lacunarity = 1;
-    private Vector2 _offset;
 
+    /// <summary>
+    /// numnbers of octaves
+    /// </summary>
+    private int _octaves = 10;
+
+    /// <summary>
+    /// Persistence of the noise map
+    /// </summary>
+    private float _persistence = 0.5f;
+
+    /// <summary>
+    /// lacunarity of the noise map
+    /// </summary>
+    private float _lacunarity = 1;
+
+    /// <summary>
+    /// Renderer of the 3D plane on wich the noisemap will be rendered
+    /// </summary>
+    public  Renderer NoiseRenderer;
+
+    /// <summary>
+    /// Texture of the noisemap as it will be displayed
+    /// </summary>
+    private Texture2D _displayTexture;
+
+    /// <summary>
+    /// Texture that contains the 16 bit format from the noisemap
+    /// </summary>
     private Texture2D _generatedTexture;
 
+    /// <summary>
+    /// Color of each pixel of the map
+    /// </summary>
     private Color32[] _pixelColor; // black/white
 
-    private float[,] _noise;
+    /// <summary>
+    /// Scale of the world
+    /// </summary>
     private float _worldScale = 100f;
+
 
     private float _minHeight = float.MaxValue;
     private float _maxHeight = float.MinValue;
@@ -36,16 +80,12 @@ public  class NoiseGenerator : MonoBehaviour
     private float _midWidth;
     private float _midHeight;
 
-    public Image NoiseImage;
 
+
+    #region Accessors and mutators
     [HideInInspector]
-    public Texture2D GeneratedTexture;
-
-
-    [HideInInspector]
-
     public Color32[] PixelColor { get { return _pixelColor; } set { _pixelColor = value; } }
-    public float[,] Noise { get { return _noise; } }
+    public float[,] Noise;
     public int Seed { get { return _seed; } set { _seed = value; } }
     public int Height { get { return _mapHeight; } set { _mapHeight = value; } }
     public int Width { get { return _mapWidth; } set { _mapWidth = value; } }
@@ -54,7 +94,8 @@ public  class NoiseGenerator : MonoBehaviour
     public float Persistence { get { return _persistence; } set { _persistence = value; } }
     public float Lacunarity { get { return _lacunarity; } set { _lacunarity = value; } }
     public float WorldScale { get { return _worldScale; } set { _worldScale = value; } }
-
+    public Texture2D DisplayTexture { get { return _displayTexture; } set { _displayTexture = value; } }
+    #endregion
 
     // Use this for initialization
     void Start () 
@@ -76,15 +117,14 @@ public  class NoiseGenerator : MonoBehaviour
     /// <summary>
     /// Generate a 2D Noise map texture
     /// </summary>
-    public void GenerateNoiseBW()
+    public float[,] GenerateNoiseBW()
     {
-        //Initate the data
-        if (_noise != null)
-            _noise = null;
-        _noise = new float[_mapWidth, _mapHeight];
+
+        float[,] noise = new float[_mapWidth, _mapHeight];
 
         if (_pixelColor != null)
             _pixelColor = null;
+
         _pixelColor = new Color32[_mapWidth * _mapHeight];
 
 
@@ -93,6 +133,8 @@ public  class NoiseGenerator : MonoBehaviour
         //For more vareity in the noise
         System.Random prng = new System.Random(Seed);
         Vector2[] octaveOffests = new Vector2[Octaves];
+
+        _displayTexture = new Texture2D(_mapWidth, _mapHeight);
 
         //Randomize the octave start position
         for(int i = 0; i < Octaves; i++)
@@ -140,42 +182,38 @@ public  class NoiseGenerator : MonoBehaviour
                     _minHeight = noiseHeight;
 
 
-                _noise[x, y] = noiseHeight;
-                _noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, _noise[x, y]);
+                noise[x, y] = noiseHeight;
+                noise[x, y] = Mathf.InverseLerp(_minHeight, _maxHeight, noise[x, y]);
 
                 //Set color for each coordinates in the noisemap Coresponding to the height scale from Noise array         
-                _pixelColor[y * _mapWidth + x] = Color.Lerp(Color.black, Color.white, _noise[x, y]);
+                _pixelColor[y * _mapWidth + x] = Color.LerpUnclamped(Color.black, Color.white, noise[x, y]);
+
+                _displayTexture.SetPixel(x,y,_pixelColor[y * _mapWidth + x]);
             }
         }
-
+        _displayTexture.Apply();
         //Generates the texture to visualize the noise map
         GenerateTexture();
 
+        return noise;
     }
 
     public void GenerateTexture()
     {
-        if (_generatedTexture != null)
-            _generatedTexture = null;
-        Texture2D display = new Texture2D(_mapWidth, _mapHeight, TextureFormat.RGBAFloat, true);
-        display.SetPixels32(_pixelColor);
-        display.Apply();
+
+        NoiseRenderer.material.mainTexture = _displayTexture;
+
 
         _generatedTexture = new Texture2D(_mapWidth, _mapHeight,TextureFormat.PVRTC_RGBA4,true);
-        _generatedTexture.LoadRawTextureData(display.GetRawTextureData());
+        _generatedTexture.LoadRawTextureData(_displayTexture.GetRawTextureData());
         _generatedTexture.GetRawTextureData();
         _generatedTexture.Apply();
 
 
-        NoiseImage.sprite = null;
-        NoiseImage.sprite = Sprite.Create(display, new Rect(0, 0, _mapWidth, _mapHeight), new Vector2(0.5f, 0.5f)); ;
 
         AppManager.Get.NoiseMapGenerated = true;
     }
 
-    public float[,] GetNoiseData()
-    {
-        return _noise;
-    }
+
 
 }

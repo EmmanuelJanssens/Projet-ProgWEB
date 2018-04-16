@@ -20,6 +20,8 @@ public class AppManager : MonoBehaviour
     public LakeGenerator WaterMap;
     public VegetationGenerator PlantMap;
 
+    public NoiseUI NoiseGUI;
+
     /*(public TextureGenerator TextureMap;
     public LakeGenerator WaterMap;
     public TreeGenerator TreeMap;*/

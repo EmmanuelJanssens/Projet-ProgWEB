@@ -26,19 +26,19 @@ public class OpenAssetSelection : MonoBehaviour
             delegate
             {
                 UIManager.Get.OpenFrame(UIManager.Get.SelectFrame);
-                MyBundles.Load<Texture2D>("terrain");
+                StartCoroutine(MyBundles.LoadAssync<Texture2D>("terrain"));
             });
         cmdOpenPlants.onClick.AddListener(
             delegate
             {
                 UIManager.Get.OpenFrame(UIManager.Get.SelectFrame);
-                MyBundles.Load<GameObject>("vegetation");
+                StartCoroutine(MyBundles.LoadAssync<GameObject>("vegetation"));
             });
         cmdOpenRocks.onClick.AddListener(
             delegate
             {
                 UIManager.Get.OpenFrame(UIManager.Get.SelectFrame);
-                MyBundles.Load<GameObject>("rock");
+                StartCoroutine(MyBundles.LoadAssync<GameObject>("rock"));
             });
     }
 }

@@ -10,6 +10,11 @@ public class PlantUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        cmdGenerate.onClick.AddListener(gen.Generate);
+        cmdGenerate.onClick.AddListener(generate);
+    }
+
+    void generate()
+    {
+        StartCoroutine(gen.Generate());
     }
 }

@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Load available bundles
+/// </summary>
 public class BundleLoader : MonoBehaviour {
 
+    /// <summary>
+    /// List of bundles that have to be loaded
+    /// </summary>
     public List<GDBundle> BundleList;
+
+    /// <summary>
+    /// Dictionary of the bunddles that where loaded
+    /// </summary>
     public Dictionary<string, GDBundle> Bundles;
 
     public Coroutine Loader;
@@ -21,20 +31,30 @@ public class BundleLoader : MonoBehaviour {
         }
 
     }
-    public void Load<T>(string name) where T : Object
+    public IEnumerator Load<T>(string name) where T : Object
     {
         if (!Bundles[name].Loaded)
+        {
             Loader = StartCoroutine(Bundles[name].Load<T>(Application.streamingAssetsPath + "/Bundles/"));
+            yield return Loader;
+        }
         else
             Debug.Log(name + " is already loaded");
+
+        yield return null;
     }
 
-    public void LoadAssync<T>(string name) where T : Object
+    public IEnumerator LoadAssync<T>(string name) where T : Object
     {
         if (!Bundles[name].Loaded)
-            Loader = StartCoroutine(Bundles[name].Load<T>(Application.streamingAssetsPath + "/Bundles/"));
+        {
+            Loader = StartCoroutine(Bundles[name].LoadAsync<T>(Application.streamingAssetsPath + "/Bundles/"));
+            yield return Loader;
+        }
         else
             Debug.Log(name + " is already loaded");
+
+        yield return null;
     }
 
     

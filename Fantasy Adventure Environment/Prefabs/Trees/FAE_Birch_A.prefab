@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4000012308464578}
   - component: {fileID: 205000010921650282}
   - component: {fileID: 136000013745559892}
+  - component: {fileID: 114792125482289598}
   m_Layer: 0
   m_Name: FAE_Birch_A
   m_TagString: Untagged
@@ -336,6 +337,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010600017118}
   m_Mesh: {fileID: 4300000, guid: a00d1cc53f4021946aba4c15907eff85, type: 2}
+--- !u!114 &114792125482289598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010151976528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c69212f6a28fa48b37d362974a3b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Name: 
+  biome: 0
+  type: 0
 --- !u!136 &136000013745559892
 CapsuleCollider:
   m_ObjectHideFlags: 1

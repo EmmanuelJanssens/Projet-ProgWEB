@@ -5,4 +5,5 @@ using UnityEngine;
 public class GDPlant : GDObject
 {
     public GameObject obj;
+
 }

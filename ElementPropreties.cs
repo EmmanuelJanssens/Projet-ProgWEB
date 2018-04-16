@@ -23,7 +23,9 @@ public class ElementPropreties : MonoBehaviour
     protected InputField MinValue;
     protected InputField MaxValue;
 
-    public InputField Influence;
+    public InputField Density;
+    public InputField Clump;
+    public InputField Resolution;
 
     public Text Title;
     public Image Image;
@@ -34,16 +36,16 @@ public class ElementPropreties : MonoBehaviour
         switch (UIManager.Get.CurrentPanel.name)
         {
             case "terrain":
-                Influence.transform.parent.gameObject.SetActive(false);
+                Density.transform.parent.gameObject.SetActive(false);
+                Clump.transform.parent.gameObject.SetActive(false);
+                Resolution.transform.parent.gameObject.SetActive(false);
                 break;
-            case "trees":
-                Influence.transform.parent.gameObject.SetActive(true);
-                break;
-            case "vegetation":
-                Influence.transform.parent.gameObject.SetActive(true);
-                break;
-            case "rock":
-                Influence.transform.parent.gameObject.SetActive(true);
+
+            default:
+                Density.transform.parent.gameObject.SetActive(true);
+                Clump.transform.parent.gameObject.SetActive(true);
+                Resolution.transform.parent.gameObject.SetActive(true);
+
                 break;
         }
 
@@ -89,7 +91,11 @@ public class ElementPropreties : MonoBehaviour
                         break;
                 }
             }
-            Influence.text = AppManager.Get.ObjectToModify.influence.ToString();
+            Density.text = AppManager.Get.ObjectToModify.density.ToString();
+            Clump.text = AppManager.Get.ObjectToModify.clump.ToString();
+            Resolution.text = AppManager.Get.ObjectToModify.details_resolution.ToString();
+
+
         }
     }
 
@@ -136,7 +142,10 @@ public class ElementPropreties : MonoBehaviour
             default:
                 break;
         }
-        AppManager.Get.ObjectToModify.influence = SetValue(Influence.text);
+        AppManager.Get.ObjectToModify.clump = SetValue(Clump.text);
+        AppManager.Get.ObjectToModify.density = (int)SetValue(Density.text);
+        AppManager.Get.ObjectToModify.details_resolution = (int)SetValue(Resolution.text);
+
         UIManager.Get.CloseFrame();
     }
 

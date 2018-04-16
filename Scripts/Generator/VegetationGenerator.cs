@@ -2,132 +2,191 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Places trees randomly on the map
+/// 
+/// ///TODO
+/// Generate a noisemap that will be used to control forest density
+/// </summary>
 public class VegetationGenerator: MonoBehaviour
 {
+
+    /// <summary>
+    /// Elements of the vegetation assets that where imported
+    /// </summary>
     public ChooseAssets Import;
 
-    public TreePrototype[] DrawableTrees;
-    // Use this for initialization
-    public List<TreeInstance> instances;
+    /// <summary>
+    /// Parent transform for the trees
+    /// </summary>
+    public Transform TTrees;
 
+    /// <summary>
+    /// Parent transform for the plants
+    /// </summary>
+    public Transform TPlants;
 
-    public void Generate()
+    /// <summary>
+    /// Poisson disk algorythm
+    /// </summary>
+    public PoissonDisk disk;
+
+    /// <summary>
+    /// List of the coroutines that are active
+    /// </summary>
+    public List<Coroutine> Coroutines;
+
+    /// <summary>
+    /// List of the plants that where selected
+    /// </summary>
+    public List<GDPlant> Plants;
+
+    public void Start()
     {
-        DrawableTrees = new TreePrototype[Import.ChoosenPlants.Count];
-        instances = new List<TreeInstance>();
-        AppManager.Get.SplatMap.terrainData.treeInstances = instances.ToArray();
+        disk = new PoissonDisk();
+    }
 
+    /// <summary>
+    /// Generates a single type of plant
+    /// One plant uses one coroutine
+    /// with that when multiplie plants are generated they are generated all together 
+    /// 
+    /// Sequence 
+    /// -- generates all positions 
+    /// -- go through all the positions and check if the position is valid
+    /// -- add them to a list of available position
+    /// -- Instantiates object at that valid position
+    /// </summary>
+    /// <param name="plant"></param>
+    /// <returns></returns>
+    public IEnumerator GenerateSingle(GDPlant plant)
+    {
+        List<Vector3> positions = new List<Vector3>();
+        List<Vector3> availablePositions = new List<Vector3>();
 
-        for (int i = 0; i < DrawableTrees.Length; i++)
+        //Wait until all the positions are generated
+        yield return StartCoroutine(disk.Generate(positions, AppManager.Get.NoiseMap.Width, AppManager.Get.NoiseMap.Height, plant.details_resolution, plant.clump, plant.density));
+
+        TerrainData terrainData = AppManager.Get.SplatMap.terrainData; ;
+        float OceanLevel = AppManager.Get.WaterMap.OceanLevel;
+
+        //Process all the positions 
+        //add them to a new list that contains all the possible positions
+        for (int j = 0; j < positions.Count; j++)
         {
-            GDPlant tree = Import.ChoosenPlants[i] as GDPlant;
 
-            DrawableTrees[i] = new TreePrototype();
-            DrawableTrees[i].prefab = tree.obj;
+            Vector3 newpos = new Vector3(positions[j].x, positions[j].y, positions[j].z);
+            newpos.y = terrainData.GetInterpolatedHeight(newpos.x, newpos.z);
 
+            bool canAdd = false;
+            switch (plant.Mode)
+            {
+                case GDObject.ApplicationMode.Height:
+                    canAdd = newpos.y < plant.height;
+                    break;
+                case GDObject.ApplicationMode.Slope:
+                    float steepness = terrainData.GetSteepness(newpos.x, newpos.y);
+                    canAdd = steepness > plant.steepness;
+                    break;
+                case GDObject.ApplicationMode.Orientation:
+                    break;
+                case GDObject.ApplicationMode.HeightRange:
+                    canAdd = newpos.y < plant.maxheight && newpos.y > plant.minheight;
+                    break;
+                case GDObject.ApplicationMode.SlopeRange:
+                    break;
+                default:
+                    break;
+            }
+            if (newpos.y > OceanLevel && canAdd)
+            {
+                availablePositions.Add(newpos);             
+            }    
         }
 
-        AppManager.Get.SplatMap.terrainData.treePrototypes = DrawableTrees;
-        AppManager.Get.SplatMap.terrainData.RefreshPrototypes();
-
-        System.Random prng = new System.Random(10);
-
-        for (int i = 0; i < Import.ChoosenPlants.Count; i++)
+        //process the new position list
+        for (int i = 0; i < availablePositions.Count; i++)
         {
-            GDPlant tree = Import.ChoosenPlants[i] as GDPlant;
+            GameObject clone = Instantiate(plant.obj);
+            COObject data = clone.GetComponent<COObject>();
 
-            for (int j = 0; j < tree.influence; j++)
+            if (data != null)
             {
-                TreeInstance newtree = new TreeInstance();
-
-                newtree.prototypeIndex = i;
-                newtree.color = Color.white;
-                newtree.lightmapColor = Color.white;
-                newtree.heightScale = Random.RandomRange(0.5f, 0.8f);
-                newtree.widthScale = newtree.heightScale;
-
-
-                Vector3 pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
-                newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
-
-
-                switch (tree.Mode)
+                data.ID = i;
+                data.name = plant.ObjectName;
+                switch (data.type)
                 {
-                    case GDObject.ApplicationMode.Height:
-                        float treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
-                        while (treeheightpos < tree.height)
-                        {
-                            pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
-                            newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
-                            treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
-                        }
+                    case COObject.TYPE.TREE:
+                        clone.transform.SetParent(TTrees);
                         break;
-                    case GDObject.ApplicationMode.Slope:
-                        float steepness = AppManager.Get.SplatMap.terrainData.GetSteepness(newtree.position.x, newtree.position.y);
-
-                        while (steepness > tree.steepness)
-                        {
-                            pos = new Vector3((float)prng.NextDouble(), (float)prng.NextDouble(), (float)prng.NextDouble());
-                            newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
-                            steepness = AppManager.Get.SplatMap.terrainData.GetSteepness(newtree.position.x, newtree.position.y);
-                        }
-
+                    case COObject.TYPE.FLOWER:
+                        clone.transform.SetParent(TPlants);
                         break;
-                    case GDObject.ApplicationMode.Orientation:
-
-                        break;
-                    case GDObject.ApplicationMode.HeightRange:
-                        treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
-                        while (treeheightpos > tree.maxheight || treeheightpos < tree.minheight)
-                        {
-                            pos = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-                            newtree.position = new Vector3(pos.x, pos.y, pos.z);
-                            newtree.position.y = AppManager.Get.SplatMap.terrainData.GetInterpolatedHeight(newtree.position.x, newtree.position.z) / AppManager.Get.NoiseMap.WorldScale;
-                            treeheightpos = newtree.position.y * AppManager.Get.NoiseMap.WorldScale;
-                        }
-                        break;
-                    case GDObject.ApplicationMode.SlopeRange:
-
+                    case COObject.TYPE.ROCK:
                         break;
                     default:
+                        clone.transform.SetParent(TTrees);
                         break;
                 }
+            }
+            else
+            {
+                ///Tree object default parent
+                clone.transform.SetParent(TTrees);
 
-                if (newtree.position.y > AppManager.Get.WaterMap.ScaledLevel)
-                {
-                    instances.Add(newtree);
-                }
             }
 
+            clone.transform.localScale = new Vector3(1, Random.Range(0.5f, 1f), 1);
+            clone.transform.localRotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+            clone.transform.localPosition = new Vector3(availablePositions[i].x * terrainData.heightmapResolution, availablePositions[i].y, availablePositions[i].z * terrainData.heightmapResolution);
+
+            yield return null;
         }
 
-        AppManager.Get.SplatMap.terrainData.treeInstances = instances.ToArray();
+        positions.Clear();
+        availablePositions.Clear();
+
+        yield return null;
+    }
+    public IEnumerator Generate()
+    {
+        //Stop current coroutines
+        if(Coroutines != null)
+        {
+            for(int i = 0; i < Coroutines.Count; i++)
+            {
+                StopCoroutine(Coroutines[i]);
+            }
+            Coroutines.Clear();
+        }
+        else
+        {
+            Coroutines = new List<Coroutine>();
+        }
+
+        //Clear the child list
+        foreach (Transform T in TTrees)
+        {
+            Destroy(T.gameObject);
+        }
+        foreach (Transform T in TPlants)
+        {
+            Destroy(T.gameObject);
+        }
+
+        Plants = new List<GDPlant>();
+        for (int i = 0; i < Import.ChoosenPlants.Count; i++)
+        {
+            GDPlant plant = Import.ChoosenPlants[i] as GDPlant;
+            Coroutines.Add(StartCoroutine(GenerateSingle(plant)));
+            Plants.Add(plant);
+        }
+
+        yield return null;
     }
 
 
-    /*for(int y = 0;  y<AppManager.Get.NoiseMap.terrainData.alphamapHeight; y++)
-           {
-               for(int x = 0; x<AppManager.Get.NoiseMap.terrainData.alphamapWidth; x++)
-               {
-                   float y_01 = (float)y / (float)AppManager.Get.NoiseMap.terrainData.alphamapHeight;
-   float x_01 = (float)x / (float)AppManager.Get.NoiseMap.terrainData.alphamapWidth;
 
-   int ix = x / 2;
-   int iy = y / 2;
-
-   float height = AppManager.Get.NoiseMap.terrainData.GetHeight(Mathf.RoundToInt(y_01 * AppManager.Get.NoiseMap.terrainData.heightmapHeight), Mathf.RoundToInt(x_01 * AppManager.Get.NoiseMap.terrainData.heightmapWidth));                    //Get Steepness of the terrain
-   float steepness = AppManager.Get.NoiseMap.terrainData.GetSteepness(x_01, y_01);
-   Vector3 direction = AppManager.Get.NoiseMap.terrainData.GetInterpolatedNormal(x, y);
-
-                   if (height > 80)
-                   {
-                       Debug.Log("yolo");
-                       break;
-                   }
-               }
-           }*/
 
 }

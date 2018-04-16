@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 33000013099615272}
   - component: {fileID: 23000011775227442}
   - component: {fileID: 205000010521316004}
-  - component: {fileID: 114910176401318482}
+  - component: {fileID: 114115801589074518}
   m_Layer: 0
   m_Name: BluePoppy
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129086}
   m_Mesh: {fileID: 4300062, guid: a039687c4c69cba4db8a0b410e840351, type: 3}
---- !u!114 &114910176401318482
+--- !u!114 &114115801589074518
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,11 +92,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 129086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb1a2ead39e91f469ce4d355c17d24c, type: 3}
+  m_Script: {fileID: 11500000, guid: 33c4d0b659f3e714690cad38412b7225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  Name: 
   biome: 0
-  type: 0
+  type: 1
 --- !u!205 &205000010521316004
 LODGroup:
   m_ObjectHideFlags: 1
