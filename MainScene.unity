@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6015002, g: 0.79295814, b: 0.876335, a: 1}
+  m_IndirectSpecularColor: {r: 0.60148567, g: 0.79302126, b: 0.8764179, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1926,7 +1926,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 265592148}
-  - component: {fileID: 265592150}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -1957,17 +1956,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 196}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &265592150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 265592147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ecedb10569b71459a15752c993fab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &272301669
 Prefab:
   m_ObjectHideFlags: 0
@@ -3313,7 +3301,7 @@ MonoBehaviour:
   SplatMap: {fileID: 736075274}
   WaterMap: {fileID: 736075275}
   PlantMap: {fileID: 736075277}
-  NoiseGUI: {fileID: 2072511022}
+  NoiseGUI: {fileID: 0}
   NoiseMapGenerated: 0
   TerrainGenerated: 0
   TextureGenrated: 0
@@ -5476,7 +5464,6 @@ GameObject:
   - component: {fileID: 736075273}
   - component: {fileID: 736075274}
   - component: {fileID: 736075275}
-  - component: {fileID: 736075276}
   - component: {fileID: 736075277}
   m_Layer: 0
   m_Name: _Generator
@@ -5540,17 +5527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterPlane: {fileID: 1353871611561182, guid: 58f3dd94646a1544b9faec3a996ef474, type: 2}
---- !u!114 &736075276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736075271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119f79296a0b1c949ba0912a764015fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &736075277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6844,7 +6820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 964532195}
   - component: {fileID: 964532194}
-  - component: {fileID: 964532196}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -6901,17 +6876,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &964532196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964532193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17894ad9acdd77a4c99a196a627149d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &976064107 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224639577808074890, guid: 2df901a6945ffbc448186f223d70c4c5,

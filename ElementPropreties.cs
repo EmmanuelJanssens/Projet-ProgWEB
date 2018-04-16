@@ -45,7 +45,6 @@ public class ElementPropreties : MonoBehaviour
                 Density.transform.parent.gameObject.SetActive(true);
                 Clump.transform.parent.gameObject.SetActive(true);
                 Resolution.transform.parent.gameObject.SetActive(true);
-
                 break;
         }
 

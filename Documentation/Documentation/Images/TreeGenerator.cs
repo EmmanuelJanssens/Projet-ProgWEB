@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class TreeGenerator : MonoBehaviour
 {
     public ImportElementIntoPanel TreeElements;
@@ -130,6 +131,7 @@ public class TreeGenerator : MonoBehaviour
                         break;
                     }
                 }
-            }*/
+            }
 
 }
+*/
