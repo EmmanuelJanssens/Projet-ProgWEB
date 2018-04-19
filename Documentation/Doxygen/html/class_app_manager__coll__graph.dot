@@ -1,0 +1,39 @@
+digraph "AppManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="AppManager",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MonoBehaviour",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" current" ,fontname="Helvetica"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PlantMap" ,fontname="Helvetica"];
+  Node4 [label="VegetationGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vegetation_generator.html",tooltip="Places trees randomly on the map "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" disk" ,fontname="Helvetica"];
+  Node5 [label="PoissonDisk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_poisson_disk.html"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Import" ,fontname="Helvetica"];
+  Node6 [label="ChooseAssets",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_assets.html",tooltip="Used when the user desires to import new assets in to the editor loads assets from the bundles that w..."];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Loader" ,fontname="Helvetica"];
+  Node7 [label="BundleLoader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_bundle_loader.html",tooltip="Load available bundles "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SplatMap" ,fontname="Helvetica"];
+  Node8 [label="TextureGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_texture_generator.html",tooltip="Texture generator imports the textures into the terrain data splatPrototypes The imported textures ar..."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" current" ,fontname="Helvetica"];
+  Node6 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Import" ,fontname="Helvetica"];
+  Node9 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NoiseMap" ,fontname="Helvetica"];
+  Node9 [label="NoiseGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_noise_generator.html",tooltip="Used to generate a noisemap Data from this map is used through the whole project "];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" current" ,fontname="Helvetica"];
+  Node10 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" WaterMap" ,fontname="Helvetica"];
+  Node10 [label="LakeGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_lake_generator.html"];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ObjectToModify" ,fontname="Helvetica"];
+  Node11 [label="GDObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_d_object.html",tooltip="Data class that will be used to generate the trees onto the therrain "];
+  Node12 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NoiseGUI" ,fontname="Helvetica"];
+  Node12 [label="NoiseUI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_noise_u_i.html",tooltip="Used to link values of the interface to the generator "];
+  Node3 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" AppManage" ,fontname="Helvetica"];
+}

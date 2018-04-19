@@ -1,0 +1,284 @@
+\section{Player\+Controller Class Reference}
+\label{class_player_controller}\index{Player\+Controller@{Player\+Controller}}
+
+
+Used to move an object arround into the world  
+
+
+Inheritance diagram for Player\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_player_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ On\+Start} ()
+\item 
+void \textbf{ Start} ()
+\item 
+virtual void \textbf{ On\+Update} ()
+\item 
+void \textbf{ Update} ()
+\item 
+virtual void \textbf{ On\+Fixed\+Update} ()
+\item 
+void \textbf{ Fixed\+Update} ()
+\item 
+virtual void \textbf{ On\+Destroy} ()
+\item 
+void \textbf{ Sprint} (bool sprinting)
+\begin{DoxyCompactList}\small\item\em Makes the player move faster \end{DoxyCompactList}\item 
+void \textbf{ Jump} ()
+\begin{DoxyCompactList}\small\item\em Aplies a force to the rigidbody to make im go upwards \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \textbf{ \+\_\+rb}
+\item 
+float \textbf{ \+\_\+\+Jump\+Force} = 3f
+\item 
+float \textbf{ \+\_\+\+Base\+Speed} = 1f
+\item 
+float \textbf{ \+\_\+\+Sprint\+Speed\+Bonus} = 2f
+\item 
+float \textbf{ \+\_\+\+Crouch\+Speed\+Malus} = .\+4f
+\item 
+float \textbf{ \+\_\+\+Current\+Speed}
+\item 
+bool \textbf{ \+\_\+is\+Sprinting} = false
+\item 
+Character\+Controller \textbf{ \+\_\+controler}
+\item 
+Vector3 \textbf{ \+\_\+move\+Direction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to move an object arround into the world 
+
+
+
+Definition at line 10 of file Player\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_player_controller_ae5bdb1b48571f67c3f722a58b6f404d4}} 
+\index{Player\+Controller@{Player\+Controller}!Fixed\+Update@{Fixed\+Update}}
+\index{Fixed\+Update@{Fixed\+Update}!Player\+Controller@{Player\+Controller}}
+\subsubsection{Fixed\+Update()}
+{\footnotesize\ttfamily void Player\+Controller.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a8a7010cb6f3c524737be3f6f77553df9}} 
+\index{Player\+Controller@{Player\+Controller}!Jump@{Jump}}
+\index{Jump@{Jump}!Player\+Controller@{Player\+Controller}}
+\subsubsection{Jump()}
+{\footnotesize\ttfamily void Player\+Controller.\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aplies a force to the rigidbody to make im go upwards 
+
+
+
+Definition at line 72 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a8de9dab81e321febb61e610716d0ed78}} 
+\index{Player\+Controller@{Player\+Controller}!On\+Destroy@{On\+Destroy}}
+\index{On\+Destroy@{On\+Destroy}!Player\+Controller@{Player\+Controller}}
+\subsubsection{On\+Destroy()}
+{\footnotesize\ttfamily virtual void Player\+Controller.\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ User\+Input} \doxyref{}{p.}{class_user_input_a8eb32460c58d55d9df9297365170ad7b}.
+
+
+
+Definition at line 54 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a92541136d00195ef8f131c48f62f321e}} 
+\index{Player\+Controller@{Player\+Controller}!On\+Fixed\+Update@{On\+Fixed\+Update}}
+\index{On\+Fixed\+Update@{On\+Fixed\+Update}!Player\+Controller@{Player\+Controller}}
+\subsubsection{On\+Fixed\+Update()}
+{\footnotesize\ttfamily virtual void Player\+Controller.\+On\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ User\+Input} \doxyref{}{p.}{class_user_input_aa37703fdb25ee035c978f47bd206a6a4}.
+
+
+
+Definition at line 50 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a10822ba93c954d41a04cc0ed2c9b2458}} 
+\index{Player\+Controller@{Player\+Controller}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Player\+Controller@{Player\+Controller}}
+\subsubsection{On\+Start()}
+{\footnotesize\ttfamily virtual void Player\+Controller.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ User\+Input} \doxyref{}{p.}{class_user_input_a21896b4f5ceb651d24b4c04e36f4957f}.
+
+
+
+Definition at line 31 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a3ab10c98b6ed3ce84df76224aacb5806}} 
+\index{Player\+Controller@{Player\+Controller}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Player\+Controller@{Player\+Controller}}
+\subsubsection{On\+Update()}
+{\footnotesize\ttfamily virtual void Player\+Controller.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ User\+Input} \doxyref{}{p.}{class_user_input_ac7e0e34d4fdf357bfa94bc106e857fcc}.
+
+
+
+Definition at line 45 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_afc3846fe6c40018dc5aead24131bf015}} 
+\index{Player\+Controller@{Player\+Controller}!Sprint@{Sprint}}
+\index{Sprint@{Sprint}!Player\+Controller@{Player\+Controller}}
+\subsubsection{Sprint()}
+{\footnotesize\ttfamily void Player\+Controller.\+Sprint (\begin{DoxyParamCaption}\item[{bool}]{sprinting }\end{DoxyParamCaption})}
+
+
+
+Makes the player move faster 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprinting} & Determines if the player started sprinting\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_ae1117d9c4da3193181cddad2c814e467}} 
+\index{Player\+Controller@{Player\+Controller}!Start@{Start}}
+\index{Start@{Start}!Player\+Controller@{Player\+Controller}}
+\subsubsection{Start()}
+{\footnotesize\ttfamily void Player\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_ae8bc83dffb99867a04be016473ed2c43}} 
+\index{Player\+Controller@{Player\+Controller}!Update@{Update}}
+\index{Update@{Update}!Player\+Controller@{Player\+Controller}}
+\subsubsection{Update()}
+{\footnotesize\ttfamily void Player\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file Player\+Controller.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_player_controller_a5ef2b6b91716e2b380e7a9bccfbde623}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+\+Base\+Speed@{\+\_\+\+Base\+Speed}}
+\index{\+\_\+\+Base\+Speed@{\+\_\+\+Base\+Speed}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+\+Base\+Speed}
+{\footnotesize\ttfamily float Player\+Controller.\+\_\+\+Base\+Speed = 1f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_aff992e793625cf055a6f6d76711d0423}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+controler@{\+\_\+controler}}
+\index{\+\_\+controler@{\+\_\+controler}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+controler}
+{\footnotesize\ttfamily Character\+Controller Player\+Controller.\+\_\+controler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 27 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a99c22dff42fc6cd3dd14b3a69322efc3}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+\+Crouch\+Speed\+Malus@{\+\_\+\+Crouch\+Speed\+Malus}}
+\index{\+\_\+\+Crouch\+Speed\+Malus@{\+\_\+\+Crouch\+Speed\+Malus}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+\+Crouch\+Speed\+Malus}
+{\footnotesize\ttfamily float Player\+Controller.\+\_\+\+Crouch\+Speed\+Malus = .\+4f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a231f5d3497deb75651846f64d0adcc87}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+\+Current\+Speed@{\+\_\+\+Current\+Speed}}
+\index{\+\_\+\+Current\+Speed@{\+\_\+\+Current\+Speed}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+\+Current\+Speed}
+{\footnotesize\ttfamily float Player\+Controller.\+\_\+\+Current\+Speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 23 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_af41bc2e6e389511ddf77d483a552fde1}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+is\+Sprinting@{\+\_\+is\+Sprinting}}
+\index{\+\_\+is\+Sprinting@{\+\_\+is\+Sprinting}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+is\+Sprinting}
+{\footnotesize\ttfamily bool Player\+Controller.\+\_\+is\+Sprinting = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a7500bb0716f4729b48d263093a804fc3}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+\+Jump\+Force@{\+\_\+\+Jump\+Force}}
+\index{\+\_\+\+Jump\+Force@{\+\_\+\+Jump\+Force}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+\+Jump\+Force}
+{\footnotesize\ttfamily float Player\+Controller.\+\_\+\+Jump\+Force = 3f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a53dcb11267eb9252b8ee4afe3cb0b887}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+move\+Direction@{\+\_\+move\+Direction}}
+\index{\+\_\+move\+Direction@{\+\_\+move\+Direction}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+move\+Direction}
+{\footnotesize\ttfamily Vector3 Player\+Controller.\+\_\+move\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_a1fcd3c6fff25a2076632e1721603c700}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+rb@{\+\_\+rb}}
+\index{\+\_\+rb@{\+\_\+rb}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+rb}
+{\footnotesize\ttfamily Rigidbody Player\+Controller.\+\_\+rb\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 12 of file Player\+Controller.\+cs.
+
+\mbox{\label{class_player_controller_adf682db2dafcb6df9ee47971dcdb47d8}} 
+\index{Player\+Controller@{Player\+Controller}!\+\_\+\+Sprint\+Speed\+Bonus@{\+\_\+\+Sprint\+Speed\+Bonus}}
+\index{\+\_\+\+Sprint\+Speed\+Bonus@{\+\_\+\+Sprint\+Speed\+Bonus}!Player\+Controller@{Player\+Controller}}
+\subsubsection{\+\_\+\+Sprint\+Speed\+Bonus}
+{\footnotesize\ttfamily float Player\+Controller.\+\_\+\+Sprint\+Speed\+Bonus = 2f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 19 of file Player\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+Events/\textbf{ Player\+Controller.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\section{List\+Manager Class Reference}
+\label{class_list_manager}\index{List\+Manager@{List\+Manager}}
+
+
+Manages a list of objects move them up and down remove them  
+
+
+Inheritance diagram for List\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_list_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Start} ()
+\item 
+void \textbf{ Init} ()
+\item 
+virtual void \textbf{ Move\+Up} (int index)
+\begin{DoxyCompactList}\small\item\em Move an element up in the list \end{DoxyCompactList}\item 
+virtual void \textbf{ Move\+Down} (int index)
+\begin{DoxyCompactList}\small\item\em Moves an element down in the list \end{DoxyCompactList}\item 
+virtual void \textbf{ Update\+Identifiers} ()
+\begin{DoxyCompactList}\small\item\em Updates Identifers list for sorting \end{DoxyCompactList}\item 
+virtual void \textbf{ Remove} (int index)
+\begin{DoxyCompactList}\small\item\em Removes an element from the hierarchy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ List\+Event} \textbf{ on\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \textbf{ List\+Element} $>$ \textbf{ Elements}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a list of objects move them up and down remove them 
+
+
+
+Definition at line 12 of file List\+Manager.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_list_manager_abbfd04f3710ffab77929672a9400a30a}} 
+\index{List\+Manager@{List\+Manager}!Init@{Init}}
+\index{Init@{Init}!List\+Manager@{List\+Manager}}
+\subsubsection{Init()}
+{\footnotesize\ttfamily void List\+Manager.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file List\+Manager.\+cs.
+
+\mbox{\label{class_list_manager_a7543efeedf5ea74bc06ac96a58b6edca}} 
+\index{List\+Manager@{List\+Manager}!Move\+Down@{Move\+Down}}
+\index{Move\+Down@{Move\+Down}!List\+Manager@{List\+Manager}}
+\subsubsection{Move\+Down()}
+{\footnotesize\ttfamily virtual void List\+Manager.\+Move\+Down (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves an element down in the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the element to be moved\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file List\+Manager.\+cs.
+
+\mbox{\label{class_list_manager_a7833ed56885fd00805d1b19c39f347b9}} 
+\index{List\+Manager@{List\+Manager}!Move\+Up@{Move\+Up}}
+\index{Move\+Up@{Move\+Up}!List\+Manager@{List\+Manager}}
+\subsubsection{Move\+Up()}
+{\footnotesize\ttfamily virtual void List\+Manager.\+Move\+Up (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move an element up in the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the element to be moved\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file List\+Manager.\+cs.
+
+\mbox{\label{class_list_manager_aee6e3b1cb62e22ab3a53fe358a7bea62}} 
+\index{List\+Manager@{List\+Manager}!Remove@{Remove}}
+\index{Remove@{Remove}!List\+Manager@{List\+Manager}}
+\subsubsection{Remove()}
+{\footnotesize\ttfamily virtual void List\+Manager.\+Remove (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an element from the hierarchy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file List\+Manager.\+cs.
+
+\mbox{\label{class_list_manager_a5522129cad973d59d80b57ba2091bfd0}} 
+\index{List\+Manager@{List\+Manager}!Start@{Start}}
+\index{Start@{Start}!List\+Manager@{List\+Manager}}
+\subsubsection{Start()}
+{\footnotesize\ttfamily void List\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file List\+Manager.\+cs.
+
+\mbox{\label{class_list_manager_a1d5fe8fbf5c0860888cb6395f632b3db}} 
+\index{List\+Manager@{List\+Manager}!Update\+Identifiers@{Update\+Identifiers}}
+\index{Update\+Identifiers@{Update\+Identifiers}!List\+Manager@{List\+Manager}}
+\subsubsection{Update\+Identifiers()}
+{\footnotesize\ttfamily virtual void List\+Manager.\+Update\+Identifiers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates Identifers list for sorting 
+
+
+
+Definition at line 79 of file List\+Manager.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_list_manager_aa83a7863d792c9e75fe7866e4ee5f00e}} 
+\index{List\+Manager@{List\+Manager}!on\+Event@{on\+Event}}
+\index{on\+Event@{on\+Event}!List\+Manager@{List\+Manager}}
+\subsubsection{on\+Event}
+{\footnotesize\ttfamily \textbf{ List\+Event} List\+Manager.\+on\+Event}
+
+
+
+Definition at line 21 of file List\+Manager.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\label{class_list_manager_accc7245d979b9c9dba58a9fc7f7b76a2}} 
+\index{List\+Manager@{List\+Manager}!Elements@{Elements}}
+\index{Elements@{Elements}!List\+Manager@{List\+Manager}}
+\subsubsection{Elements}
+{\footnotesize\ttfamily List$<$\textbf{ List\+Element}$>$ List\+Manager.\+Elements\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 19 of file List\+Manager.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+U\+I/\+List/\textbf{ List\+Manager.\+cs}\end{DoxyCompactItemize}

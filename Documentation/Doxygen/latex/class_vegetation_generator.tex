@@ -1,0 +1,185 @@
+\section{Vegetation\+Generator Class Reference}
+\label{class_vegetation_generator}\index{Vegetation\+Generator@{Vegetation\+Generator}}
+
+
+Places trees randomly on the map  
+
+
+Inheritance diagram for Vegetation\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vegetation_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Start} ()
+\item 
+I\+Enumerator \textbf{ Generate\+Single} (\textbf{ G\+D\+Plant} plant)
+\begin{DoxyCompactList}\small\item\em Generates a single type of plant One plant uses one coroutine with that when multiplie plants are generated they are generated all together \end{DoxyCompactList}\item 
+I\+Enumerator \textbf{ Generate} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Choose\+Assets} \textbf{ Import}
+\begin{DoxyCompactList}\small\item\em Elements of the vegetation assets that where imported \end{DoxyCompactList}\item 
+Transform \textbf{ T\+Trees}
+\begin{DoxyCompactList}\small\item\em Parent transform for the trees \end{DoxyCompactList}\item 
+Transform \textbf{ T\+Plants}
+\begin{DoxyCompactList}\small\item\em Parent transform for the plants \end{DoxyCompactList}\item 
+\textbf{ Poisson\+Disk} \textbf{ disk}
+\begin{DoxyCompactList}\small\item\em Poisson disk algorythm \end{DoxyCompactList}\item 
+List$<$ Coroutine $>$ \textbf{ Coroutines}
+\begin{DoxyCompactList}\small\item\em List of the coroutines that are active \end{DoxyCompactList}\item 
+List$<$ \textbf{ G\+D\+Plant} $>$ \textbf{ Plants}
+\begin{DoxyCompactList}\small\item\em List of the plants that where selected \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Places trees randomly on the map 
+
+///\+T\+O\+DO Generate a noisemap that will be used to control forest density 
+
+Definition at line 12 of file Vegetation\+Generator.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_vegetation_generator_a1933cc928c652109412c426a9894648d}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Generate@{Generate}}
+\index{Generate@{Generate}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Generate()}
+{\footnotesize\ttfamily I\+Enumerator Vegetation\+Generator.\+Generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_a0de1e03a07dfa8a3f21f23d3366152f4}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Generate\+Single@{Generate\+Single}}
+\index{Generate\+Single@{Generate\+Single}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Generate\+Single()}
+{\footnotesize\ttfamily I\+Enumerator Vegetation\+Generator.\+Generate\+Single (\begin{DoxyParamCaption}\item[{\textbf{ G\+D\+Plant}}]{plant }\end{DoxyParamCaption})}
+
+
+
+Generates a single type of plant One plant uses one coroutine with that when multiplie plants are generated they are generated all together 
+
+Sequence -- generates all positions -- go through all the positions and check if the position is valid -- add them to a list of available position -- Instantiates object at that valid position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Tree object default parent 
+
+Definition at line 63 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_a5c7e497cbd87ae74ee12c87608de1744}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Start@{Start}}
+\index{Start@{Start}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Start()}
+{\footnotesize\ttfamily void Vegetation\+Generator.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file Vegetation\+Generator.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_vegetation_generator_acb98b6e4d606e6a1db485f6e57dd5199}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Coroutines@{Coroutines}}
+\index{Coroutines@{Coroutines}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Coroutines}
+{\footnotesize\ttfamily List$<$Coroutine$>$ Vegetation\+Generator.\+Coroutines}
+
+
+
+List of the coroutines that are active 
+
+
+
+Definition at line 38 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_ad20b57f637f32c7cb9eebd0c20f2cccd}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!disk@{disk}}
+\index{disk@{disk}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{disk}
+{\footnotesize\ttfamily \textbf{ Poisson\+Disk} Vegetation\+Generator.\+disk}
+
+
+
+Poisson disk algorythm 
+
+
+
+Definition at line 33 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_a519539bde478c2603c7abe17e7ba31e3}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Import@{Import}}
+\index{Import@{Import}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Import}
+{\footnotesize\ttfamily \textbf{ Choose\+Assets} Vegetation\+Generator.\+Import}
+
+
+
+Elements of the vegetation assets that where imported 
+
+
+
+Definition at line 18 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_a86daf4c4b243d24071e2b9850d19b985}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!Plants@{Plants}}
+\index{Plants@{Plants}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{Plants}
+{\footnotesize\ttfamily List$<$\textbf{ G\+D\+Plant}$>$ Vegetation\+Generator.\+Plants}
+
+
+
+List of the plants that where selected 
+
+
+
+Definition at line 43 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_a92c54788fc3571d4146b6e07ed89f388}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!T\+Plants@{T\+Plants}}
+\index{T\+Plants@{T\+Plants}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{T\+Plants}
+{\footnotesize\ttfamily Transform Vegetation\+Generator.\+T\+Plants}
+
+
+
+Parent transform for the plants 
+
+
+
+Definition at line 28 of file Vegetation\+Generator.\+cs.
+
+\mbox{\label{class_vegetation_generator_aab661132e8945da3ae507ff9bc61e589}} 
+\index{Vegetation\+Generator@{Vegetation\+Generator}!T\+Trees@{T\+Trees}}
+\index{T\+Trees@{T\+Trees}!Vegetation\+Generator@{Vegetation\+Generator}}
+\subsubsection{T\+Trees}
+{\footnotesize\ttfamily Transform Vegetation\+Generator.\+T\+Trees}
+
+
+
+Parent transform for the trees 
+
+
+
+Definition at line 23 of file Vegetation\+Generator.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+Generator/\textbf{ Vegetation\+Generator.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,269 @@
+\section{Choose\+Assets Class Reference}
+\label{class_choose_assets}\index{Choose\+Assets@{Choose\+Assets}}
+
+
+Used when the user desires to import new assets in to the editor loads assets from the bundles that were loaded  
+
+
+Inheritance diagram for Choose\+Assets\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_choose_assets}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ On\+Enable} ()
+\begin{DoxyCompactList}\small\item\em When the frame opens whe have to start the displaying \end{DoxyCompactList}\item 
+I\+Enumerator \textbf{ Display\+Assets} ()
+\begin{DoxyCompactList}\small\item\em Displays all the available UI elements into the selection frame \end{DoxyCompactList}\item 
+I\+Enumerator \textbf{ Export\+Assets} ()
+\begin{DoxyCompactList}\small\item\em Exports the assets to be used with custom objects Creates an array of all selected assets (toogle.\+Is\+On = true) And simultanously creates Elements into a list \end{DoxyCompactList}\item 
+void \textbf{ Open\+Propreties} (int i)
+\item 
+void \textbf{ Remove\+Element\+From\+Choosen} (int id)
+\item 
+void \textbf{ Move\+Element\+Up} (int id)
+\item 
+void \textbf{ Move\+Element\+Down} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \textbf{ Element\+Available}
+\begin{DoxyCompactList}\small\item\em Elements to be displayed in the selection frame \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Element\+Selected}
+\begin{DoxyCompactList}\small\item\em Elements that will be displayed in the editor \end{DoxyCompactList}\item 
+Game\+Object \textbf{ frm\+Element\+Propreties}
+\begin{DoxyCompactList}\small\item\em Frame of the propreties from each element One unique frame updated everytime a different element is selected \end{DoxyCompactList}\item 
+Button \textbf{ Start\+Importation}
+\begin{DoxyCompactList}\small\item\em Command that starts the importation of the selected elements into the editor panel \end{DoxyCompactList}\item 
+Button [$\,$] \textbf{ cmd\+Open\+Propreties}
+\begin{DoxyCompactList}\small\item\em List of commands to control each selected elements Move Up,Down, Open propreties \end{DoxyCompactList}\item 
+\textbf{ Bundle\+Loader} \textbf{ Loader}
+\begin{DoxyCompactList}\small\item\em Used to load the bundles \end{DoxyCompactList}\item 
+List$<$ \textbf{ G\+D\+Texture} $>$ \textbf{ Choosen\+Textures}
+\begin{DoxyCompactList}\small\item\em A list of the textures that where selected \end{DoxyCompactList}\item 
+List$<$ \textbf{ G\+D\+Plant} $>$ \textbf{ Choosen\+Plants}
+\begin{DoxyCompactList}\small\item\em A list of the plants that where selected \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used when the user desires to import new assets in to the editor loads assets from the bundles that were loaded 
+
+
+
+Definition at line 10 of file Choose\+Assets.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_choose_assets_a60025b6cba8c2b5f418416f43a8218eb}} 
+\index{Choose\+Assets@{Choose\+Assets}!Display\+Assets@{Display\+Assets}}
+\index{Display\+Assets@{Display\+Assets}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Display\+Assets()}
+{\footnotesize\ttfamily I\+Enumerator Choose\+Assets.\+Display\+Assets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays all the available UI elements into the selection frame 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a99ebedc3eec2ed38293b96c28cd12612}} 
+\index{Choose\+Assets@{Choose\+Assets}!Export\+Assets@{Export\+Assets}}
+\index{Export\+Assets@{Export\+Assets}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Export\+Assets()}
+{\footnotesize\ttfamily I\+Enumerator Choose\+Assets.\+Export\+Assets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exports the assets to be used with custom objects Creates an array of all selected assets (toogle.\+Is\+On = true) And simultanously creates Elements into a list 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_ab65fa20ae8df3bc993f89259aac7b0f1}} 
+\index{Choose\+Assets@{Choose\+Assets}!Move\+Element\+Down@{Move\+Element\+Down}}
+\index{Move\+Element\+Down@{Move\+Element\+Down}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Move\+Element\+Down()}
+{\footnotesize\ttfamily void Choose\+Assets.\+Move\+Element\+Down (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 269 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a892154344570fc0ca4d5cda73c2a88c4}} 
+\index{Choose\+Assets@{Choose\+Assets}!Move\+Element\+Up@{Move\+Element\+Up}}
+\index{Move\+Element\+Up@{Move\+Element\+Up}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Move\+Element\+Up()}
+{\footnotesize\ttfamily void Choose\+Assets.\+Move\+Element\+Up (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 241 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_af97999a56f830b311a3ff9517a259666}} 
+\index{Choose\+Assets@{Choose\+Assets}!On\+Enable@{On\+Enable}}
+\index{On\+Enable@{On\+Enable}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{On\+Enable()}
+{\footnotesize\ttfamily void Choose\+Assets.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When the frame opens whe have to start the displaying 
+
+
+
+Definition at line 94 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_aefc9eb667ed65c233960a67beb60637b}} 
+\index{Choose\+Assets@{Choose\+Assets}!Open\+Propreties@{Open\+Propreties}}
+\index{Open\+Propreties@{Open\+Propreties}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Open\+Propreties()}
+{\footnotesize\ttfamily void Choose\+Assets.\+Open\+Propreties (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_aa0273937884f0a001e8fcfdaf00bf5cb}} 
+\index{Choose\+Assets@{Choose\+Assets}!Remove\+Element\+From\+Choosen@{Remove\+Element\+From\+Choosen}}
+\index{Remove\+Element\+From\+Choosen@{Remove\+Element\+From\+Choosen}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Remove\+Element\+From\+Choosen()}
+{\footnotesize\ttfamily void Choose\+Assets.\+Remove\+Element\+From\+Choosen (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 226 of file Choose\+Assets.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_choose_assets_ad6e56c946cc17d9f62b48be017d269a6}} 
+\index{Choose\+Assets@{Choose\+Assets}!Choosen\+Plants@{Choosen\+Plants}}
+\index{Choosen\+Plants@{Choosen\+Plants}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Choosen\+Plants}
+{\footnotesize\ttfamily List$<$\textbf{ G\+D\+Plant}$>$ Choose\+Assets.\+Choosen\+Plants}
+
+
+
+A list of the plants that where selected 
+
+
+
+Definition at line 63 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a16f6012ea7261f6ddb2be3244d494516}} 
+\index{Choose\+Assets@{Choose\+Assets}!Choosen\+Textures@{Choosen\+Textures}}
+\index{Choosen\+Textures@{Choosen\+Textures}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Choosen\+Textures}
+{\footnotesize\ttfamily List$<$\textbf{ G\+D\+Texture}$>$ Choose\+Assets.\+Choosen\+Textures}
+
+
+
+A list of the textures that where selected 
+
+
+
+Definition at line 58 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_aeefcb389af6f12ba925c4becf5d1d06d}} 
+\index{Choose\+Assets@{Choose\+Assets}!cmd\+Open\+Propreties@{cmd\+Open\+Propreties}}
+\index{cmd\+Open\+Propreties@{cmd\+Open\+Propreties}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{cmd\+Open\+Propreties}
+{\footnotesize\ttfamily Button [$\,$] Choose\+Assets.\+cmd\+Open\+Propreties}
+
+
+
+List of commands to control each selected elements Move Up,Down, Open propreties 
+
+
+
+Definition at line 48 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a7f25d91291f73930cc5e57854338d1c9}} 
+\index{Choose\+Assets@{Choose\+Assets}!Element\+Available@{Element\+Available}}
+\index{Element\+Available@{Element\+Available}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Element\+Available}
+{\footnotesize\ttfamily Game\+Object Choose\+Assets.\+Element\+Available}
+
+
+
+Elements to be displayed in the selection frame 
+
+
+
+Definition at line 26 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_ac3db163e05f17b5a8745c02ee1c004cd}} 
+\index{Choose\+Assets@{Choose\+Assets}!Element\+Selected@{Element\+Selected}}
+\index{Element\+Selected@{Element\+Selected}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Element\+Selected}
+{\footnotesize\ttfamily Game\+Object Choose\+Assets.\+Element\+Selected}
+
+
+
+Elements that will be displayed in the editor 
+
+
+
+Definition at line 31 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_acb74e129636a259f54c09c045ef21bd1}} 
+\index{Choose\+Assets@{Choose\+Assets}!frm\+Element\+Propreties@{frm\+Element\+Propreties}}
+\index{frm\+Element\+Propreties@{frm\+Element\+Propreties}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{frm\+Element\+Propreties}
+{\footnotesize\ttfamily Game\+Object Choose\+Assets.\+frm\+Element\+Propreties}
+
+
+
+Frame of the propreties from each element One unique frame updated everytime a different element is selected 
+
+
+
+Definition at line 37 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a4b6f32724c1e732d16c03c55b1cbd331}} 
+\index{Choose\+Assets@{Choose\+Assets}!Loader@{Loader}}
+\index{Loader@{Loader}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Loader}
+{\footnotesize\ttfamily \textbf{ Bundle\+Loader} Choose\+Assets.\+Loader}
+
+
+
+Used to load the bundles 
+
+
+
+Definition at line 53 of file Choose\+Assets.\+cs.
+
+\mbox{\label{class_choose_assets_a51e0823ea63f0ee70f6f5c29f82a0f63}} 
+\index{Choose\+Assets@{Choose\+Assets}!Start\+Importation@{Start\+Importation}}
+\index{Start\+Importation@{Start\+Importation}!Choose\+Assets@{Choose\+Assets}}
+\subsubsection{Start\+Importation}
+{\footnotesize\ttfamily Button Choose\+Assets.\+Start\+Importation}
+
+
+
+Command that starts the importation of the selected elements into the editor panel 
+
+
+
+Definition at line 42 of file Choose\+Assets.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+Asset\+Loader/\textbf{ Choose\+Assets.\+cs}\end{DoxyCompactItemize}

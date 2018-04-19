@@ -1,0 +1,14 @@
+digraph "ElementPropreties"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2 [label="ElementPropreties",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MonoBehaviour",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Tabs" ,fontname="Helvetica"];
+  Node4 [label="SwitchTab",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_switch_tab.html",tooltip="Gui inerface script That handles switching between an amount of tabs "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ActiveTab" ,fontname="Helvetica"];
+  Node5 [label="TabItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tab_item.html",tooltip="Item of a SwitchTab "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

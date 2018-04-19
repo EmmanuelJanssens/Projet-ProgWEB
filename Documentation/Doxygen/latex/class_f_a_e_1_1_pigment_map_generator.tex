@@ -1,0 +1,398 @@
+\section{F\+A\+E.\+Pigment\+Map\+Generator Class Reference}
+\label{class_f_a_e_1_1_pigment_map_generator}\index{F\+A\+E.\+Pigment\+Map\+Generator@{F\+A\+E.\+Pigment\+Map\+Generator}}
+Inheritance diagram for F\+A\+E.\+Pigment\+Map\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_a_e_1_1_pigment_map_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Texture\+Rotation} \{ \textbf{ Texture\+Rotation.\+None}, 
+\textbf{ Texture\+Rotation.\+Quarter}, 
+\textbf{ Texture\+Rotation.\+Half}, 
+\textbf{ Texture\+Rotation.\+Three\+Quarters}
+ \}
+\item 
+enum \textbf{ Heightmap\+Channel} \{ \newline
+\textbf{ Heightmap\+Channel.\+None}, 
+\textbf{ Heightmap\+Channel.\+Slot1}, 
+\textbf{ Heightmap\+Channel.\+Slot2}, 
+\textbf{ Heightmap\+Channel.\+Slot3}, 
+\newline
+\textbf{ Heightmap\+Channel.\+Slot4}, 
+\textbf{ Heightmap\+Channel.\+Slot5}, 
+\textbf{ Heightmap\+Channel.\+Slot6}, 
+\textbf{ Heightmap\+Channel.\+Slot7}, 
+\newline
+\textbf{ Heightmap\+Channel.\+Slot8}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Init} ()
+\item 
+void \textbf{ Get\+Target\+Info} ()
+\item 
+void \textbf{ Set\+Pigment\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Terrain\+U\+V\+Util} \textbf{ util}
+\item 
+\textbf{ Terrain\+U\+V\+Util.\+Workflow} \textbf{ workflow}
+\item 
+float \textbf{ render\+Light\+Brightness} = 0.\+25f
+\item 
+bool \textbf{ use\+Alternative\+Renderer}
+\item 
+bool \textbf{ is\+Center\+Pivot}
+\item 
+Terrain \textbf{ terrain}
+\item 
+Texture2D \textbf{ input\+Heightmap}
+\item 
+Texture2D \textbf{ input\+Pigment\+Map}
+\item 
+bool \textbf{ use\+Custom\+Pigment\+Map}
+\item 
+bool \textbf{ flip\+Vertically}
+\item 
+bool \textbf{ flip\+Hortizontally}
+\item 
+\textbf{ Texture\+Rotation} \textbf{ texture\+Rotation}
+\item 
+Texture2D \textbf{ pigment\+Map}
+\item 
+Vector3 \textbf{ target\+Size}
+\item 
+Vector3 \textbf{ target\+Position}
+\item 
+Vector3 \textbf{ target\+Center\+Position}
+\item 
+string \textbf{ save\+Path}
+\item 
+bool \textbf{ has\+Terrain\+Data} = true
+\item 
+\textbf{ Heightmap\+Channel} \textbf{ heightmap\+Channel} = \textbf{ Heightmap\+Channel.\+None}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Pigment\+Map\+Generator.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4ac}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Heightmap\+Channel@{Heightmap\+Channel}}
+\index{Heightmap\+Channel@{Heightmap\+Channel}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{Heightmap\+Channel}
+{\footnotesize\ttfamily enum \textbf{ F\+A\+E.\+Pigment\+Map\+Generator.\+Heightmap\+Channel}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!None@{None}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot1@{Slot1}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot1@{Slot1}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4acae88c874b75305f81e897b8e8fec372a3}} 
+Slot1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot2@{Slot2}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot2@{Slot2}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca0f93d2ac970ec933f0c16225d67747bd}} 
+Slot2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot3@{Slot3}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot3@{Slot3}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca2ea42a2b8c41268067f866446a671f3c}} 
+Slot3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot4@{Slot4}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot4@{Slot4}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca99f22e8284d0b005ed31e67773a56152}} 
+Slot4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot5@{Slot5}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot5@{Slot5}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4acab36642d0267e01b974f01d395980acff}} 
+Slot5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot6@{Slot6}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot6@{Slot6}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca2e1c478ad3ee36c3d2c6671271109ec2}} 
+Slot6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot7@{Slot7}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot7@{Slot7}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca3fe8576c358f16ba47992066684ea12e}} 
+Slot7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slot8@{Slot8}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Slot8@{Slot8}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_adc18e7ed469d0fb5f5708401ca28a4aca279b9715da666d337d3d864475e91573}} 
+Slot8&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 85 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a67a080c3d9b8506cdef2e1efdb4efede}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Texture\+Rotation@{Texture\+Rotation}}
+\index{Texture\+Rotation@{Texture\+Rotation}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{Texture\+Rotation}
+{\footnotesize\ttfamily enum \textbf{ F\+A\+E.\+Pigment\+Map\+Generator.\+Texture\+Rotation}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!None@{None}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a67a080c3d9b8506cdef2e1efdb4efedea6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quarter@{Quarter}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Quarter@{Quarter}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a67a080c3d9b8506cdef2e1efdb4efedeab25cde1e74f3d27f678c2e309e06102e}} 
+Quarter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Half@{Half}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Half@{Half}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a67a080c3d9b8506cdef2e1efdb4efedeac48615a1bc4197056d522af276aa5a85}} 
+Half&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Three\+Quarters@{Three\+Quarters}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Three\+Quarters@{Three\+Quarters}}}\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a67a080c3d9b8506cdef2e1efdb4efedea850728c829c818ee8538216e8ad2770d}} 
+Three\+Quarters&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 54 of file Pigment\+Map\+Generator.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_aebeebcd84a411347805beb5cdaba37f2}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Get\+Target\+Info@{Get\+Target\+Info}}
+\index{Get\+Target\+Info@{Get\+Target\+Info}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{Get\+Target\+Info()}
+{\footnotesize\ttfamily void F\+A\+E.\+Pigment\+Map\+Generator.\+Get\+Target\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 128 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_ab830796a1c5b9d81e266b80a077c6e1b}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Init@{Init}}
+\index{Init@{Init}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{Init()}
+{\footnotesize\ttfamily void F\+A\+E.\+Pigment\+Map\+Generator.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 111 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a803a79952cdc4f60630c50bba9b9456d}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!Set\+Pigment\+Map@{Set\+Pigment\+Map}}
+\index{Set\+Pigment\+Map@{Set\+Pigment\+Map}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{Set\+Pigment\+Map()}
+{\footnotesize\ttfamily void F\+A\+E.\+Pigment\+Map\+Generator.\+Set\+Pigment\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 167 of file Pigment\+Map\+Generator.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a384957632765fe4e66ebc6e4bade7694}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!flip\+Hortizontally@{flip\+Hortizontally}}
+\index{flip\+Hortizontally@{flip\+Hortizontally}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{flip\+Hortizontally}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+flip\+Hortizontally}
+
+
+
+Definition at line 52 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a04ca969709d41c61ad19d106abd10912}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!flip\+Vertically@{flip\+Vertically}}
+\index{flip\+Vertically@{flip\+Vertically}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{flip\+Vertically}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+flip\+Vertically}
+
+
+
+Definition at line 51 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a555dc9fc2f0bbf2805306a09fd1fe61c}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!has\+Terrain\+Data@{has\+Terrain\+Data}}
+\index{has\+Terrain\+Data@{has\+Terrain\+Data}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{has\+Terrain\+Data}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+has\+Terrain\+Data = true}
+
+
+
+Definition at line 78 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a4008c911aef8430499930123cf603c09}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!heightmap\+Channel@{heightmap\+Channel}}
+\index{heightmap\+Channel@{heightmap\+Channel}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{heightmap\+Channel}
+{\footnotesize\ttfamily \textbf{ Heightmap\+Channel} F\+A\+E.\+Pigment\+Map\+Generator.\+heightmap\+Channel = \textbf{ Heightmap\+Channel.\+None}}
+
+
+
+Definition at line 97 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_ada336d42bde5e94473d7cdc084d12062}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!input\+Heightmap@{input\+Heightmap}}
+\index{input\+Heightmap@{input\+Heightmap}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{input\+Heightmap}
+{\footnotesize\ttfamily Texture2D F\+A\+E.\+Pigment\+Map\+Generator.\+input\+Heightmap}
+
+
+
+Definition at line 46 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a9cba9a601464346f2760c677a474a212}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!input\+Pigment\+Map@{input\+Pigment\+Map}}
+\index{input\+Pigment\+Map@{input\+Pigment\+Map}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{input\+Pigment\+Map}
+{\footnotesize\ttfamily Texture2D F\+A\+E.\+Pigment\+Map\+Generator.\+input\+Pigment\+Map}
+
+
+
+Definition at line 47 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_aecef69600aa1ae77a7ef0d3fbce7ae0d}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!is\+Center\+Pivot@{is\+Center\+Pivot}}
+\index{is\+Center\+Pivot@{is\+Center\+Pivot}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{is\+Center\+Pivot}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+is\+Center\+Pivot}
+
+
+
+Definition at line 30 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a46a32bc5d8fb864559ac87a8dee8cbd3}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!pigment\+Map@{pigment\+Map}}
+\index{pigment\+Map@{pigment\+Map}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{pigment\+Map}
+{\footnotesize\ttfamily Texture2D F\+A\+E.\+Pigment\+Map\+Generator.\+pigment\+Map}
+
+
+
+Definition at line 64 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_aea4b9266efa94e76898669b97402553a}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!render\+Light\+Brightness@{render\+Light\+Brightness}}
+\index{render\+Light\+Brightness@{render\+Light\+Brightness}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{render\+Light\+Brightness}
+{\footnotesize\ttfamily float F\+A\+E.\+Pigment\+Map\+Generator.\+render\+Light\+Brightness = 0.\+25f}
+
+
+
+Definition at line 28 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a6ce2ab147af39191fead7a61870b3432}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!save\+Path@{save\+Path}}
+\index{save\+Path@{save\+Path}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{save\+Path}
+{\footnotesize\ttfamily string F\+A\+E.\+Pigment\+Map\+Generator.\+save\+Path}
+
+
+
+Definition at line 76 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a57dbfc69034acb06f2454e0de958f883}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!target\+Center\+Position@{target\+Center\+Position}}
+\index{target\+Center\+Position@{target\+Center\+Position}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{target\+Center\+Position}
+{\footnotesize\ttfamily Vector3 F\+A\+E.\+Pigment\+Map\+Generator.\+target\+Center\+Position}
+
+
+
+Definition at line 73 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a75aff5aa8a0eed2049de5d433ba40caf}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!target\+Position@{target\+Position}}
+\index{target\+Position@{target\+Position}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{target\+Position}
+{\footnotesize\ttfamily Vector3 F\+A\+E.\+Pigment\+Map\+Generator.\+target\+Position}
+
+
+
+Definition at line 72 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_acdac9bdadc97dd669f3718e76fd3f452}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!target\+Size@{target\+Size}}
+\index{target\+Size@{target\+Size}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{target\+Size}
+{\footnotesize\ttfamily Vector3 F\+A\+E.\+Pigment\+Map\+Generator.\+target\+Size}
+
+
+
+Definition at line 71 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a21ef09f382e3334533b39d8b74f5de17}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!terrain@{terrain}}
+\index{terrain@{terrain}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{terrain}
+{\footnotesize\ttfamily Terrain F\+A\+E.\+Pigment\+Map\+Generator.\+terrain}
+
+
+
+Definition at line 33 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a5424932e6fef2715e4b7bb68026bfd39}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!texture\+Rotation@{texture\+Rotation}}
+\index{texture\+Rotation@{texture\+Rotation}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{texture\+Rotation}
+{\footnotesize\ttfamily \textbf{ Texture\+Rotation} F\+A\+E.\+Pigment\+Map\+Generator.\+texture\+Rotation}
+
+
+
+Definition at line 61 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_af0154d2edfa549b1b62fa22242ce79bb}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!use\+Alternative\+Renderer@{use\+Alternative\+Renderer}}
+\index{use\+Alternative\+Renderer@{use\+Alternative\+Renderer}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{use\+Alternative\+Renderer}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+use\+Alternative\+Renderer}
+
+
+
+Definition at line 29 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_a8de4e684a02011a4ed55be01fe4bb0d3}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!use\+Custom\+Pigment\+Map@{use\+Custom\+Pigment\+Map}}
+\index{use\+Custom\+Pigment\+Map@{use\+Custom\+Pigment\+Map}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{use\+Custom\+Pigment\+Map}
+{\footnotesize\ttfamily bool F\+A\+E.\+Pigment\+Map\+Generator.\+use\+Custom\+Pigment\+Map}
+
+
+
+Definition at line 48 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_af27f5557cf043e368ee66655d0cd32d6}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!util@{util}}
+\index{util@{util}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{util}
+{\footnotesize\ttfamily \textbf{ Terrain\+U\+V\+Util} F\+A\+E.\+Pigment\+Map\+Generator.\+util}
+
+
+
+Definition at line 21 of file Pigment\+Map\+Generator.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_pigment_map_generator_ac33391857fe6d31be6a0868790a93a4b}} 
+\index{F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}!workflow@{workflow}}
+\index{workflow@{workflow}!F\+A\+E\+::\+Pigment\+Map\+Generator@{F\+A\+E\+::\+Pigment\+Map\+Generator}}
+\subsubsection{workflow}
+{\footnotesize\ttfamily \textbf{ Terrain\+U\+V\+Util.\+Workflow} F\+A\+E.\+Pigment\+Map\+Generator.\+workflow}
+
+
+
+Definition at line 22 of file Pigment\+Map\+Generator.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Fantasy Adventure Environment/\+Scripts/\textbf{ Pigment\+Map\+Generator.\+cs}\end{DoxyCompactItemize}

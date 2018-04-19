@@ -1,0 +1,255 @@
+\section{F\+A\+E.\+Wind\+Controller Class Reference}
+\label{class_f_a_e_1_1_wind_controller}\index{F\+A\+E.\+Wind\+Controller@{F\+A\+E.\+Wind\+Controller}}
+
+
+Sets the wind properties of the \doxyref{F\+AE}{p.}{namespace_f_a_e} shaders  
+
+
+Inheritance diagram for F\+A\+E.\+Wind\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_a_e_1_1_wind_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Strength} (float value)
+\begin{DoxyCompactList}\small\item\em Set the wind strength \end{DoxyCompactList}\item 
+void \textbf{ Apply} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Visualize\+Vectors} (bool state)
+\begin{DoxyCompactList}\small\item\em Toggles the visualization of the wind vectors on all shaders that feature wind animations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Texture \textbf{ wind\+Vectors}
+\item 
+bool \textbf{ visualize\+Vectors} = false
+\item 
+float \textbf{ wind\+Direction} = 0f
+\begin{DoxyCompactList}\small\item\em Wind direction \end{DoxyCompactList}\item 
+float \textbf{ wind\+Speed} = 0.\+33f
+\begin{DoxyCompactList}\small\item\em Name property. \end{DoxyCompactList}\item 
+float \textbf{ wind\+Strength} = 0.\+5f
+\item 
+float \textbf{ wind\+Amplitude} = 14f
+\item 
+float \textbf{ trunk\+Wind\+Speed} = 10f
+\item 
+float \textbf{ trunk\+Wind\+Weight} = 4f
+\item 
+float \textbf{ trunk\+Wind\+Swinging} = 0.\+5f
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \textbf{ \+\_\+visualize\+Vectors}
+\begin{DoxyCompactList}\small\item\em Used to retreive the current state of the wind visualization, either on or off \end{DoxyCompactList}\item 
+static float \textbf{ \+\_\+wind\+Strength}
+\item 
+static float \textbf{ \+\_\+wind\+Amplitude}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sets the wind properties of the \doxyref{F\+AE}{p.}{namespace_f_a_e} shaders 
+
+
+
+Definition at line 18 of file Wind\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_f_a_e_1_1_wind_controller_a2920d94afbd791743c831ce61f952fc1}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!Apply@{Apply}}
+\index{Apply@{Apply}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{Apply()}
+{\footnotesize\ttfamily void F\+A\+E.\+Wind\+Controller.\+Apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 126 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a720b396510bc65c88834be791098829a}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!Set\+Strength@{Set\+Strength}}
+\index{Set\+Strength@{Set\+Strength}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{Set\+Strength()}
+{\footnotesize\ttfamily void F\+A\+E.\+Wind\+Controller.\+Set\+Strength (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the wind strength 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_acf9474bc774f5372fd0ed8b8e9134257}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!Visualize\+Vectors@{Visualize\+Vectors}}
+\index{Visualize\+Vectors@{Visualize\+Vectors}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{Visualize\+Vectors()}
+{\footnotesize\ttfamily static void F\+A\+E.\+Wind\+Controller.\+Visualize\+Vectors (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Toggles the visualization of the wind vectors on all shaders that feature wind animations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & sadsdasda\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file Wind\+Controller.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_f_a_e_1_1_wind_controller_a21f08cf3d439c97073b5869d10d2d78e}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!\+\_\+visualize\+Vectors@{\+\_\+visualize\+Vectors}}
+\index{\+\_\+visualize\+Vectors@{\+\_\+visualize\+Vectors}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{\+\_\+visualize\+Vectors}
+{\footnotesize\ttfamily bool F\+A\+E.\+Wind\+Controller.\+\_\+visualize\+Vectors\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to retreive the current state of the wind visualization, either on or off 
+
+
+
+Definition at line 30 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_aa2c4f6a3560c7a1021c29fb549f29c6c}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!\+\_\+wind\+Amplitude@{\+\_\+wind\+Amplitude}}
+\index{\+\_\+wind\+Amplitude@{\+\_\+wind\+Amplitude}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{\+\_\+wind\+Amplitude}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+\_\+wind\+Amplitude\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 60 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a07dcd4284d6629eef10460c80f89d1fb}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!\+\_\+wind\+Strength@{\+\_\+wind\+Strength}}
+\index{\+\_\+wind\+Strength@{\+\_\+wind\+Strength}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{\+\_\+wind\+Strength}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+\_\+wind\+Strength\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 59 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_ac73fa2ce3eb8b528f5cf90d2b64d771e}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!trunk\+Wind\+Speed@{trunk\+Wind\+Speed}}
+\index{trunk\+Wind\+Speed@{trunk\+Wind\+Speed}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{trunk\+Wind\+Speed}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+trunk\+Wind\+Speed = 10f}
+
+
+
+Definition at line 50 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a2b72e23ae92ab8d8adcf3681252a758a}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!trunk\+Wind\+Swinging@{trunk\+Wind\+Swinging}}
+\index{trunk\+Wind\+Swinging@{trunk\+Wind\+Swinging}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{trunk\+Wind\+Swinging}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+trunk\+Wind\+Swinging = 0.\+5f}
+
+
+
+Definition at line 54 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a12f32f480f988174b3ea0c5638785540}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!trunk\+Wind\+Weight@{trunk\+Wind\+Weight}}
+\index{trunk\+Wind\+Weight@{trunk\+Wind\+Weight}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{trunk\+Wind\+Weight}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+trunk\+Wind\+Weight = 4f}
+
+
+
+Definition at line 52 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_ac576bddf086fbc21ddb7fa99d74535a5}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!visualize\+Vectors@{visualize\+Vectors}}
+\index{visualize\+Vectors@{visualize\+Vectors}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{visualize\+Vectors}
+{\footnotesize\ttfamily bool F\+A\+E.\+Wind\+Controller.\+visualize\+Vectors = false}
+
+
+
+Definition at line 26 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a6abe0ede584694969fe4da911e5c089d}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!wind\+Amplitude@{wind\+Amplitude}}
+\index{wind\+Amplitude@{wind\+Amplitude}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{wind\+Amplitude}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+wind\+Amplitude = 14f}
+
+
+
+Definition at line 46 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a1f290abc4dabd491ba4ba8da40796802}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!wind\+Direction@{wind\+Direction}}
+\index{wind\+Direction@{wind\+Direction}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{wind\+Direction}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+wind\+Direction = 0f}
+
+
+
+Wind direction 
+
+The 360 degree Y-\/axis direction represented as a 0-\/1 value
+
+Definition at line 36 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_a940f2d02ad1e9ec7750b94d534332086}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!wind\+Speed@{wind\+Speed}}
+\index{wind\+Speed@{wind\+Speed}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{wind\+Speed}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+wind\+Speed = 0.\+33f}
+
+
+
+Name property. 
+
+A value tag is used to describe the property value.
+
+Definition at line 42 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_abd3b1a518655167770829516cdf10353}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!wind\+Strength@{wind\+Strength}}
+\index{wind\+Strength@{wind\+Strength}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{wind\+Strength}
+{\footnotesize\ttfamily float F\+A\+E.\+Wind\+Controller.\+wind\+Strength = 0.\+5f}
+
+
+
+Definition at line 44 of file Wind\+Controller.\+cs.
+
+\mbox{\label{class_f_a_e_1_1_wind_controller_acf9c83193cf5bab4b092d84023d8586c}} 
+\index{F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}!wind\+Vectors@{wind\+Vectors}}
+\index{wind\+Vectors@{wind\+Vectors}!F\+A\+E\+::\+Wind\+Controller@{F\+A\+E\+::\+Wind\+Controller}}
+\subsubsection{wind\+Vectors}
+{\footnotesize\ttfamily Texture F\+A\+E.\+Wind\+Controller.\+wind\+Vectors}
+
+
+
+Definition at line 25 of file Wind\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Fantasy Adventure Environment/\+Scripts/\textbf{ Wind\+Controller.\+cs}\end{DoxyCompactItemize}

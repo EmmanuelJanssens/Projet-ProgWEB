@@ -1,0 +1,412 @@
+\section{U\+I\+Manager Class Reference}
+\label{class_u_i_manager}\index{U\+I\+Manager@{U\+I\+Manager}}
+
+
+manages UI Navigation  
+
+
+Inheritance diagram for U\+I\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u_i_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ U\+I\+Manager} ()
+\item 
+void \textbf{ Start} ()
+\item 
+void \textbf{ Enable\+Terrain} (bool b)
+\begin{DoxyCompactList}\small\item\em Enables the terrain \end{DoxyCompactList}\item 
+void \textbf{ Enable\+Noise\+Map} (bool b)
+\begin{DoxyCompactList}\small\item\em Enables the noise map \end{DoxyCompactList}\item 
+void \textbf{ Enable\+Free\+Look} (bool b)
+\begin{DoxyCompactList}\small\item\em Enables the freellok \end{DoxyCompactList}\item 
+void \textbf{ Switch\+Panel} (Game\+Object panel\+To\+Open)
+\begin{DoxyCompactList}\small\item\em Switch between panels \end{DoxyCompactList}\item 
+void \textbf{ Open\+Frame} (Game\+Object to\+Open)
+\begin{DoxyCompactList}\small\item\em Opens a specific frame \end{DoxyCompactList}\item 
+void \textbf{ Close\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Closes the curent open frame \end{DoxyCompactList}\item 
+void \textbf{ go\+To\+Previous\+Panel} ()
+\begin{DoxyCompactList}\small\item\em Switches to the previous panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \textbf{ Select\+Frame}
+\begin{DoxyCompactList}\small\item\em Game object that is the frame selection Display of toggles \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Previous\+Panel}
+\begin{DoxyCompactList}\small\item\em The panel where the user was before Usualy the main editor panel \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Current\+Panel}
+\begin{DoxyCompactList}\small\item\em The panel in wich the user is now \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Dark\+Overlay}
+\begin{DoxyCompactList}\small\item\em overlay that is displayed when a frame is opened \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Previous\+Frame}
+\begin{DoxyCompactList}\small\item\em The last frame that was opened \end{DoxyCompactList}\item 
+Game\+Object \textbf{ Current\+Frame}
+\begin{DoxyCompactList}\small\item\em The current frame that is openend \end{DoxyCompactList}\item 
+string \textbf{ wich\+Panel}
+\item 
+Text \textbf{ Title}
+\begin{DoxyCompactList}\small\item\em Title of the current panel \end{DoxyCompactList}\item 
+Toggle \textbf{ Show\+Terrain}
+\begin{DoxyCompactList}\small\item\em Toggle used to display the terrain part of groupbox parent \end{DoxyCompactList}\item 
+Toggle \textbf{ Show\+Noise\+Map}
+\begin{DoxyCompactList}\small\item\em Toggle used to display the noise map part of groupbox parent \end{DoxyCompactList}\item 
+Toggle \textbf{ Free\+Look}
+\begin{DoxyCompactList}\small\item\em Activates or deactivates the free look mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ U\+I\+Manager} \textbf{ current}
+\begin{DoxyCompactList}\small\item\em Current \doxyref{U\+I\+Manager}{p.}{class_u_i_manager} instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ U\+I\+Manager} \textbf{ Get}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+manages UI Navigation 
+
+
+
+Definition at line 9 of file U\+I\+Manager.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_u_i_manager_a9d5d4e01945225da8c33ab1c47438707}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!U\+I\+Manager@{U\+I\+Manager}}
+\index{U\+I\+Manager@{U\+I\+Manager}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{U\+I\+Manager()}
+{\footnotesize\ttfamily U\+I\+Manager.\+U\+I\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file U\+I\+Manager.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_u_i_manager_af87d963218bbc32aaa369122fae18f6b}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Close\+Frame@{Close\+Frame}}
+\index{Close\+Frame@{Close\+Frame}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Close\+Frame()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Close\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the curent open frame 
+
+
+
+Definition at line 159 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_abe751650e1ee99bce80744eca9334035}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Enable\+Free\+Look@{Enable\+Free\+Look}}
+\index{Enable\+Free\+Look@{Enable\+Free\+Look}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Enable\+Free\+Look()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Enable\+Free\+Look (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+Enables the freellok 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & value of the toggle\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_ae2d34700615a4d75e14dedbc4b3104d3}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Enable\+Noise\+Map@{Enable\+Noise\+Map}}
+\index{Enable\+Noise\+Map@{Enable\+Noise\+Map}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Enable\+Noise\+Map()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Enable\+Noise\+Map (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+Enables the noise map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & value of the toggle\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a2526aa96dbb3c2d71509626025d575ac}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Enable\+Terrain@{Enable\+Terrain}}
+\index{Enable\+Terrain@{Enable\+Terrain}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Enable\+Terrain()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Enable\+Terrain (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+Enables the terrain 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & value of the toggle\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a5417f51ef2c2dd06c0fbf2f499567177}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!go\+To\+Previous\+Panel@{go\+To\+Previous\+Panel}}
+\index{go\+To\+Previous\+Panel@{go\+To\+Previous\+Panel}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{go\+To\+Previous\+Panel()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+go\+To\+Previous\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Switches to the previous panel 
+
+
+
+Definition at line 177 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a962aaa723c986023cd8345211f2c9a5f}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Open\+Frame@{Open\+Frame}}
+\index{Open\+Frame@{Open\+Frame}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Open\+Frame()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Open\+Frame (\begin{DoxyParamCaption}\item[{Game\+Object}]{to\+Open }\end{DoxyParamCaption})}
+
+
+
+Opens a specific frame 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Open} & frame to be opened\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a2bd6b48b13b9e14e6292e4b713f59584}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Start@{Start}}
+\index{Start@{Start}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Start()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_aea1cf6dcacae4cd135a5632a64089658}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Switch\+Panel@{Switch\+Panel}}
+\index{Switch\+Panel@{Switch\+Panel}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Switch\+Panel()}
+{\footnotesize\ttfamily void U\+I\+Manager.\+Switch\+Panel (\begin{DoxyParamCaption}\item[{Game\+Object}]{panel\+To\+Open }\end{DoxyParamCaption})}
+
+
+
+Switch between panels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel\+To\+Open} & Wich panel to be activated\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file U\+I\+Manager.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_u_i_manager_a770aa95273a390e9d1ff46e497573673}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!current@{current}}
+\index{current@{current}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{current}
+{\footnotesize\ttfamily \textbf{ U\+I\+Manager} U\+I\+Manager.\+current\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Current \doxyref{U\+I\+Manager}{p.}{class_u_i_manager} instance 
+
+
+
+Definition at line 20 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a3e6d82b14046145347020bcb5280ee85}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Current\+Frame@{Current\+Frame}}
+\index{Current\+Frame@{Current\+Frame}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Current\+Frame}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Current\+Frame}
+
+
+
+The current frame that is openend 
+
+
+
+Definition at line 47 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_abe8147fc237874736009f0aac183404c}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Current\+Panel@{Current\+Panel}}
+\index{Current\+Panel@{Current\+Panel}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Current\+Panel}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Current\+Panel}
+
+
+
+The panel in wich the user is now 
+
+
+
+Definition at line 32 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a72b698545cbcdce2042b4216ff8b9617}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Dark\+Overlay@{Dark\+Overlay}}
+\index{Dark\+Overlay@{Dark\+Overlay}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Dark\+Overlay}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Dark\+Overlay}
+
+
+
+overlay that is displayed when a frame is opened 
+
+
+
+Definition at line 37 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a4674e69178ba258b45234fb9e7b4dc8e}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Free\+Look@{Free\+Look}}
+\index{Free\+Look@{Free\+Look}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Free\+Look}
+{\footnotesize\ttfamily Toggle U\+I\+Manager.\+Free\+Look}
+
+
+
+Activates or deactivates the free look mode 
+
+
+
+Definition at line 70 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_aa7e903e62ec50e6bf0c7ea693af60104}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Previous\+Frame@{Previous\+Frame}}
+\index{Previous\+Frame@{Previous\+Frame}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Previous\+Frame}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Previous\+Frame}
+
+
+
+The last frame that was opened 
+
+
+
+Definition at line 42 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a61e812d2720f3eaf9b500e0cc67f0b4f}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Previous\+Panel@{Previous\+Panel}}
+\index{Previous\+Panel@{Previous\+Panel}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Previous\+Panel}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Previous\+Panel}
+
+
+
+The panel where the user was before Usualy the main editor panel 
+
+
+
+Definition at line 27 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_abc0e55646cd4460ba3358b6bccc8c851}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Select\+Frame@{Select\+Frame}}
+\index{Select\+Frame@{Select\+Frame}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Select\+Frame}
+{\footnotesize\ttfamily Game\+Object U\+I\+Manager.\+Select\+Frame}
+
+
+
+Game object that is the frame selection Display of toggles 
+
+
+
+Definition at line 15 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a565ae6b337dcd9ead258c80f677219ab}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Show\+Noise\+Map@{Show\+Noise\+Map}}
+\index{Show\+Noise\+Map@{Show\+Noise\+Map}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Show\+Noise\+Map}
+{\footnotesize\ttfamily Toggle U\+I\+Manager.\+Show\+Noise\+Map}
+
+
+
+Toggle used to display the noise map part of groupbox parent 
+
+
+
+Definition at line 65 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_ab2fb84380adb7acd9206f72bfe62adee}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Show\+Terrain@{Show\+Terrain}}
+\index{Show\+Terrain@{Show\+Terrain}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Show\+Terrain}
+{\footnotesize\ttfamily Toggle U\+I\+Manager.\+Show\+Terrain}
+
+
+
+Toggle used to display the terrain part of groupbox parent 
+
+
+
+Definition at line 60 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a6d4ff0fc3f9425f8c9615c1adaa56cee}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Title@{Title}}
+\index{Title@{Title}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Title}
+{\footnotesize\ttfamily Text U\+I\+Manager.\+Title}
+
+
+
+Title of the current panel 
+
+
+
+Definition at line 55 of file U\+I\+Manager.\+cs.
+
+\mbox{\label{class_u_i_manager_a86dfcf0acf90b97702552f73c8e60149}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!wich\+Panel@{wich\+Panel}}
+\index{wich\+Panel@{wich\+Panel}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{wich\+Panel}
+{\footnotesize\ttfamily string U\+I\+Manager.\+wich\+Panel}
+
+
+
+Definition at line 50 of file U\+I\+Manager.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\label{class_u_i_manager_a9c24943a866819a1d410243eadbe119c}} 
+\index{U\+I\+Manager@{U\+I\+Manager}!Get@{Get}}
+\index{Get@{Get}!U\+I\+Manager@{U\+I\+Manager}}
+\subsubsection{Get}
+{\footnotesize\ttfamily \textbf{ U\+I\+Manager} U\+I\+Manager.\+Get\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 74 of file U\+I\+Manager.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+Managers/\textbf{ U\+I\+Manager.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+digraph "NoiseGenerator.GenerateNoiseBW"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NoiseGenerator.GenerateNoiseBW",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="TextureGenerator.Generate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_texture_generator.html#aab187583231f03ec5f53750854ec6689",tooltip="Function called when pressing the generate button "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="NoiseUI.GenerateNoiseMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_noise_u_i.html#ae8056541270c49293d5b29702d07a409",tooltip="Generates a noise map "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SaveData.Save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_save_data.html#aaae8781724c7b87aeb57a6a60609b687",tooltip="Saves the data to a file "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SaveData.Start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_save_data.html#af64a9779645b78c6436f74eaf25c85a8",tooltip="Initiate class and add listeners to the two commands "];
+}

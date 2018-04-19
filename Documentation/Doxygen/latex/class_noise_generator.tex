@@ -1,0 +1,258 @@
+\section{Noise\+Generator Class Reference}
+\label{class_noise_generator}\index{Noise\+Generator@{Noise\+Generator}}
+
+
+Used to generate a noisemap Data from this map is used through the whole project  
+
+
+Inheritance diagram for Noise\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_noise_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float [,] \textbf{ Generate\+Noise\+BW} ()
+\begin{DoxyCompactList}\small\item\em Generate a 2D Noise map texture \end{DoxyCompactList}\item 
+void \textbf{ Generate\+Texture} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Noise\+Generator} \textbf{ Get} ()
+\begin{DoxyCompactList}\small\item\em Get the instance of the Noise\+Map\+Generator There is only one \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Renderer \textbf{ Noise\+Renderer}
+\begin{DoxyCompactList}\small\item\em Renderer of the 3D plane on wich the noisemap will be rendered \end{DoxyCompactList}\item 
+float [,] \textbf{ Noise}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Noise\+Generator} \textbf{ current}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Color32 [$\,$] \textbf{ Pixel\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Seed}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Width}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+float \textbf{ Scale}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Octaves}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+float \textbf{ Persistence}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+float \textbf{ Lacunarity}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+float \textbf{ World\+Scale}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Texture2D \textbf{ Display\+Texture}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to generate a noisemap Data from this map is used through the whole project 
+
+
+
+Definition at line 11 of file Noise\+Generator.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_noise_generator_a3ec891cebd7e3feaae3681383eb55531}} 
+\index{Noise\+Generator@{Noise\+Generator}!Generate\+Noise\+BW@{Generate\+Noise\+BW}}
+\index{Generate\+Noise\+BW@{Generate\+Noise\+BW}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Generate\+Noise\+B\+W()}
+{\footnotesize\ttfamily float [,] Noise\+Generator.\+Generate\+Noise\+BW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a 2D Noise map texture 
+
+
+
+Definition at line 120 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_a56b3b413e3ddb6f5f5d32ea99d41cd2c}} 
+\index{Noise\+Generator@{Noise\+Generator}!Generate\+Texture@{Generate\+Texture}}
+\index{Generate\+Texture@{Generate\+Texture}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Generate\+Texture()}
+{\footnotesize\ttfamily void Noise\+Generator.\+Generate\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 201 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_ad917ec1709a8484619c7ffaaf2673206}} 
+\index{Noise\+Generator@{Noise\+Generator}!Get@{Get}}
+\index{Get@{Get}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Get()}
+{\footnotesize\ttfamily static \textbf{ Noise\+Generator} Noise\+Generator.\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the instance of the Noise\+Map\+Generator There is only one 
+
+\begin{DoxyReturn}{Returns}
+Instance of the Generator
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Noise\+Generator.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_noise_generator_a69151437d945e3407c8c5769eaac803e}} 
+\index{Noise\+Generator@{Noise\+Generator}!current@{current}}
+\index{current@{current}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{current}
+{\footnotesize\ttfamily \textbf{ Noise\+Generator} Noise\+Generator.\+current\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 14 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_a495ac4e77295a601b53f00b327abe7ea}} 
+\index{Noise\+Generator@{Noise\+Generator}!Noise@{Noise}}
+\index{Noise@{Noise}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Noise}
+{\footnotesize\ttfamily float [,] Noise\+Generator.\+Noise}
+
+
+
+Definition at line 88 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_aa5d85d1027a000657274ce9faadac6ec}} 
+\index{Noise\+Generator@{Noise\+Generator}!Noise\+Renderer@{Noise\+Renderer}}
+\index{Noise\+Renderer@{Noise\+Renderer}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Noise\+Renderer}
+{\footnotesize\ttfamily Renderer Noise\+Generator.\+Noise\+Renderer}
+
+
+
+Renderer of the 3D plane on wich the noisemap will be rendered 
+
+
+
+Definition at line 54 of file Noise\+Generator.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\label{class_noise_generator_aacc3af2790c43181aef02a21686c0a0f}} 
+\index{Noise\+Generator@{Noise\+Generator}!Display\+Texture@{Display\+Texture}}
+\index{Display\+Texture@{Display\+Texture}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Display\+Texture}
+{\footnotesize\ttfamily Texture2D Noise\+Generator.\+Display\+Texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 97 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_afcc9298c8a526298e1c831503d011ef6}} 
+\index{Noise\+Generator@{Noise\+Generator}!Height@{Height}}
+\index{Height@{Height}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Height}
+{\footnotesize\ttfamily int Noise\+Generator.\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 90 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_ab19c364d60bddc1d663b7dd86edc1034}} 
+\index{Noise\+Generator@{Noise\+Generator}!Lacunarity@{Lacunarity}}
+\index{Lacunarity@{Lacunarity}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Lacunarity}
+{\footnotesize\ttfamily float Noise\+Generator.\+Lacunarity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 95 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_ac7f30e6f8f78c71a4c96b3a244c1dc32}} 
+\index{Noise\+Generator@{Noise\+Generator}!Octaves@{Octaves}}
+\index{Octaves@{Octaves}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Octaves}
+{\footnotesize\ttfamily int Noise\+Generator.\+Octaves\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 93 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_ac38e86ad2ac5823099dcbcca7e3c2818}} 
+\index{Noise\+Generator@{Noise\+Generator}!Persistence@{Persistence}}
+\index{Persistence@{Persistence}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Persistence}
+{\footnotesize\ttfamily float Noise\+Generator.\+Persistence\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 94 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_acdb9a256d433b7482dc9fbd66c79bda3}} 
+\index{Noise\+Generator@{Noise\+Generator}!Pixel\+Color@{Pixel\+Color}}
+\index{Pixel\+Color@{Pixel\+Color}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Pixel\+Color}
+{\footnotesize\ttfamily Color32 [$\,$] Noise\+Generator.\+Pixel\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 87 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_a50fad63e094e22ec773e9be4ca7ce777}} 
+\index{Noise\+Generator@{Noise\+Generator}!Scale@{Scale}}
+\index{Scale@{Scale}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Scale}
+{\footnotesize\ttfamily float Noise\+Generator.\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 92 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_ac65b1370bc60f2cb64bf6b064418b96f}} 
+\index{Noise\+Generator@{Noise\+Generator}!Seed@{Seed}}
+\index{Seed@{Seed}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Seed}
+{\footnotesize\ttfamily int Noise\+Generator.\+Seed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 89 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_a1315cad3607e2f9cf5d2968c6dae0e28}} 
+\index{Noise\+Generator@{Noise\+Generator}!Width@{Width}}
+\index{Width@{Width}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{Width}
+{\footnotesize\ttfamily int Noise\+Generator.\+Width\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 91 of file Noise\+Generator.\+cs.
+
+\mbox{\label{class_noise_generator_a37552851974d43296ad5eb95d3175e5b}} 
+\index{Noise\+Generator@{Noise\+Generator}!World\+Scale@{World\+Scale}}
+\index{World\+Scale@{World\+Scale}!Noise\+Generator@{Noise\+Generator}}
+\subsubsection{World\+Scale}
+{\footnotesize\ttfamily float Noise\+Generator.\+World\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 96 of file Noise\+Generator.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Emmanuel.\+J\+A\+N\+S\+S\+E\+N\+S/\+Desktop/\+Projet Prog\+W\+E\+B/\+E\+J\+S\+\_\+\+P\+R\+O\+G/\+Assets/\+Scripts/\+Generator/\textbf{ Noise\+Generator.\+cs}\end{DoxyCompactItemize}
